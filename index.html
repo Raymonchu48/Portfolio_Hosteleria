@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ramón Alberto Curbalán Vega · Portfolio Hostelería y Restauración</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio profesional de Ramón Alberto Curbalán, especializado en hostelería, restauración y gestión de servicios F&B en hoteles de 4 y 5 estrellas.">
+<link rel="stylesheet" href="style.css">
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap');
+    :root {
+      --primary: #60a4b8;      /* azul verdoso tipo plantilla BANNO */
+      --primary-dark: #3d6e7d;
+      --bg-body: #f4f4f4;
+      --bg-white: #ffffff;
+      --text-main: #333333;
+      --text-muted: #777777;
+      --border-soft: #e3e3e3;
+      --radius: 4px;
+    }
+	.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.top-links {
+  padding: 16px 0 0;
+}
+
+.top-links .container {
+  display: flex;
+  justify-content: flex-end; /* botón alineado con el resto de la página */
+}
+
+
+/* Botón LinkedIn, mismo color de marca pero más compacto */
+.btn-linkedin {
+  display: inline-block;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 8px 18px;
+  font-size: 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.btn-linkedin:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+/* ===== BOTÓN CORPORATIVO UNIFICADO ===== */
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 10px 24px;
+  font-size: 13px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+   body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--bg-white);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    /* HEADER TOP COLOR BLOCK */
+    .top-strip {
+      background: var(--primary);
+      height: 90px;
+      display: flex;
+      align-items: center;
+      padding: 0 40px;
+      color: #ffffff;
+	  position: relative;   /* clave */
+  overflow: hidden;     /* clave */
+    }
+/* Marca de agua corporativa en header */
+.top-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("imagenes/Marca-cubiertos.png");
+  background-repeat: no-repeat;
+  background-size: 85% auto;
+  background-position: 75% center;
+
+  opacity: 0.07;                 /* MUY sutil */
+  filter: contrast(120%) brightness(110%);
+  pointer-events: none;
+
+  z-index: 0;
+}
+    .logo {
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .logo span {
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    nav {
+      margin-left: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+    }
+
+    nav a {
+      color: #ffffff;
+      opacity: 0.9;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+ /* HERO – formato portada diagonal */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); /* derecha un poco más ancha */
+  min-height: 360px;
+  border-bottom: 1px solid var(--border-soft);
+  overflow: hidden;
+  background: #fdfdfd;
+  align-items: stretch;
+}
+.hero-right {
+  position: relative;
+  padding: 40px 50px 50px;          /* antes 60px 60px 80px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #16323d;                   /* importante: texto oscuro */
+}
+/* Bloque azul diagonal al estilo portada */
+.hero-right::before {
+  content: "";
+  position: absolute;
+  inset: -50px -60px -50px -60px;   /* menos invasivo arriba/abajo/izquierda */
+
+  background: linear-gradient(
+    135deg,
+    #8bc0cf 0%,     /* azul más claro */
+    #9fd0dd 45%,
+    #b5dce5 100%
+  );
+
+  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+  z-index: -1;
+}
+
+/* Contenido por encima de la marca de agua */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+font-family: 'Playfair Display', serif;   /* ← clave */
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #16323d;   /* un punto más oscuro */
+}
+.hero-title-line {
+  display: block;
+}
+.hero-subtitle {
+  font-size: 15px;
+  margin-bottom: 18px;
+  color: #285664; 
+}
+
+.hero-text-main {
+  font-size: 14px;
+  margin-bottom: 14px;
+  max-width: 540px;   /* columna de texto más limpia */
+   color: #24414d; 
+}
+/* Énfasis ejecutivo dentro del texto */
+.text-strong {
+  color:#14323e;       /* más oscuro, serio y ejecutivo */
+  font-weight: 600;
+}
+.hero-highlight {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 10px;
+  color: #4b6a74;                 /* gris azulado, muy legible */
+}
+/* Cabecera: texto + avatar alineados y centrados */
+.hero-header {
+  display: flex;
+  flex-direction: row-reverse;  /* avatar a la derecha */
+  align-items: center;          /* centra verticalmente avatar y texto */
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* El bloque de texto se centra respecto al avatar */
+.hero-heading-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   /* centra las dos líneas del nombre + subtítulo */
+  padding-left:  clamp(12px, 2vw, 24px);
+}
+
+/* Avatar circular */
+.hero-avatar {
+  position: static;
+  width: 120px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  flex-shrink: 0;
+}
+
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ajuste fino del texto al lado del avatar */
+.hero-heading-text .hero-highlight {
+  margin-bottom: 10px;
+}
+
+.hero-heading-text .hero-title {
+  margin-bottom: 10px;
+}
+.hero-left {
+  position: relative;
+  display: flex;
+  align-items: center;      /* centra verticalmente */
+  justify-content: center;  /* por si la columna es más ancha */
+  overflow: hidden;
+}
+/* Overlay muy suave encima de la foto para equilibrar */
+.hero-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.10), rgba(0,0,0,0.22));
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;  /* centra bien tu figura */
+   z-index: 0;
+}
+.btn-primary {
+  display: inline-block;
+  background: var(--primary);
+  color: #ffffff;
+  padding: 10px 26px;
+  font-size: 14px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+.hero-image-box {
+  text-align: center;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 16px;
+  background: #fafafa;
+}
+
+.hero-image-box img {
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+}
+
+.hero-image-caption {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.hero-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* centrado en tu figura */
+}
+/* FEATURES (3 columnas) */
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 40px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.feature-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+.feature-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.feature-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.feature-link {
+  font-size: 12px;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+/* ABOUT + TESTIMONIALS */
+.bottom-section {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+.section-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.section-text {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.section-text p + p {
+  margin-top: 10px;
+}
+
+.testimonial {
+  border-left: 4px solid var(--primary);
+  padding-left: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.testimonial-author {
+  font-size: 13px;
+  margin-top: 4px;
+  color: #555;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-muted);
+  padding: 16px 10px 24px;
+  border-top: 1px solid var(--border-soft);
+  background: #f9f9f9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero::before {
+    background-size: 80% auto;
+    background-position: 50% 55%;
+    opacity: 0.14;
+  }
+
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero::before {
+    background-size: 80% auto;
+    background-position: 50% 55%;
+    opacity: 0.14;
+  }
+
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bottom-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero, .features, .bottom-section {
+    padding: 24px 16px 32px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    gap: 14px;
+    font-size: 12px;
+  }
+}
+
+/* ===== GALERÍA (si la usas en esta página) ===== */
+.galeria {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px 60px;
+}
+
+.galeria h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.galeria-intro {
+  margin-bottom: 30px;
+  color: #777;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.galeria figure {
+  background: #ffffff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.galeria img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.galeria figcaption {
+  padding: 10px 12px 14px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* ===== CONTACTO – TARJETA PRESENTACIÓN ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* que al hacer scroll no quede pegado al borde superior */
+#contacto {
+  scroll-margin-top: 90px;
+}
+
+/* Sección de contacto como bloque separado */
+.contacto-section {
+  padding: 40px 0 20px;
+  background: #f5f7f9;
+}
+
+/* Tarjeta de presentación */
+.contact-card {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 24px 26px 22px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #356975;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Estado cuando se resalta al pulsar el botón CONTACTO */
+.contact-card.contact-highlight {
+  transform: scale(1.03);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Título de la tarjeta */
+.contact-title {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1d1d1f;
+  margin-bottom: 14px;
+}
+
+/* Etiquetas "Ubicación", "Email", "Teléfono" */
+.contact-label {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Texto general y enlaces dentro de la tarjeta */
+.contact-card p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.contact-card a {
+  color: #356975;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  text-decoration: underline;
+}
+
+/* Zona del botón */
+.contact-actions {
+  margin-top: 16px;
+}
+
+/* Botón tipo CTA dentro de la tarjeta (puede compartir estilo con tu .btn-linkedin anterior) */
+.contact-card .btn-linkedin {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: #356975;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contact-card .btn-linkedin:hover {
+  background: #28505a;
+}
+
+/* ===== FOOTER centrado y alineado con la tarjeta ===== */
+footer {
+  max-width: 600px;
+  margin: 12px auto 24px;
+  text-align: center;
+  font-size: 11px;
+  color: #777;
+  background: #f5f7f9;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border-top: 1px solid #e3e3e3;
+}
+
+
+}
+
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- BLOQUE SUPERIOR -->
+    <header class="top-strip">
+      <div class="logo">
+        PORTFOLIO PROFESIONAL</span>
+      </div>
+      <nav>
+  <ul>
+    <li>
+      <a 
+        href="Presentacion_profecional.pdf"
+        target="_blank"
+        rel="noopener noreferrer" >
+        Perfil
+      </a>
+    </li>
+    <li> 
+  <a 
+    href="Perfil_C.V.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Experiencia
+  </a>
+</li>
+    <li><a href="galeria.html" target="_blank" rel="noopener">Galeria</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+    </header>
+
+    <!-- HERO PRINCIPAL -->
+   <section class="hero" id="perfil">
+
+  <!-- COLUMNA IZQUIERDA: FOTO GRANDE -->
+  <div class="hero-left">
+    <img
+      src="imagenes/Presentacion.png"
+      alt="Ramon Alberto Curbalan Vega en restaurante de alta gama"
+      class="hero-cover"
+    >
+  </div>
+
+  <!-- COLUMNA DERECHA: AVATAR + TEXTO EN BLOQUE AZUL -->
+  <div class="hero-right">
+
+    <!-- Cabecera con avatar + nombre -->
+    <div class="hero-header">
+      <div class="hero-avatar">
+        <img
+          src="imagenes/ramon-perfil.png"
+          alt="Ramon Alberto Curbalan Vega"
+        >
+      </div>
+
+      <div class="hero-heading-text">
+        <div class="hero-highlight">
+          HOSTELERÍA · HOTELES 5★ Y GRAN LUJO · F&B
+        </div>
+
+       <h1 class="hero-title">
+  <span class="hero-title-line">RAMON ALBERTO</span>
+  <span class="hero-title-line">CURBALAN VEGA</span>
+</h1>
+
+        <h2 class="hero-subtitle">
+          Manager de restauración y banquetes en hoteles de gran lujo
+        </h2>
+      </div>
+    </div>
+
+    <!-- Texto principal -->
+    <p class="hero-text-main">
+      <span class="text-strong">Profesional con más de 23 años de experiencia en hostelería y restauración,
+      desarrollando mi carrera en hoteles de 5 estrellas Gran Lujo y especializándome
+      en la dirección de eventos gestión de equipos y
+      optimización de la rentabilidad. Destaco por mi liderazgo, atención al cliente,
+      control económico y dominio avanzado de herramientas POS, respaldado por formación en turismo, dirección hotelera
+      y gestión empresarial. Este perfil me posiciona como alta responsabilidad en F&B y restauración.</span>
+    </p>
+
+    <p class="hero-text-main">
+      <span class="text-strong">
+        Dedicación a trabajar con objetivos, indicadores de calidad y control de costes, impulsando mejoras en satisfacción
+        del cliente, ingresos por banquetes y eficiencia del servicio mediante equipos bien formados y procesos claros.
+      </span>
+    </p>
+
+    <!-- Botón CV -->
+    <a href="Curriculum_2026.pdf" target="_blank" class="btn-primary">
+      VER C.V EJECUTIVO
+    </a>
+
+    <!-- Tarjeta de frase (la cajita blanca) -->
+    <div class="hero-image-box">
+      <p class="hero-image-caption">
+        "Perfil orientado a F&B, servicio de alto nivel y gestión operativa en hoteles 4–5 estrellas, con foco en experiencia del huésped, coordinación de equipos y cumplimiento de estándares de cadena."
+      </p>
+    </div>
+
+  </div>
+</section>
+
+    <!-- TRES BLOQUES TIPO “SERVICIOS” -->
+    <section class="features" id="experiencia">
+      <article>
+        <div class="feature-icon">F&B</div>
+        <h3 class="feature-title">Servicio de calidad 5★</h3>
+        <p class="feature-text">
+          Servicio 5★ entendido como sistema: procesos precisos, equipos alineados y experiencia de cliente consistente.
+		  Entiendo el servicio premium como un equilibrio entre procesos bien definidos, equipos bien dirigidos y una experiencia
+		  personalizada que supere expectativas sin perder eficiencia ni rentabilidad. La calidad no es un gesto puntual, es un sistema sostenido en el tiempo.
+Garantizo estándares de excelencia operativa sin perder eficiencia ni control del detalle.
+El lujo, para mí, es método, coherencia y resultado medible.
+        </p>
+        <a
+  href="Servicio.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="btn-primary"
+>
+  CALIDAD/SERVICIO
+</a>
+      </article>
+
+      <article>
+        <div class="feature-icon">EQ</div>
+        <h3 class="feature-title">Gestión de equipos </h3>
+        <p class="feature-text">
+          Lidero equipos en entornos de alta exigencia combinando dirección operativa, coaching estratégico y psicología aplicada.
+Especializado en motivación, delegación eficaz y mejora del rendimiento colectivo.
+Gestiono personas con foco en objetivos, cohesión del equipo y experiencia del cliente.
+Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles.
+        </p>
+        <a
+  href="Gestion-Equipos.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="btn-primary"
+>
+  Motivación
+</a>
+      </article>
+
+      <article>
+        <div class="feature-icon">PL</div>
+        <h3 class="feature-title">Visión de negocio</h3>
+        <p class="feature-text">
+         Aporto una visión operativa y estratégica del área de restauración y eventos, 
+		 combinando gestión de equipos, control de costes y Project Management aplicado al día a día del negocio.
+		 Trabajo estrechamente con dirección general, RR. HH. y finanzas para transformar objetivos empresariales en acciones concretas:
+		 planificación de recursos, optimización de procesos, implantación de estándares y seguimiento de KPIs. 
+        </p>
+        <div class="feature-link"></div>
+		<a 
+  href="PTD.pdf"
+  class="btn-primary"
+>
+  Proyecto PTD
+</a>
+
+      </article>
+    </section>
+
+    <!-- BLOQUE INFERIOR: ABOUT + TESTIMONIOS -->
+    <section class="bottom-section" id="formacion">
+	
+      <div>
+        <h3 class="section-title">Propuesta de Valor</h3>
+        <div class="section-text">
+        
+          <p>
+           "Profesional de F&B y restauración con experiencia en entornos de alta exigencia, donde la excelencia en el servicio, la imagen de marca y la rentabilidad deben avanzar alineadas".
+          </p>
+		   <p>
+		   "Mi enfoque se apoya en metodologías ágiles para mejorar la eficiencia operativa, reducir riesgos y maximizar la experiencia del cliente, siempre con orientación a resultados y mejora continua. Busco seguir creciendo en posiciones de responsabilidad dentro de F&B, aportando liderazgo, visión de negocio y capacidad de ejecución".
+        </p>
+		<p>
+		Director de Banquetes & Eventos | F&B Operations | Project Management aplicado a Restauración | Optimización de Costes y Experiencia del Cliente
+		</p>
+		<!-- Botón PDF en la zona en blanco -->
+<div class="propuesta-valor-cta">
+  <a href="Manual_premium.pdf"
+     class="btn-linkedin"
+     target="_blank"
+     rel="noopener">
+    Manual eventos
+  </a>
+</div>
+		</div>
+      </div>
+
+           <aside>
+        <h3 class="section-title">Testimonio profesional</h3>
+        <div class="testimonial">
+          “Ramón ha trabajado en diferentes outlets del hotel, integrándose en el equipo
+          de Banquetes y siendo promocionado a Supervisor de Pool Bar. Gestionaba horarios,
+          supervisaba los servicios en mi ausencia y diseñaba cartas de bebidas con sus precios
+          de venta. Tener a Ramón en un hotel es un activo para cualquier organización.”
+        </div>
+        <div class="testimonial-author">
+           F&B Director, Park Hyatt Mallorca
+        </div>
+      </aside>
+    </section>
+
+    <!-- SECCIÓN DE CONTACTO -->
+    <section id="contacto" class="contacto-section">
+      <div class="contact-card">
+        <h3 class="contact-title">Contacto</h3>
+
+        <p><span class="contact-label">Ubicación:</span> Illes Baleares, España</p>
+
+        <p>
+          <span class="contact-label">Email:</span>
+          <a href="mailto:ramonalberto.curbalvega@gmail.com">
+            ramonalberto.curbalvega@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <span class="contact-label">Teléfono:</span>
+          <a href="tel:+34640724160">
+            +34 640724160
+          </a>
+        </p>
+
+        <div class="contact-actions">
+          <a class="btn-linkedin"
+             href="https://www.linkedin.com/in/ramon-alberto-curbalan-vega-754042167"
+			 linkedin.com/in/ramon-alberto-curbalan-vega-754042167
+             target="_blank"
+             rel="noopener">
+            LINKEDIN
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Ramón Alberto Curbalán Vega · Portfolio profesional de hostelería y restauración.
+    </footer>
+  </div>
+
+  <script>
+    // Año del footer
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Efecto de “zoom suave” al pulsar CONTACTO en el menú
+    const contactLink = document.querySelector('nav a[href="#contacto"]');
+    const contactCard = document.querySelector('.contact-card');
+
+    if (contactLink && contactCard) {
+      contactLink.addEventListener('click', function () {
+        contactCard.classList.add('contact-highlight');
+        setTimeout(function () {
+          contactCard.classList.remove('contact-highlight');
+        }, 800);
+      });
+    }
+  </script>
+</body>
+</html>
