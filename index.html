@@ -491,7 +491,85 @@ footer {
     gap: 14px;
     font-size: 12px;
   }
+/* ==========================
+   AJUSTE HERO EN MÓVIL
+   ========================== */
+@media (max-width: 768px) {
+
+  .top-strip {
+    height: auto;
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+    letter-spacing: 0.12em;
+  }
+
+  /* Hero en una sola columna */
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  /* Imagen principal */
+  .hero-left {
+    height: 320px;              /* controla el alto */
+  }
+
+  .hero-cover {
+    object-fit: cover;
+    object-position: center top; /* enfoca mejor la cara */
+  }
+
+  /* Bloque derecho */
+  .hero-right {
+    padding: 28px 20px 32px;
+  }
+
+  /* Elimina diagonal en móvil (clave) */
+  .hero-right::before {
+    clip-path: none;
+    inset: 0;
+  }
+
+  /* Avatar más pequeño */
+  .hero-avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  .hero-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .hero-heading-text {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .hero-text-main {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .btn-primary {
+    margin: 16px auto 0;
+  }
 }
+
 
 /* ===== GALERÍA (si la usas en esta página) ===== */
 .galeria {
@@ -910,6 +988,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
   </script>
 </body>
 </html>
+
 
 
 
