@@ -318,62 +318,63 @@
   .galeria-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-/* ============================
+/* ===========================
    VERSIÓN MÓVIL (≤ 768px)
-   ============================ */
+   =========================== */
 @media (max-width: 768px) {
 
-  /* Que la página comience arriba, no centrada en vertical */
+  /* Fondo: eliminamos el gris enorme y centramos el contenido */
   .galeria-body {
+    background: #f3f3f3;
     align-items: flex-start;
-    padding: 16px 0 32px;
-    background: #f4f4f4;        /* fondo liso, sin gris gigante */
+    padding: 12px 0;
   }
 
-  /* Quitamos el marco del Mac y dejamos solo la “ventana” */
+  /* El wrapper ocupa todo el ancho */
   .laptop-wrapper {
     width: 100%;
-    padding: 0 12px;
+    justify-content: center;
   }
 
+  /* Quitamos la foto del Mac y la “caja” fija */
   .laptop-frame {
+    background-image: none;     /* sin mockup */
     width: 100%;
     max-width: 100%;
-    background: none;          /* sin imagen del Mac */
     aspect-ratio: auto;
+    position: static;
+    padding: 0 10px;
   }
 
-  /* La pantalla ya no es absoluta, se comporta como bloque normal */
+  /* La pantalla deja de ser absoluta: se convierte en el contenedor normal */
   .laptop-screen {
     position: static;
     top: auto;
     left: auto;
     right: auto;
     bottom: auto;
-    padding: 12px 10px;
-    border-radius: 14px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
   }
 
+  /* La ventana tipo Safari se convierte en el layout principal */
   .browser-window {
-    border-radius: 12px;
+    height: auto;
+    min-height: 0;
+    border-radius: 14px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    overflow: hidden;
   }
 
   .browser-content {
-    padding: 12px 10px 14px;
+    padding: 14px 14px 18px;
+    max-height: none;
+    overflow-y: visible;
   }
 
-  /* La cuadrícula se adapta mejor a móvil */
-  .galeria-grid {
-    grid-template-columns: 1fr;       /* 1 columna en móvil */
-    gap: 14px;
-  }
-
-  .galeria-grid img {
-    height: 180px;                    /* algo más altas */
-    object-fit: cover;
-  }
-
+  /* Tipografía un poco más compacta en móvil */
   .galeria h1 {
     font-size: 20px;
   }
@@ -381,6 +382,22 @@
   .galeria-intro {
     font-size: 13px;
   }
+
+  /* Grid en 1 columna para que se lean bien las tarjetas */
+  .galeria-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .galeria-grid figure {
+    border-radius: 10px;
+  }
+
+  .galeria-grid img {
+    height: 180px;
+  }
+}
+
 }
 
   </style>
@@ -559,5 +576,6 @@
 </body>
 
 </html>
+
 
 
