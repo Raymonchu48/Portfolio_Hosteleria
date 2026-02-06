@@ -44,7 +44,7 @@
     width: 1500px;
     max-width: 90%;
     aspect-ratio: 527 / 383; /* proporción de la imagen ISO400 */
-    background-image: url("mockup-iso400.jpg"); /* MISMA carpeta que este HTML */
+    background-image: url("imagenes/mockup-iso400.jpg"); /* MISMA carpeta que este HTML */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -61,7 +61,7 @@
     right: 50px;
     bottom: 150px;
 /* Fondo: tu captura de iPad como wallpaper del Mac */
-  background-image: url("Fondo_iOS.png");
+  background-image: url("imagenes/Fondo_iOS.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -318,7 +318,71 @@
   .galeria-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+/* ============================
+   VERSIÓN MÓVIL (≤ 768px)
+   ============================ */
+@media (max-width: 768px) {
+
+  /* Que la página comience arriba, no centrada en vertical */
+  .galeria-body {
+    align-items: flex-start;
+    padding: 16px 0 32px;
+    background: #f4f4f4;        /* fondo liso, sin gris gigante */
+  }
+
+  /* Quitamos el marco del Mac y dejamos solo la “ventana” */
+  .laptop-wrapper {
+    width: 100%;
+    padding: 0 12px;
+  }
+
+  .laptop-frame {
+    width: 100%;
+    max-width: 100%;
+    background: none;          /* sin imagen del Mac */
+    aspect-ratio: auto;
+  }
+
+  /* La pantalla ya no es absoluta, se comporta como bloque normal */
+  .laptop-screen {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: 12px 10px;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
+
+  .browser-window {
+    border-radius: 12px;
+  }
+
+  .browser-content {
+    padding: 12px 10px 14px;
+  }
+
+  /* La cuadrícula se adapta mejor a móvil */
+  .galeria-grid {
+    grid-template-columns: 1fr;       /* 1 columna en móvil */
+    gap: 14px;
+  }
+
+  .galeria-grid img {
+    height: 180px;                    /* algo más altas */
+    object-fit: cover;
+  }
+
+  .galeria h1 {
+    font-size: 20px;
+  }
+
+  .galeria-intro {
+    font-size: 13px;
+  }
 }
+
   </style>
 </head>
 
@@ -495,4 +559,5 @@
 </body>
 
 </html>
+
 
