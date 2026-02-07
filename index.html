@@ -619,19 +619,18 @@ footer {
 html {
   scroll-behavior: smooth;
 }
-
-/* que al hacer scroll no quede pegado al borde superior */
+/* Que el navegador no tape la sección al hacer scroll al ancla */
 #contacto {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 110px;
 }
 
-/* Sección de contacto como bloque separado */
+/* Sección de contacto como bloque independiente */
 .contacto-section {
-  padding: 50px 0 ;
+  padding: 40px 0 50px;
   background: #f5f7f9;
 }
 
-/* Tarjeta de presentación */
+/* Tarjeta de contacto centrada */
 .contact-card {
   max-width: 420px;
   margin: 0 auto;
@@ -643,13 +642,12 @@ html {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Estado cuando se resalta al pulsar el botón CONTACTO */
+/* Efecto de zoom cuando pulsas CONTACTO en el menú */
 .contact-card.contact-highlight {
   transform: scale(1.03);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* Título de la tarjeta */
 .contact-title {
   font-size: 18px;
   letter-spacing: 0.12em;
@@ -658,13 +656,11 @@ html {
   margin-bottom: 14px;
 }
 
-/* Etiquetas "Ubicación", "Email", "Teléfono" */
 .contact-label {
   font-weight: 600;
   color: #333;
 }
 
-/* Texto general y enlaces dentro de la tarjeta */
 .contact-card p {
   margin: 4px 0;
   font-size: 14px;
@@ -680,13 +676,12 @@ html {
   text-decoration: underline;
 }
 
-/* Zona del botón */
 .contact-actions {
   margin-top: 16px;
 }
 
-/* Botón tipo CTA dentro de la tarjeta (puede compartir estilo con tu .btn-linkedin anterior) */
-.contact-card .btn-linkedin {
+/* Botón estilo CTA */
+.btn-linkedin {
   display: inline-block;
   padding: 8px 18px;
   font-size: 13px;
@@ -695,24 +690,22 @@ html {
   border-radius: 999px;
   background: #356975;
   color: #ffffff;
-  text-decoration: none;
 }
 
-.contact-card .btn-linkedin:hover {
+.btn-linkedin:hover {
   background: #28505a;
 }
 
-/* ===== FOOTER centrado y alineado con la tarjeta ===== */
+/* Footer centrado bajo todo el contenido */
 footer {
-  max-width: 600px;
-  margin: 12px auto 24px;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
   font-size: 11px;
-  color: #777;
-  background: #f5f7f9;
-  padding: 10px 16px;
-  border-radius: 10px;
-  border-top: 1px solid #e3e3e3;
+  color: var(--text-muted);
+  padding: 12px 16px 20px;
+  border-top: 1px solid var(--border-soft);
+  background: #f9f9f9;
 }
 
 
@@ -926,33 +919,25 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
         </div>
       </aside>
     </section>
-
-    <!-- SECCIÓN DE CONTACTO -->
+<!-- SECCIÓN DE CONTACTO (FUERA del bottom-section) -->
     <section id="contacto" class="contacto-section">
       <div class="contact-card">
         <h3 class="contact-title">Contacto</h3>
 
         <p><span class="contact-label">Ubicación:</span> Illes Baleares, España</p>
-
-        <p>
-          <span class="contact-label">Email:</span>
+        <p><span class="contact-label">Email:</span>
           <a href="mailto:ramonalberto.curbalvega@gmail.com">
             ramonalberto.curbalvega@gmail.com
           </a>
         </p>
-
-          <span class="contact-label">Teléfono:</span>
-          <a href="tel:+34640724160">
-            +34 640724160
-          </a>
+        <p><span class="contact-label">Teléfono:</span>
+          <a href="tel:+34640724160">+34 640724160</a>
         </p>
 
         <div class="contact-actions">
           <a class="btn-linkedin"
-             href="https://www.linkedin.com/in/ramon-alberto-curbalan-vega-754042167"
-			 linkedin.com/in/ramon-alberto-curbalan-vega-754042167
-             target="_blank"
-             rel="noopener">
+             href="https://www.linkedin.com/in/tu-perfil"
+             target="_blank" rel="noopener">
             LINKEDIN
           </a>
         </div>
@@ -960,9 +945,9 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
     </section>
 
     <footer>
-      © <span id="year"></span> Ramón Alberto Curbalán Vega ·PORTFOLIO PROFESIONAL DE HOSTELERIA Y RESTAURACION.
+      © <span id="year"></span> Ramón Alberto Curbalán Vega · Portfolio profesional de hostelería y restauración.
     </footer>
-  </div>
+  </div> <!-- .page -->
 
   <script>
     // Año del footer
@@ -971,8 +956,8 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
       yearSpan.textContent = new Date().getFullYear();
     }
 
-    // Efecto de “zoom suave” al pulsar CONTACTO en el menú
-    const contactLink = document.querySelector('nav a[href="#contacto"]');
+    // Zoom suave al pulsar CONTACTO
+    const contactLink = document.querySelector('a[href="#contacto"]');
     const contactCard = document.querySelector('.contact-card');
 
     if (contactLink && contactCard) {
@@ -986,6 +971,8 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
   </script>
 </body>
 </html>
+   
+
 
 
 
