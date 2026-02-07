@@ -2,415 +2,248 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Galería de eventos 5★ GL – Ramon Alberto Curbalán Vega</title>
+  <title>Galería de eventos 5★ GL – Ramon Curbalán</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
-  /* ==============================
-     RESET BÁSICO
-     ============================== */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #e3e3e3;
+    }
 
-  /* ==============================
-     FONDO GENERAL
-     ============================== */
-  .galeria-body {
-    background: #e3e3e3;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    /* Fondo general y centrado del Mac */
+    .galeria-body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 24px 0;
+    }
 
-  /* ==============================
-     CONTENEDOR PORTÁTIL
-     ============================== */
-  .laptop-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    .laptop-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
 
-  /* IMAGEN DEL PORTÁTIL */
-  .laptop-frame {
-    position: relative;
-    width: 1500px;
-    max-width: 90%;
-    aspect-ratio: 527 / 383; /* proporción de la imagen ISO400 */
-    background-image: url("imagenes/mockup-iso400.jpg"); /* MISMA carpeta que este HTML */
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+    /* Imagen del iMac / MacBook con tu wallpaper dentro */
+    .laptop-frame {
+      position: relative;
+      width: 1200px;
+      max-width: 96vw;
+      aspect-ratio: 16 / 9;
+      background-image: url("imagenes/fondo_iOS.png"); /* ← imagen con el Mac + wallpaper */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
-  /* ==============================
-     PANTALLA DEL PORTÁTIL
-     ============================== */
-  .laptop-screen {
-    position: absolute;
-    /* Ajusta estos valores si quieres mover la ventana dentro del portátil */
-    top: 25px;
-    left: 60px;
-    right: 50px;
-    bottom: 150px;
-/* Fondo: tu captura de iPad como wallpaper del Mac */
-  background-image: url("imagenes/Fondo_iOS.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    /* Zona donde va la “ventana” de Safari con la galería */
+    .laptop-screen {
+      position: absolute;
+      /* Ajusta estos valores para encajar la ventana donde quieras en el Mac */
+      top: 90px;
+      left: 80px;
+      right: 80px;
+      bottom: 130px;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
 
-  padding: 16px 18px;
-  overflow: hidden;      /* el scroll va dentro de .browser-content */
-  border-radius: 14px;   /* esquinas redondeadas tipo pantalla */
-}
-    
+    /* Ventana tipo Safari */
+    .browser-window {
+      width: 100%;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.85);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
 
-  /* ==============================
-     VENTANA TIPO SAFARI
-     ============================== */
-  .browser-window {
-    height: 85%;
-    width: 100%;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.100);  /* glass claro */
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.30);
-    backdrop-filter: blur(10px);            /* efecto cristal */
-    -webkit-backdrop-filter: blur(14px);    /* Safari/Chrome */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
+    .browser-topbar {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px 0 14px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(235,238,245,0.9));
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
 
-  .browser-topbar {
-    height: 34px;
-    display: flex;
-    align-items: center;
-    padding: 0 12px 0 14px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(235,238,245,0.9));
-    border-bottom: 2px solid rgba(0,0,0,0.06);
-  }
+    .browser-buttons {
+      display: flex;
+      gap: 6px;
+      margin-right: 16px;
+    }
 
-  /* Botones rojo/amarillo/verde */
-  .browser-buttons {
-    display: flex;
-    gap: 6px;
-    margin-right: 16px;
-  }
+    .browser-buttons .btn {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
 
-  .browser-buttons .btn {
-    width: 20px;
-    height: 10px;
-    border-radius: 200%;
-    display: inline-block;
-  }
+    .browser-buttons .close { background: #ff5f57; }
+    .browser-buttons .minimize { background: #febc2e; }
+    .browser-buttons .maximize { background: #28c840; }
 
-  .browser-buttons .btn.close {
-    background: #ff5f57;
-  }
+    .browser-url {
+      flex: 1;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 11px;
+      color: #666;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
 
-  .browser-buttons .btn.minimize {
-    background: #febc2e;
-  }
+    .browser-content {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 18px 20px 22px;
+    }
 
-  .browser-buttons .btn.maximize {
-    background: #28c840;
-  }
+    /* Scrollbar tipo macOS */
+    .browser-content::-webkit-scrollbar {
+      width: 8px;
+    }
+    .browser-content::-webkit-scrollbar-track {
+      background: #edf0f4;
+      border-radius: 8px;
+    }
+    .browser-content::-webkit-scrollbar-thumb {
+      background-color: #3d8db8;
+      border-radius: 8px;
+      border: 2px solid #edf0f4;
+    }
+    .browser-content::-webkit-scrollbar-thumb:hover {
+      background-color: #2f6f92;
+    }
+    .browser-content {
+      scrollbar-width: thin;
+      scrollbar-color: #3d8db8 #edf0f4;
+    }
 
-  /* Barra de dirección tipo Safari */
-  .browser-url {
-    flex: 1;
-    height: 22px;
-    border-radius: 999px;
-    background: rgba(255,255,255,0.9);
-    border: 1px solid rgba(0,0,0,0.06);
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    font-size: 11px;
-    color: #666;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+    /* Contenido de la galería */
+    .galeria {
+      max-width: 100%;
+    }
 
-  /* Contenido con scroll interno */
-  .browser-content {
-    flex: 1;
-	 min-height: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 16px 20px 18px;
-  }
+    .galeria h1 {
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: #111827;
+    }
 
-  /* Scrollbar azul (Chrome / Edge / Safari) */
-  .browser-content::-webkit-scrollbar {
-    width: 5px;
-  }
+    .galeria-intro {
+      font-size: 13px;
+      color: #4b5563;
+      margin-bottom: 18px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      display: inline-block;
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
 
-  .browser-content::-webkit-scrollbar-track {
-    background: #edf0f4;
-    border-radius: 8px;
-  }
+    .galeria-grid {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
 
-  .browser-content::-webkit-scrollbar-thumb {
-    background-color: #3d8db8;
-    border-radius: 8px;
-    border: 1px solid #edf0f4;
-  }
+    .galeria-grid figure {
+      background: #ffffff;
+      border: 1px solid #e1e1e1;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
 
-  .browser-content::-webkit-scrollbar-thumb:hover {
-    background-color: #2f6f92;
-  }
+    .galeria-grid img {
+      width: 100%;
+      height: 135px;
+      object-fit: cover;
+      display: block;
+    }
 
-  /* Scrollbar en Firefox */
-  .browser-content {
-    scrollbar-width: thin;
-    scrollbar-color: #3d8db8 #edf0f4;
-  }
+    .galeria-grid figcaption {
+      font-size: 13px;
+      color: #444;
+      padding: 10px 12px 12px;
+      line-height: 1.35;
+    }
 
-  /* ==============================
-     GALERÍA (CONTENIDO INTERIOR)
-     ============================== */
-  .galeria {
-    
-	padding-bottom: 40px; /* fuerza desbordamiento natural */
-	 width: 100%;
-  max-width: 100%;
-  padding-left: 6px;   /* ajuste óptico */
-  padding-right: 6px;
-  }
+    /* Responsive: tablet / móvil */
+    @media (max-width: 1024px) {
+      .galeria-body {
+        align-items: flex-start;
+        padding: 16px 0;
+      }
 
-  .galeria h1 {
-  font-size: 23px;              /* apenas +1px, se nota */
-  font-weight: 600;             /* semibold, estilo Apple */
-  color: #1d1d1f;               /* negro macOS real */
-  letter-spacing: -0.2px;       /* ajuste fino editorial */
-  margin-bottom: 6px;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.6);
-  margin-left: 0;
-  }
+      .laptop-frame {
+        width: 100vw;
+        max-width: 100vw;
+      }
 
-  .galeria-intro {
-  display: inline-block;                     /* que se ajuste al texto */
-  max-width: 80%;                            /* no ocupar todo el ancho */
-  margin-top: 4px;
-  margin-bottom: 14px;
+      .laptop-screen {
+        top: 70px;
+        left: 18px;
+        right: 18px;
+        bottom: 120px;
+      }
 
-  padding: 4px 10px 6px;
-  font-size: 13px;
-  line-height: 1.35;
-  color: #333;                               /* más oscuro, legible */
+      .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-  background: rgba(255, 255, 255, 0.86);     /* banda clara tipo etiqueta */
-  border-radius: 999px;                      /* pill / pastilla */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);    /* muy sutil */
-}
+    @media (max-width: 650px) {
+      .laptop-screen {
+        top: 55px;
+        left: 10px;
+        right: 10px;
+        bottom: 90px;
+      }
 
-  /* GRID DE TARJETAS */
-  .galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-  }
+      .browser-window {
+        border-radius: 12px;
+      }
 
-  /* TARJETA */
-  .galeria-grid figure {
-    background: #ffffff;
-    border: 1px solid #e1e1e1;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-  }
+      .browser-content {
+        padding: 14px 14px 16px;
+      }
 
-  /* IMAGEN */
-  .galeria-grid img {
-    width: 100%;
-    height: 95px;
-    object-fit: cover;
-    display: block;
-  }
-
-  /* TEXTO */
-  .galeria-grid figcaption {
-    font-size: 12px;
-    color: #444;
-    padding: 6px 8px 8px;
-    line-height: 1.3;
-  }
-  /* ==============================
-   VISOR TIPO PHOTOS.APP
-   ============================== */
-
-.photo-viewer {
-  position: absolute;
-  inset: 0;                     /* ocupa toda el área de browser-content */
-  display: none;                /* oculto por defecto */
-  align-items: center;
-  justify-content: center;
-  z-index: 20;
-}
-
-.photo-viewer.is-visible {
-  display: flex;
-}
-
-.photo-viewer-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);    /* fondo oscuro suave */
-  backdrop-filter: blur(8px);         /* efecto glass por detrás */
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.photo-viewer-content {
-  position: relative;
-  max-width: min(90%, 780px);      /* ancho razonable en cualquier pantalla */
-  max-height: 80vh;                /* que no se coma el monitor */
-  background: rgba(15, 15, 15, 0.95);
-  border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-  padding: 12px 16px 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.photo-viewer-content img {
-  max-width: 100%;
-  max-height: 70vh;                /* un poco más de margen vertical */
-  object-fit: contain;             /* CLAVE: mostrar la foto completa */
-  border-radius: 10px;
-  display: block;
-}
-
-.photo-viewer-caption {
-  margin-top: 10px;
-  font-size: 13px;
-  color: #f5f5f5;
-  text-align: center;
-}
-
-/* Botón de cierre */
-.photo-viewer-close {
-  position: absolute;
-  top: 6px;
-  right: 10px;
-  border: none;
-  background: transparent;
-  color: #ffffff;
-  font-size: 22px;
-  cursor: pointer;
-  padding: 0;
-  line-height: 1;
-}
-
-.photo-viewer-close:hover {
-  color: #ff5f57;
-}
-  @media (min-width: 1100px) {
-  .galeria-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-/* ===========================
-   VERSIÓN MÓVIL (≤ 768px)
-   =========================== */
-@media (max-width: 768px) {
-
-  /* Fondo: eliminamos el gris enorme y centramos el contenido */
-  .galeria-body {
-    background: #f3f3f3;
-    align-items: flex-start;
-    padding: 12px 0;
-  }
-
-  /* El wrapper ocupa todo el ancho */
-  .laptop-wrapper {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Quitamos la foto del Mac y la “caja” fija */
-  .laptop-frame {
-    background-image: none;     /* sin mockup */
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: auto;
-    position: static;
-    padding: 0 10px;
-  }
-
-  /* La pantalla deja de ser absoluta: se convierte en el contenedor normal */
-  .laptop-screen {
-    position: static;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    padding: 0;
-    background: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  /* La ventana tipo Safari se convierte en el layout principal */
-  .browser-window {
-    height: auto;
-    min-height: 0;
-    border-radius: 14px;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    overflow: hidden;
-  }
-
-  .browser-content {
-    padding: 14px 14px 18px;
-    max-height: none;
-    overflow-y: visible;
-  }
-
-  /* Tipografía un poco más compacta en móvil */
-  .galeria h1 {
-    font-size: 20px;
-  }
-
-  .galeria-intro {
-    font-size: 13px;
-  }
-
-  /* Grid en 1 columna para que se lean bien las tarjetas */
-  .galeria-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .galeria-grid figure {
-    border-radius: 10px;
-  }
-
-  .galeria-grid img {
-    height: 180px;
-  }
-}
-
-}
+      .galeria-grid {
+        grid-template-columns: 1fr; /* una columna en móvil */
+      }
+    }
 
   </style>
 </head>
 
 <body class="galeria-body">
-
-  <!-- PORTÁTIL CENTRADO -->
   <div class="laptop-wrapper">
     <div class="laptop-frame">
-      <!-- PANTALLA DEL PORTÁTIL -->
       <div class="laptop-screen">
-
         <div class="browser-window">
           <div class="browser-topbar">
             <div class="browser-buttons">
@@ -418,164 +251,59 @@
               <span class="btn minimize"></span>
               <span class="btn maximize"></span>
             </div>
-            <div class="browser-url">
-              www.ramon-curbalan.com/galeria
-            </div>
+            <div class="browser-url">www.ramon-curbalan.com/galeria</div>
           </div>
 
           <div class="browser-content">
-            <!-- TU GALERÍA DENTRO DE LA VENTANA -->
             <main class="galeria">
               <h1>Galería de eventos 5★ GL</h1>
               <p class="galeria-intro">
-                Selección de montajes, coffee stations, galas y servicios especiales
-                desarrollados en entornos de alta exigencia.
+                Selección de fotos con montajes para distintas ocaciones ,coffee stations, cenas y almuerzos de galas y servicios especiales desarrollados en entornos de alta exigencia.
               </p>
 
               <div class="galeria-grid">
                 <figure>
-                  <img src= "imagenes\coffe-breaks.jpg"alt="Drink station premium">
+                  <img src="imagenes/coffee-station-1.jpg" alt="Drink station premium">
                   <figcaption>Drink station premium para convenciones corporativas.</figcaption>
                 </figure>
 
                 <figure>
-                  <img src= "imagenes/coffe-braks2.jpg"alt="Coffee station premium">
+                  <img src="imgagenes/coffee-station-2.jpg" alt="Coffee station premium">
                   <figcaption>Coffee station premium para convenciones corporativas.</figcaption>
                 </figure>
 
                 <figure>
-                  <img src=" imagenes/134689.JPEG" alt="Coffe station premium top">
-                  <figcaption>Coffe station especial edition.</figcaption>
+                  <img src="imgagenes/coffee-station-3.jpg" alt="Coffee station especial">
+                  <figcaption>Coffee station especial edition.</figcaption>
                 </figure>
 
                 <figure>
-                  <img src= "imagenes/148736.JPEG"alt="Restaurante corporativo">
+                  <img src="imgagenes/restaurante-almuerzo.jpg" alt="Restaurante corporativo">
                   <figcaption>Sala de restaurante con montaje para almuerzo corporativo.</figcaption>
                 </figure>
 
                 <figure>
-                  <img src= "imagenes/mesa-alm.jpg"alt="Mesa privada ejecutivo>
+                  <img src="imgagenes/mesa-privada.jpg" alt="Mesa privada">
                   <figcaption>Mesa de cena privada para alta dirección y reuniones estratégicas.</figcaption>
                 </figure>
-			
-				<figure>
-                  <img src= "imagenes\IMG_5580.jpeg"alt="Almuerzo de gala">
-                  <figcaption>Montaje de almuerzo de gala ejecutivo con flujo de servicio optimizado.</figcaption>
+
+                <figure>
+                  <img src="imgagenes/gala.jpg" alt="Cena de gala 5★ GL">
+                  <figcaption>Cocktail recepción especial para evento de grupos.</figcaption>
                 </figure>
-			
-				<figure>
-                  <img src= "imagenes/148736.JPEG"alt="Almuerzo de gala">
-                  <figcaption>Montaje de almuerzo de gala ejecutivo exclusivo con montaje sutil y elegante.</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= " imagenes/Meeting.JPG"alt="Meeting coorporativo">
-                  <figcaption>Montaje de reuniones para ejecutivo .</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= " imagenes/IMG_4670.jpeg"alt="Cocktel">
-                  <figcaption>Cocktel recepción especial para evento de grupos.</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= " imagenes/IMG_5120.jpeg"alt="Recepción">
-                  <figcaption>Wellcom reception especial grupos.</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= "imagenes/mesa-gala1.jpg"alt="Cena de Gala">
-                  <figcaption>Montaje de cena de gala special Bodas con flujo de servicio optimizado.</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= " imagenes/reunion2.jpg"alt="Meeting">
-                  <figcaption>Montaje exclusivo meeting Presentación coorporativo.</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= " imagenes/134689.JPEG"alt="coffe-breaks">
-                  <figcaption>Montaje especial coffe-breaks en sala de reuniones.</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= "imagenes\IMG_4446.jpeg"alt="Cocktel Boda">
-                  <figcaption>Cocktel para Boda especialmente preparado para la ocación.</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= " imagenes/mesa-ext1.jpg"alt="Almuerzo de gala">
-                  <figcaption>Montaje de almuerzo de gala ejecutivo con flujo de servicio optimizado.</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= "imagenes/reunion2.jpg"alt="Meetin room">
-                  <figcaption>Montaje de reuniones para ejecutivos y grupos grande .</figcaption>
-                </figure>
-				
-				<figure>
-                  <img src= "imagenes/124081.JPEG"alt="Meetin room">
-                  <figcaption>Montaje de Almuerzo exterio .</figcaption>
-                </figure>
-				
+
+                <!-- puedes seguir añadiendo más figuras aquí -->
               </div>
             </main>
-			<!-- VISOR TIPO PHOTOS.APP -->
-          <div class="photo-viewer" id="photoViewer">
-            <div class="photo-viewer-backdrop"></div>
-            <div class="photo-viewer-content">
-              <button class="photo-viewer-close" aria-label="Cerrar imagen">&times;</button>
-              <img src="" alt="" id="photoViewerImg">
-              <p class="photo-viewer-caption" id="photoViewerCaption"></p>
-            </div>
           </div>
-          </div><!-- /.browser-content -->
-        </div><!-- /.browser-window -->
-
-      </div> <!-- /.laptop-screen -->
-    </div>   <!-- /.laptop-frame -->
-  </div>     <!-- /.laptop-wrapper -->
-<script>
-  // Referencias al visor
-  const viewer = document.getElementById('photoViewer');
-  const viewerImg = document.getElementById('photoViewerImg');
-  const viewerCaption = document.getElementById('photoViewerCaption');
-  const viewerCloseBtn = document.querySelector('.photo-viewer-close');
-  const viewerBackdrop = document.querySelector('.photo-viewer-backdrop');
-
-  // Abrir visor al hacer clic en cualquier figura
-  document.querySelectorAll('.galeria-grid figure').forEach(function(fig) {
-    fig.addEventListener('click', function() {
-      const img = fig.querySelector('img');
-      const caption = fig.querySelector('figcaption');
-
-      viewerImg.src = img.src;
-      viewerImg.alt = img.alt || '';
-      viewerCaption.textContent = caption ? caption.textContent : '';
-
-      viewer.classList.add('is-visible');
-    });
-  });
-
-  // Cerrar visor (botón, fondo, tecla Esc)
-  function closeViewer() {
-    viewer.classList.remove('is-visible');
-    viewerImg.src = '';
-    viewerCaption.textContent = '';
-  }
-
-  viewerCloseBtn.addEventListener('click', closeViewer);
-  viewerBackdrop.addEventListener('click', closeViewer);
-
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && viewer.classList.contains('is-visible')) {
-      closeViewer();
-    }
-  });
-</script>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
-
 </html>
+
+
 
 
 
