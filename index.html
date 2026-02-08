@@ -623,29 +623,35 @@ html {
 #contacto {
   scroll-margin-top: 110px;
 }
-
-/* Sección de contacto como bloque independiente */
-.contacto-section {
-  padding: 40px 0 50px;
-  background: #f5f7f9;
+/* Que al hacer clic en CONTACTO no quede tapado por el header */
+#contacto {
+  scroll-margin-top: 110px;
 }
 
-/* Tarjeta de contacto centrada */
+/* Sección de contacto: zona de fondo gris claro y contenido centrado */
+.contacto-section {
+  padding: 40px 16px 60px;
+  background: #f5f7f9;
+  display: flex;
+  justify-content: center;
+}
+
+/* Tarjeta de contacto centrada y con aspecto de “presentación” */
 .contact-card {
+  width: 100%;
   max-width: 420px;
-  margin: 0 auto;
-  padding: 24px 26px 22px;
   background: #ffffff;
   border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  padding: 24px 26px 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
   border-left: 4px solid #356975;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Efecto de zoom cuando pulsas CONTACTO en el menú */
+/* Zoom suave cuando se pulsa CONTACTO en el menú */
 .contact-card.contact-highlight {
   transform: scale(1.03);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.20);
 }
 
 .contact-title {
@@ -680,7 +686,7 @@ html {
   margin-top: 16px;
 }
 
-/* Botón estilo CTA */
+/* Botón LinkedIn tipo CTA redondo */
 .btn-linkedin {
   display: inline-block;
   padding: 8px 18px;
@@ -695,17 +701,19 @@ html {
 .btn-linkedin:hover {
   background: #28505a;
 }
-/* FOOTER centrado y alineado con la tarjeta de contacto */
+
+/* Footer centrado, alineado con el contenido principal */
 footer {
-  max-width: 420px;               /* mismo ancho que la contact-card */
-  margin: 18px auto 32px;         /* centrado y separado hacia abajo */
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  font-size: 12px;
+  font-size: 11px;
   color: #777;
-  background: #f5f7f9;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 12px 16px 20px;
+  border-top: 1px solid #e3e3e3;
+  background: #f9f9f9;
 }
+
 
 }
 
@@ -970,6 +978,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 </body>
 </html>
    
+
 
 
 
