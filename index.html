@@ -478,8 +478,14 @@ footer {
   }
 }
 
+
+/* ==========================
+   RESPONSIVE EXTRA (≤600px)
+   ========================== */
 @media (max-width: 600px) {
-  .hero, .features, .bottom-section {
+  .hero,
+  .features,
+  .bottom-section {
     padding: 24px 16px 32px;
   }
 
@@ -491,8 +497,10 @@ footer {
     gap: 14px;
     font-size: 12px;
   }
+}
+
 /* ==========================
-   AJUSTE HERO EN MÓVIL
+   AJUSTE HERO EN MÓVIL (≤768px)
    ========================== */
 @media (max-width: 768px) {
 
@@ -514,12 +522,12 @@ footer {
 
   /* Imagen principal */
   .hero-left {
-    height: 320px;              /* controla el alto */
+    height: 320px;
   }
 
   .hero-cover {
     object-fit: cover;
-    object-position: center top; /* enfoca mejor la cara */
+    object-position: center top;
   }
 
   /* Bloque derecho */
@@ -527,7 +535,7 @@ footer {
     padding: 28px 20px 32px;
   }
 
-  /* Elimina diagonal en móvil (clave) */
+  /* Eliminamos la diagonal en móvil */
   .hero-right::before {
     clip-path: none;
     inset: 0;
@@ -570,62 +578,16 @@ footer {
   }
 }
 
+/* ==========================
+   SECCIÓN DE CONTACTO
+   ========================== */
 
-/* ===== GALERÍA (si la usas en esta página) ===== */
-.galeria {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px 60px;
-}
-
-.galeria h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-.galeria-intro {
-  margin-bottom: 30px;
-  color: #777;
-}
-
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.galeria figure {
-  background: #ffffff;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-}
-
-.galeria img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.galeria figcaption {
-  padding: 10px 12px 14px;
-  font-size: 14px;
-  color: #555;
-}
-
-/* ===== CONTACTO – TARJETA PRESENTACIÓN ===== */
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* Que al hacer clic en CONTACTO no quede tapado por el header */
+/* Para que el scroll ancle bien debajo del header */
 #contacto {
   scroll-margin-top: 110px;
 }
 
-/* Sección de contacto: zona de fondo gris claro y contenido centrado */
+/* Fondo de la sección y centrado de la tarjeta */
 .contacto-section {
   padding: 40px 16px 60px;
   background: #f5f7f9;
@@ -633,7 +595,7 @@ html {
   justify-content: center;
 }
 
-/* Tarjeta de contacto centrada y con aspecto de “presentación” */
+/* Tarjeta de presentación */
 .contact-card {
   width: 100%;
   max-width: 420px;
@@ -645,7 +607,7 @@ html {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* Zoom suave cuando se pulsa CONTACTO en el menú */
+/* Efecto “zoom” al pulsar CONTACTO en el menú */
 .contact-card.contact-highlight {
   transform: scale(1.03);
   box-shadow: 0 18px 42px rgba(0, 0, 0, 0.20);
@@ -683,7 +645,8 @@ html {
   margin-top: 16px;
 }
 
-/* Botón LinkedIn tipo CTA redondo */
+/* Aquí redefinimos el botón LinkedIn para que tenga forma de píldora;
+   si NO quieres cambiar el de arriba de todo, cambia esta clase a .btn-linkedin-contact */
 .btn-linkedin {
   display: inline-block;
   padding: 8px 18px;
@@ -699,7 +662,7 @@ html {
   background: #28505a;
 }
 
-/* Footer centrado, alineado con el contenido principal */
+/* FOOTER centrado y alineado con la página */
 footer {
   max-width: 1200px;
   margin: 0 auto;
@@ -710,10 +673,7 @@ footer {
   border-top: 1px solid #e3e3e3;
   background: #f9f9f9;
 }
-
-
-}
-
+	  }
   </style>
 </head>
 <body>
@@ -827,7 +787,7 @@ footer {
         <div class="feature-icon">F&B</div>
         <h3 class="feature-title">Servicio de calidad 5★</h3>
         <p class="feature-text">
-          Servicio 5★ entendido como sistema: procesos precisos, equipos alineados y experiencia de cliente consistente.
+          Servicio 5★ como sistema de procesos precisos, equipos alineados y experiencia de cliente consistente.
 		  Entiendo el servicio premium como un equilibrio entre procesos bien definidos, equipos bien dirigidos y una experiencia
 		  personalizada que supere expectativas sin perder eficiencia ni rentabilidad. La calidad no es un gesto puntual, es un sistema sostenido en el tiempo.
 Garantizo estándares de excelencia operativa sin perder eficiencia ni control del detalle.
@@ -896,7 +856,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 		   "Mi enfoque se apoya en metodologías ágiles para mejorar la eficiencia operativa, reducir riesgos y maximizar la experiencia del cliente, siempre con orientación a resultados y mejora continua. Busco seguir creciendo en posiciones de responsabilidad dentro de F&B, aportando liderazgo, visión de negocio y capacidad de ejecución".
         </p>
 		<p>
-		Director de Banquetes & Eventos | F&B Operations | Project Management aplicado a Restauración | Optimización de Costes y Experiencia del Cliente
+		Manager de Banquetes & Eventos | F&B Operations | Project Management aplicado a Restauración | Optimización de Costes y Experiencia del Cliente
 		</p>
 		<!-- Botón PDF en la zona en blanco -->
 <div class="propuesta-valor-cta">
@@ -975,6 +935,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 </body>
 </html>
    
+
 
 
 
