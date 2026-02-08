@@ -349,9 +349,14 @@ font-family: 'Playfair Display', serif;   /* ← clave */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  padding: 40px;
+
+  /* NUEVO: banda con fondo y efecto “card” grande */
+  background: #f5f7f9;
+  border-radius: 18px;
+  padding: 40px 40px 48px;
+  margin: 32px 40px 40px;
   text-align: center;
-  border-bottom: 1px solid var(--border-soft);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.04);
 }
 
 .feature-icon {
@@ -401,9 +406,15 @@ font-family: 'Playfair Display', serif;   /* ← clave */
 /* ABOUT + TESTIMONIALS */
 .bottom-section {
   display: grid;
-  grid-template-columns: 2fr 1.4fr;
-  gap: 40px;
-  padding: 40px;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+  gap: 48px;
+
+  /* NUEVO: banda de fondo */
+  background: #f5f7f9;
+  border-radius: 18px;
+  padding: 40px 40px 48px;
+  margin: 0 40px 40px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.04);
 }
 
 .section-title {
@@ -607,9 +618,10 @@ footer {
 /* Fondo de la sección y centrado de la tarjeta */
 .contacto-section {
   padding: 40px 16px 60px;
-  background: #f5f7f9;
+  background: transparent;
   display: flex;
   justify-content: center;
+	padding: 0;
 }
 
 /* Tarjeta de presentación */
@@ -991,6 +1003,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 </body>
 </html>
    
+
 
 
 
