@@ -707,20 +707,20 @@ footer {
 
 .valor-testimonio {
   display: grid;
-  grid-template-columns: 1.6fr 1fr;
-  gap: 60px;
-  align-items: start;
-  padding: 40px;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
+  gap: 48px;
+  align-items: flex-start;
+ 
 }
 
 /* Columna izquierda */
-.valor-col {
-  max-width: 720px;
+.valor-col .section-text {
+  max-width: 620px;
 }
 
 /* Columna derecha */
 .testimonio-col {
-  padding-top: 6px; /* alineación óptica con el título */
+   max-width: 420px;
 }
 	  
 	  }
@@ -899,7 +899,6 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 
     <!-- COLUMNA IZQUIERDA -->
     <div class="valor-col">
-      <h3 class="section-title">Propuesta de Valor</h3>
      
         <h3 class="section-title">Propuesta de Valor</h3>
         <div class="section-text">
@@ -992,6 +991,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 </body>
 </html>
    
+
 
 
 
