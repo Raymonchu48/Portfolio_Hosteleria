@@ -7,7 +7,8 @@
   <meta name="description" content="Portfolio profesional de Ramón Alberto Curbalán, especializado en hostelería, restauración y gestión de servicios F&B en hoteles de 4 y 5 estrellas.">
 <link rel="stylesheet" href="style.css">
   <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&display=swap');
+
     :root {
       --primary: #60a4b8;      /* azul verdoso tipo plantilla BANNO */
       --primary-dark: #3d6e7d;
@@ -375,10 +376,20 @@ font-family: 'Playfair Display', serif;   /* ← clave */
 }
 
 .feature-text {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 14px;
+  /* tipografía tipo Bodoni MT Condensed */
+  font-family: 'Bodoni Moda', 'Bodoni MT Condensed', 'Bodoni MT', 'Didot', 'Times New Roman', serif;
+
+  font-size: 14px;
+  color: var(--text-main);
+
+  /* estilo maquetación revista / Word */
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.7;
+
+  margin-bottom: 16px;
 }
+
 
 .feature-link {
   font-size: 12px;
@@ -407,10 +418,16 @@ font-family: 'Playfair Display', serif;   /* ← clave */
   font-size: 14px;
   color: var(--text-muted);
 }
-
-.section-text p + p {
-  margin-top: 10px;
+.section-text p {
+  font-family: 'Bodoni Moda', 'Bodoni MT Condensed', 'Bodoni MT', 'Didot', 'Times New Roman', serif;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.7;
+  font-size: 14px;
+  color: var(--text-main);
 }
+
+
 
 .testimonial {
   border-left: 4px solid var(--primary);
@@ -946,6 +963,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 </body>
 </html>
    
+
 
 
 
