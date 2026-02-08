@@ -649,18 +649,29 @@ footer {
    si NO quieres cambiar el de arriba de todo, cambia esta clase a .btn-linkedin-contact */
 .btn-linkedin {
   display: inline-block;
-  padding: 8px 18px;
-  font-size: 13px;
-  letter-spacing: 0.12em;
+  padding: 9px 22px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+
+  background: #5f8f9b;              /* azul verdoso más suave */
+  color: #ffffff;                   /* texto perfectamente legible */
+
   border-radius: 999px;
-  background: #356975;
-  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+
+  transition: background 0.25s ease,
+              transform 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
 .btn-linkedin:hover {
-  background: #28505a;
+  background: #3d6e7d;              /* tu primary-dark */
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }
+
 
 /* FOOTER centrado y alineado con la página */
 footer {
@@ -935,6 +946,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 </body>
 </html>
    
+
 
 
 
