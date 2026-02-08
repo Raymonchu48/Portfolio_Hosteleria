@@ -701,6 +701,28 @@ footer {
   border-top: 1px solid #e3e3e3;
   background: #f9f9f9;
 }
+/* ===============================
+   PROUESTA DE VALOR + TESTIMONIO
+   =============================== */
+
+.valor-testimonio {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 60px;
+  align-items: start;
+  padding: 40px;
+}
+
+/* Columna izquierda */
+.valor-col {
+  max-width: 720px;
+}
+
+/* Columna derecha */
+.testimonio-col {
+  padding-top: 6px; /* alineación óptica con el título */
+}
+	  
 	  }
   </style>
 </head>
@@ -872,8 +894,13 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 
     <!-- BLOQUE INFERIOR: ABOUT + TESTIMONIOS -->
     <section class="bottom-section" id="formacion">
-	
-      <div>
+		
+	<section class="valor-testimonio">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="valor-col">
+      <h3 class="section-title">Propuesta de Valor</h3>
+     
         <h3 class="section-title">Propuesta de Valor</h3>
         <div class="section-text">
         
@@ -896,8 +923,9 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
   </a>
 </div>
 </div>
+</div>
 
-           <aside>
+           <aside class="testimonio-col">
         <h3 class="section-title">Testimonio profesional</h3>
         <div class="testimonial">
           “Ramón ha trabajado en diferentes outlets del hotel, integrándose en el equipo
@@ -910,6 +938,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
         </div>
       </aside>
     </section>
+		
 <!-- SECCIÓN DE CONTACTO (FUERA del bottom-section) -->
     <section id="contacto" class="contacto-section">
       <div class="contact-card">
@@ -963,6 +992,7 @@ Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles
 </body>
 </html>
    
+
 
 
 
