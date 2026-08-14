@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <title>Diplomas y acreditaciones · Ramón Alberto Curbalán Vega</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Relación de diplomas, cursos especializados y acreditaciones oficiales de Ramón Alberto Curbalán en hostelería, restauración, hotelería y gestión.">
+  <meta name="description" content="Relación de diplomas, cursos especializados y acreditaciones oficiales de Ramón Alberto Curbalán en hostelería, restauración, hotelería y gestión." />
 
   <style>
     :root {
       --primary: #60a4b8;
-      --primary-soft: #e3f0f4;
-      --bg-body: #f4f4f4;
+      --primary-dark: #3d6e7d;
+      --primary-soft: #e8f3f6;
+      --bg-body: #f2f4f5;
       --bg-white: #ffffff;
-      --text-main: #333333;
-      --text-muted: #777777;
-      --border-soft: #e0e0e0;
-      --radius: 6px;
+      --card-bg: #fafbfb;
+      --text-main: #2f3437;
+      --text-muted: #6f777c;
+      --border-soft: #dde2e5;
+      --radius: 10px;
     }
 
     * {
@@ -28,7 +30,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg-body);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     a {
@@ -37,98 +39,112 @@
     }
 
     .page {
-      max-width: 1100px;
-      margin: 30px auto;
+      max-width: 1180px;
+      margin: 28px auto;
       background: var(--bg-white);
-      box-shadow: 0 0 12px rgba(0,0,0,0.05);
-      border-radius: var(--radius);
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+      border-radius: 14px;
       overflow: hidden;
     }
 
     header {
-      background: var(--primary);
-      color: #ffffff;
-      padding: 26px 32px 30px;
+      background: linear-gradient(135deg, var(--primary), #78b7c8);
+      color: #fff;
+      padding: 28px 34px 32px;
     }
 
     header h1 {
       font-size: 24px;
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
       text-transform: uppercase;
       margin-bottom: 6px;
     }
 
     header p {
       font-size: 14px;
-      opacity: 0.95;
+      opacity: .96;
     }
 
     header .sub {
       font-size: 12px;
-      opacity: 0.8;
+      opacity: .85;
       margin-top: 6px;
     }
 
     main {
-      padding: 30px 32px 32px;
+      padding: 30px 34px 34px;
     }
 
     .intro {
       font-size: 14px;
       color: var(--text-muted);
-      margin-bottom: 24px;
+      margin-bottom: 28px;
+      max-width: 1040px;
     }
 
     .section {
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     .section-title {
       font-size: 14px;
       text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #444;
-      margin-bottom: 12px;
+      letter-spacing: .16em;
+      color: #3f464a;
+      margin-bottom: 14px;
       border-bottom: 1px solid var(--border-soft);
-      padding-bottom: 4px;
+      padding-bottom: 7px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
+      align-items: stretch;
+    }
+
+    /* Elimina huecos cuando una sección tiene un número impar de tarjetas */
+    .cards > .card:only-child,
+    .cards > .card:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
     }
 
     .card {
       border-radius: var(--radius);
       border: 1px solid var(--border-soft);
-      padding: 12px 14px 14px;
-      background: #fafafa;
+      padding: 15px 16px 16px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--card-bg) 100%);
+      box-shadow: 0 3px 10px rgba(0,0,0,.035);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
     }
 
     .card-header {
       display: flex;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 6px;
+      gap: 12px;
+      margin-bottom: 7px;
     }
 
     .card-title {
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 650;
+      color: #262b2e;
     }
 
     .card-entity {
       font-size: 12px;
       color: var(--text-muted);
+      margin-top: 2px;
     }
 
     .card-badge {
       font-size: 11px;
-      padding: 2px 8px;
+      padding: 3px 9px;
       border-radius: 999px;
       background: var(--primary-soft);
-      color: var(--primary);
+      color: var(--primary-dark);
       white-space: nowrap;
       align-self: flex-start;
     }
@@ -136,42 +152,63 @@
     .card-meta {
       font-size: 12px;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
 
     .card-desc {
       font-size: 12px;
-      color: #555555;
-      margin-bottom: 6px;
+      color: #4c5357;
+      margin-bottom: 10px;
     }
 
     .card-link {
       font-size: 12px;
-      color: var(--primary);
-      text-decoration: underline;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: auto;
+      display: inline-block;
+      width: fit-content;
+      border-bottom: 1px solid rgba(61,110,125,.35);
+    }
+
+    .card-link:hover {
+      color: #244f5b;
+      border-bottom-color: #244f5b;
     }
 
     .note {
       font-size: 11px;
       color: var(--text-muted);
-      margin-top: 6px;
+      margin-top: 7px;
     }
 
     footer {
       font-size: 11px;
       color: var(--text-muted);
       text-align: center;
-      padding: 12px 10px 16px;
+      padding: 14px 12px 18px;
       border-top: 1px solid var(--border-soft);
-      background: #f9f9f9;
+      background: #f8f9f9;
     }
 
     @media (max-width: 800px) {
+      .page {
+        margin: 0;
+        border-radius: 0;
+      }
+
       .cards {
         grid-template-columns: 1fr;
       }
 
-      header, main {
+      .cards > .card:only-child,
+      .cards > .card:last-child:nth-child(odd) {
+        grid-column: auto;
+      }
+
+      header,
+      main {
         padding-left: 18px;
         padding-right: 18px;
       }
@@ -188,12 +225,9 @@
 
     <main>
       <p class="intro">
-        En esta página se recoge una síntesis de los diplomas y acreditaciones oficiales obtenidos en el ámbito
-        de la hostelería, la restauración, la gestión de servicios hoteleros y la gestión empresarial. Cada tarjeta
-        incluye la entidad que lo imparte, fechas, duración y foco principal del programa.
+        En esta página se recoge una síntesis de los diplomas y acreditaciones oficiales obtenidos en el ámbito de la hostelería, la restauración, la gestión de servicios hoteleros y la gestión empresarial. Cada tarjeta incluye la entidad que lo imparte, fechas, duración y foco principal del programa.
       </p>
 
-      <!-- GESTIÓN DE RESTAURACIÓN / COCINA / SERVICIO -->
       <section class="section">
         <h2 class="section-title">Gestión de restauración, cocina y servicio</h2>
         <div class="cards">
@@ -238,7 +272,6 @@
         </div>
       </section>
 
-      <!-- CALIDAD Y RENTABILIDAD EN HOTELERÍA -->
       <section class="section">
         <h2 class="section-title">Calidad de servicio y rentabilidad hotelera</h2>
         <div class="cards">
@@ -265,12 +298,11 @@
             </div>
             <div class="card-meta">Modalidad: Teleformación · 17/10/2022 – 14/11/2022</div>
             <div class="card-desc">Análisis de cuentas de pérdidas y ganancias, equilibrio financiero y fondo de maniobra, umbral de rentabilidad, rentabilidad económica y financiera, márgenes y herramientas digitales para mejorar la rentabilidad del negocio hotelero.</div>
-            <a href="diplomas/Gestion calidad servicio restaurantes.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
+            <a href="diplomas/Analisis -Rentabilidad-Hoteles.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
           </article>
         </div>
       </section>
 
-      <!-- BEBIDAS, SUMILLERÍA E IDIOMAS -->
       <section class="section">
         <h2 class="section-title">Sumillería, bebidas e idiomas</h2>
         <div class="cards">
@@ -309,15 +341,14 @@
               <div class="card-badge">200 h</div>
             </div>
             <div class="card-meta">Modalidad: Teleformación · 20/12/2021 – 08/03/2022</div>
-            <div class="card-desc">Inglés aplicado a gestión comercial y relación con clientes: atención telefónica, negociación, resolución de reclamaciones, tratamiento de pedidos, redacción de mensajes comerciales y uso de vocabulario profesional en el entorno empresarial y turístico.</div>
+            <div class="card-desc">Inglés aplicado a gestión comercial y relación con clientes: atención telefónica, negociación, resolución de reclamaciones, tratamiento de pedidos, redacción de mensajes comerciales y vocabulario profesional en el entorno empresarial y turístico.</div>
             <a href="diplomas/DIPLOMA_aprovechamiento_Estatal_Turismo_2021.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
           </article>
         </div>
       </section>
 
-      <!-- GESTIÓN EMPRESARIAL -->
       <section class="section">
-        <h2 class="section-title">Gestión y administración de empresas</h2>
+        <h2 class="section-title">Gestión, administración y dirección hotelera</h2>
         <div class="cards">
           <article class="card">
             <div class="card-header">
@@ -331,23 +362,22 @@
             <div class="card-desc">Programa de formación en dirección y gestión empresarial con contenidos en planificación estratégica, financiera, marketing, recursos humanos y organización de empresas, aplicable a entornos de hostelería y turismo.</div>
             <a href="diplomas/Diploma Master en Administración de Empresas.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
           </article>
+
+          <article class="card">
+            <div class="card-header">
+              <div>
+                <div class="card-title">Máster en Turismo y Dirección Hotelera</div>
+                <div class="card-entity">MASSTERCURSOS · European Association for Distance Learning (EADL)</div>
+              </div>
+              <div class="card-badge">650 h</div>
+            </div>
+            <div class="card-meta">Metodología: Online · Finalización: 12/01/2026 · Calificación: Sobresaliente</div>
+            <div class="card-desc">Máster especializado en dirección hotelera y gestión turística, orientado a planificación estratégica, dirección de operaciones, gestión económica, calidad de servicio, organización de departamentos hoteleros y toma de decisiones.</div>
+            <a href="diplomas/Diploma Master_direccion_Hotelera1.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
+          </article>
         </div>
       </section>
 
-      <article class="card">
-        <div class="card-header">
-          <div>
-            <div class="card-title">Máster en Turismo y Dirección Hotelera</div>
-            <div class="card-entity">MASSTERCURSOS · European Association for Distance Learning (EADL)</div>
-          </div>
-          <div class="card-badge">650 h</div>
-        </div>
-        <div class="card-meta">Metodología: Online · Finalización: 12/01/2026 · Calificación: Sobresaliente</div>
-        <div class="card-desc">Máster especializado en dirección hotelera y gestión turística, orientado a la planificación estratégica, dirección de operaciones, gestión económica, calidad de servicio, organización de departamentos hoteleros y toma de decisiones en entornos turísticos y hoteleros.</div>
-        <a href="diplomas/Diploma Master_direccion_Hotelera1.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-      </article>
-
-      <!-- ACREDITACIÓN OFICIAL DE COMPETENCIAS -->
       <section class="section">
         <h2 class="section-title">Acreditación oficial de competencias profesionales</h2>
         <div class="cards">
@@ -360,19 +390,15 @@
               <div class="card-badge">Nivel 2–3</div>
             </div>
             <div class="card-meta">Clave de registro: BTE/165365/2021 · Palma, 28/07/2021</div>
-            <div class="card-desc">Acreditación oficial, vía experiencia laboral y formación, de las unidades de competencia: definición y planificación de procesos de servicio en restauración, supervisión y desarrollo de procesos, gestión y dirección de departamentos de restauración, prevención de riesgos y seguridad alimentaria, asesoramiento sobre vinos y bebidas, y comunicación profesional en lengua extranjera.</div>
+            <div class="card-desc">Acreditación oficial, vía experiencia laboral y formación, de unidades de competencia en planificación de servicios de restauración, supervisión de procesos, gestión y dirección de departamentos, prevención de riesgos, seguridad alimentaria, asesoramiento sobre vinos y bebidas y comunicación profesional en lengua extranjera.</div>
             <a href="diplomas/BTE_165365_2021 Copiar.pdf" target="_blank" class="card-link">Ver acreditación en PDF</a>
             <div class="note">Esta acreditación es acumulable para la obtención de títulos de FP y certificados de profesionalidad del sector de restauración.</div>
           </article>
         </div>
       </section>
-
-      <p class="note">Nota: los enlaces a PDF deben apuntar a la ubicación real de los archivos en tu servidor (por ejemplo, carpeta <code>pdf/</code> o <code>docs/</code>). Solo es necesario cambiar las rutas de <code>href="pdf/..."</code> por los nombres y carpetas que utilices.</p>
     </main>
 
-    <footer>
-      Página de diplomas y acreditaciones · Ramón Alberto Curbalán Vega
-    </footer>
+    <footer>Página de diplomas y acreditaciones · Ramón Alberto Curbalán Vega</footer>
   </div>
 </body>
 </html>
