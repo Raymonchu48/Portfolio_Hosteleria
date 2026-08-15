@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,650&family=Manrope:wght@400;500;600;700&display=swap');
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,7 +15,7 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #e3e3e3;
     }
 
@@ -39,16 +41,15 @@
       width: 1200px;
       max-width: 96vw;
       aspect-ratio: 16 / 9;
-      background-image: url("fondo_iOS.png"); /* ← imagen con el Mac + wallpaper */
+      background-image: url("fondo_iOS.png");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* Zona donde va la “ventana” de Safari con la galería */
+    /* Zona donde va la ventana de Safari con la galería */
     .laptop-screen {
       position: absolute;
-      /* Ajusta estos valores para encajar la ventana donde quieras en el Mac */
       top: 90px;
       left: 80px;
       right: 80px;
@@ -106,8 +107,10 @@
       display: flex;
       align-items: center;
       padding: 0 10px;
-      font-size: 11px;
-      color: #666;
+      font-family: 'Manrope', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      color: #606971;
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -147,16 +150,22 @@
     }
 
     .galeria h1 {
-      font-size: 22px;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 24px;
+      font-weight: 650;
+      letter-spacing: -0.015em;
       margin-bottom: 6px;
-      color: #111827;
+      color: #17212a;
     }
 
     .galeria-intro {
-      font-size: 13px;
-      color: #4b5563;
+      font-family: 'Manrope', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: #46525b;
       margin-bottom: 18px;
-      padding: 6px 12px;
+      padding: 7px 13px;
       border-radius: 999px;
       display: inline-block;
       background: rgba(255,255,255,0.85);
@@ -186,10 +195,12 @@
     }
 
     .galeria-grid figcaption {
-      font-size: 13px;
-      color: #444;
+      font-family: 'Manrope', sans-serif;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #344047;
       padding: 10px 12px 12px;
-      line-height: 1.35;
+      line-height: 1.45;
     }
 
     /* Responsive: tablet / móvil */
@@ -233,7 +244,11 @@
       }
 
       .galeria-grid {
-        grid-template-columns: 1fr; /* una columna en móvil */
+        grid-template-columns: 1fr;
+      }
+
+      .galeria h1 {
+        font-size: 21px;
       }
     }
 
@@ -302,9 +317,3 @@
   </div>
 </body>
 </html>
-
-
-
-
-
-
