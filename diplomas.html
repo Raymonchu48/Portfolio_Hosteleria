@@ -22,11 +22,7 @@
       --radius: 10px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -36,10 +32,7 @@
       letter-spacing: -0.005em;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .page {
       max-width: 1180px;
@@ -64,22 +57,9 @@
       margin-bottom: 7px;
     }
 
-    header p {
-      font-size: 13.5px;
-      font-weight: 600;
-      opacity: .97;
-    }
-
-    header .sub {
-      font-size: 11.8px;
-      font-weight: 500;
-      opacity: .88;
-      margin-top: 6px;
-    }
-
-    main {
-      padding: 30px 34px 34px;
-    }
+    header p { font-size: 13.5px; font-weight: 600; opacity: .97; }
+    header .sub { font-size: 11.8px; font-weight: 500; opacity: .88; margin-top: 6px; }
+    main { padding: 30px 34px 34px; }
 
     .intro {
       font-size: 13.5px;
@@ -90,9 +70,7 @@
       max-width: 1040px;
     }
 
-    .section {
-      margin-bottom: 30px;
-    }
+    .section { margin-bottom: 30px; }
 
     .section-title {
       font-family: 'Manrope', sans-serif;
@@ -114,9 +92,7 @@
     }
 
     .cards > .card:only-child,
-    .cards > .card:last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-    }
+    .cards > .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
     .card {
       position: relative;
@@ -143,17 +119,8 @@
       pointer-events: none;
     }
 
-    .card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 7px;
-    }
+    .card > * { position: relative; z-index: 1; }
+    .card-header { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; }
 
     .card-title {
       font-family: 'Manrope', sans-serif;
@@ -164,13 +131,7 @@
       color: #1f2b31;
     }
 
-    .card-entity {
-      font-size: 11.7px;
-      line-height: 1.45;
-      font-weight: 500;
-      color: #5d6b72;
-      margin-top: 3px;
-    }
+    .card-entity { font-size: 11.7px; line-height: 1.45; font-weight: 500; color: #5d6b72; margin-top: 3px; }
 
     .card-badge {
       font-size: 10.7px;
@@ -184,20 +145,8 @@
       box-shadow: 0 1px 5px rgba(61,110,125,.05);
     }
 
-    .card-meta {
-      font-size: 11.6px;
-      font-weight: 500;
-      color: #637178;
-      margin-bottom: 8px;
-    }
-
-    .card-desc {
-      font-size: 11.9px;
-      font-weight: 500;
-      line-height: 1.62;
-      color: #39474e;
-      margin-bottom: 11px;
-    }
+    .card-meta { font-size: 11.6px; font-weight: 500; color: #637178; margin-bottom: 8px; }
+    .card-desc { font-size: 11.9px; font-weight: 500; line-height: 1.62; color: #39474e; margin-bottom: 11px; }
 
     .card-link {
       font-size: 11.6px;
@@ -210,17 +159,8 @@
       border-bottom: 1px solid rgba(61,110,125,.35);
     }
 
-    .card-link:hover {
-      color: #244f5b;
-      border-bottom-color: #244f5b;
-    }
-
-    .note {
-      font-size: 10.8px;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-top: 8px;
-    }
+    .card-link:hover { color: #244f5b; border-bottom-color: #244f5b; }
+    .note { font-size: 10.8px; font-weight: 500; color: var(--text-muted); margin-top: 8px; }
 
     footer {
       font-size: 10.8px;
@@ -233,30 +173,12 @@
     }
 
     @media (max-width: 800px) {
-      .page {
-        margin: 0;
-        border-radius: 0;
-      }
-
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
+      .page { margin: 0; border-radius: 0; }
+      .cards { grid-template-columns: 1fr; }
       .cards > .card:only-child,
-      .cards > .card:last-child:nth-child(odd) {
-        grid-column: auto;
-      }
-
-      header,
-      main {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      header h1 {
-        font-size: 24px;
-      }
-
+      .cards > .card:last-child:nth-child(odd) { grid-column: auto; }
+      header, main { padding-left: 18px; padding-right: 18px; }
+      header h1 { font-size: 24px; }
       .card::before {
         background:
           linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)),
@@ -274,274 +196,65 @@
     </header>
 
     <main>
-      <p class="intro">
-        Síntesis de formación y acreditaciones vinculadas a dirección hotelera, restauración, gestión de personas, calidad, rentabilidad, innovación, digitalización y liderazgo. Cada tarjeta recoge entidad, duración, fechas y foco principal del programa.
-      </p>
+      <p class="intro">Síntesis de formación y acreditaciones vinculadas a dirección hotelera, restauración, gestión de personas, calidad, rentabilidad, innovación, digitalización y liderazgo. Cada tarjeta recoge entidad, duración, fechas y foco principal del programa.</p>
 
       <section class="section">
         <h2 class="section-title">Gestión de restauración, cocina y servicio</h2>
         <div class="cards">
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">HOTR040PO · Gestión de la Restauración</div>
-                <div class="card-entity">Training For Success · Plan Estatal de Formación Continua</div>
-              </div>
-              <div class="card-badge">100 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Teleformación · 10/06/2021 – 27/07/2021</div>
-            <div class="card-desc">Organización de servicios de restauración, planificación de cartas y menús, control de costes, fijación de precios, gestión de ingresos y seguridad e higiene.</div>
-            <a href="diplomas/Diploma Gestion de la Restauracion.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
-
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">HOTR061PO · Habilidades y Competencias en la Dirección de Cocina</div>
-                <div class="card-entity">SMARTMIND S.L. · SEPE · Turismo</div>
-              </div>
-              <div class="card-badge">25 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Online tutorizada · 21/12/2022 – 11/01/2023</div>
-            <div class="card-desc">Dirección de cocina, organización de partidas, diseño de cocina, confección de menús y cartas, control de existencias, nutrición y creatividad culinaria.</div>
-            <a href="diplomas/Diploma Gestion de Cocinas.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
-
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">HOTR064PO · Servicio en Restaurante y Bares</div>
-                <div class="card-entity">Método Estudios Consultores</div>
-              </div>
-              <div class="card-badge">35 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Teleformación · 22/12/2022 – 09/02/2023</div>
-            <div class="card-desc">Servicio en sala, brigadas, montaje de mesas, comanda, buffets, desayunos, room service, bar, introducción a coctelería y organización del restaurante.</div>
-            <a href="diplomas/servicio en restaurantes y bares.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
+          <article class="card"><div class="card-header"><div><div class="card-title">HOTR040PO · Gestión de la Restauración</div><div class="card-entity">Training For Success · Plan Estatal de Formación Continua</div></div><div class="card-badge">100 h</div></div><div class="card-meta">Modalidad: Teleformación · 10/06/2021 – 27/07/2021</div><div class="card-desc">Organización de servicios de restauración, planificación de cartas y menús, control de costes, fijación de precios, gestión de ingresos y seguridad e higiene.</div><a href="diplomas/Diploma Gestion de la Restauracion.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+          <article class="card"><div class="card-header"><div><div class="card-title">HOTR061PO · Habilidades y Competencias en la Dirección de Cocina</div><div class="card-entity">SMARTMIND S.L. · SEPE · Turismo</div></div><div class="card-badge">25 h</div></div><div class="card-meta">Modalidad: Online tutorizada · 21/12/2022 – 11/01/2023</div><div class="card-desc">Dirección de cocina, organización de partidas, diseño de cocina, confección de menús y cartas, control de existencias, nutrición y creatividad culinaria.</div><a href="diplomas/Diploma Gestion de Cocinas.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+          <article class="card"><div class="card-header"><div><div class="card-title">HOTR064PO · Servicio en Restaurante y Bares</div><div class="card-entity">Método Estudios Consultores</div></div><div class="card-badge">35 h</div></div><div class="card-meta">Modalidad: Teleformación · 22/12/2022 – 09/02/2023</div><div class="card-desc">Servicio en sala, brigadas, montaje de mesas, comanda, buffets, desayunos, room service, bar, introducción a coctelería y organización del restaurante.</div><a href="diplomas/servicio en restaurantes y bares.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
         </div>
       </section>
 
-      <section class="section">
-        <h2 class="section-title">Calidad de servicio y rentabilidad hotelera</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Gestión de Calidad de Servicio en el Sector de la Hostelería</div>
-                <div class="card-entity">G12 Grupo Empresarial de Servicios</div>
-              </div>
-              <div class="card-badge">40 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Teleformación · 24/11/2021 – 23/12/2021</div>
-            <div class="card-desc">Cultura de servicio, estándares de calidad, satisfacción del cliente, comunicación, gestión de reclamaciones e implantación de modelos de calidad.</div>
-            <a href="diplomas/Gestion calidad servicio restaurantes.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
+      <section class="section"><h2 class="section-title">Calidad de servicio y rentabilidad hotelera</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Gestión de Calidad de Servicio en el Sector de la Hostelería</div><div class="card-entity">G12 Grupo Empresarial de Servicios</div></div><div class="card-badge">40 h</div></div><div class="card-meta">Modalidad: Teleformación · 24/11/2021 – 23/12/2021</div><div class="card-desc">Cultura de servicio, estándares de calidad, satisfacción del cliente, comunicación, gestión de reclamaciones e implantación de modelos de calidad.</div><a href="diplomas/Gestion calidad servicio restaurantes.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Análisis de la Rentabilidad en Establecimientos Hoteleros</div><div class="card-entity">Universidad Camilo José Cela</div></div><div class="card-badge">30 h</div></div><div class="card-meta">Modalidad: Teleformación · 17/10/2022 – 14/11/2022</div><div class="card-desc">Pérdidas y ganancias, equilibrio financiero, umbral de rentabilidad, rentabilidad económica y financiera, márgenes y herramientas de mejora.</div><a href="diplomas/Analisis -Rentabilidad-Hoteles.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+      </div></section>
 
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Análisis de la Rentabilidad en Establecimientos Hoteleros</div>
-                <div class="card-entity">Universidad Camilo José Cela</div>
-              </div>
-              <div class="card-badge">30 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Teleformación · 17/10/2022 – 14/11/2022</div>
-            <div class="card-desc">Pérdidas y ganancias, equilibrio financiero, umbral de rentabilidad, rentabilidad económica y financiera, márgenes y herramientas de mejora.</div>
-            <a href="diplomas/Analisis -Rentabilidad-Hoteles.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
-        </div>
-      </section>
+      <section class="section"><h2 class="section-title">Sumillería, bebidas e idiomas</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Sumillería y Maridaje</div><div class="card-entity">ASSESFORM Assessors · Consorci per a la Formació Contínua de Catalunya</div></div><div class="card-badge">20 h</div></div><div class="card-meta">Modalidad: Teleformación · 19/03/2025 – 07/04/2025</div><div class="card-desc">Condiciones de cata, análisis sensorial y técnicas de maridaje entre vino y gastronomía.</div><a href="diplomas/certificado_somellier_marinaje.pdf" target="_blank" class="card-link">Ver certificado en PDF</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">El proceso de enología y la cata</div><div class="card-entity">Associació Catalana de Fabricants d'Aliments Compostos · Consorci per a la Formació Contínua de Catalunya</div></div><div class="card-badge">40 h</div></div><div class="card-meta">Modalidad: Teleformación · 13/07/2026 – 10/08/2026</div><div class="card-desc">Tipología de vinos, etiquetado, vinificación, fermentación, calidad e higiene, metodología de cata y análisis sensorial.</div><a href="diplomas/Certificado_Enologia_Cata.pdf" target="_blank" class="card-link">Ver certificado en PDF</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">ADGX01 · Inglés: Gestión Comercial</div><div class="card-entity">Core Networks S.L. · SEPE · Turismo</div></div><div class="card-badge">200 h</div></div><div class="card-meta">Modalidad: Teleformación · 20/12/2021 – 08/03/2022</div><div class="card-desc">Inglés aplicado a gestión comercial, atención al cliente, negociación, reclamaciones y comunicación profesional.</div><a href="diplomas/DIPLOMA_aprovechamiento_Estatal_Turismo_2021.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+      </div></section>
 
-      <section class="section">
-        <h2 class="section-title">Sumillería, bebidas e idiomas</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Sumillería y Maridaje</div>
-                <div class="card-entity">ASSESFORM Assessors · Consorci per a la Formació Contínua de Catalunya</div>
-              </div>
-              <div class="card-badge">20 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Teleformación · 19/03/2025 – 07/04/2025</div>
-            <div class="card-desc">Condiciones de cata, análisis sensorial y técnicas de maridaje entre vino y gastronomía.</div>
-            <a href="diplomas/certificado_somellier_marinaje.pdf" target="_blank" class="card-link">Ver certificado en PDF</a>
-          </article>
+      <section class="section"><h2 class="section-title">Gestión, administración y dirección hotelera</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Máster en Administración y Gestión de Empresas</div><div class="card-entity">MassterCursos · Plataforma de Formación</div></div><div class="card-badge">175 h</div></div><div class="card-meta">Metodología: Online · Finalización: 16/12/2021 · Calificación: Sobresaliente</div><div class="card-desc">Dirección y gestión empresarial, planificación estratégica y financiera, marketing, recursos humanos y organización de empresas.</div><a href="diplomas/Diploma Master en Administración de Empresas.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Máster en Turismo y Dirección Hotelera</div><div class="card-entity">MASSTERCURSOS · European Association for Distance Learning (EADL)</div></div><div class="card-badge">650 h</div></div><div class="card-meta">Metodología: Online · Finalización: 12/01/2026 · Calificación: Sobresaliente</div><div class="card-desc">Planificación estratégica, dirección de operaciones, gestión económica, calidad de servicio, organización departamental y toma de decisiones.</div><a href="diplomas/Diploma Master_direccion_Hotelera1.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+      </div></section>
 
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">El proceso de enología y la cata</div>
-                <div class="card-entity">Associació Catalana de Fabricants d'Aliments Compostos · Consorci per a la Formació Contínua de Catalunya</div>
-              </div>
-              <div class="card-badge">40 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Teleformación · 13/07/2026 – 10/08/2026</div>
-            <div class="card-desc">Tipología de vinos, etiquetado, vinificación, fermentación, calidad e higiene, metodología de cata y análisis sensorial.</div>
-            <a href="diplomas/Certificado_Enologia_Cata.pdf" target="_blank" class="card-link">Ver certificado en PDF</a>
-          </article>
+      <section class="section"><h2 class="section-title">Gestión de personas, contratación y relaciones laborales</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">ADGD240PO · Salario y Contratación</div><div class="card-entity">Centro de Estudios Activa Formación SL · Sistema de Formación Profesional para el Empleo</div></div><div class="card-badge">100 h</div></div><div class="card-meta">Modalidad: Online tutorizada · 18/12/2019 – 19/02/2020</div><div class="card-desc">Formación en estructura salarial, convenios colectivos, modalidades de contratación, Seguridad Social, altas y bajas, cotización, prestaciones, régimen de autónomos, jornada laboral, infracciones y sanciones en el orden social.</div><a href="diplomas/diploma salarios y contratacion.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+      </div></section>
 
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">ADGX01 · Inglés: Gestión Comercial</div>
-                <div class="card-entity">Core Networks S.L. · SEPE · Turismo</div>
-              </div>
-              <div class="card-badge">200 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Teleformación · 20/12/2021 – 08/03/2022</div>
-            <div class="card-desc">Inglés aplicado a gestión comercial, atención al cliente, negociación, reclamaciones y comunicación profesional.</div>
-            <a href="diplomas/DIPLOMA_aprovechamiento_Estatal_Turismo_2021.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
-        </div>
-      </section>
+      <section class="section"><h2 class="section-title">Digitalización, logística y sostenibilidad</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Logística Urbana Inteligente de Mercancías</div><div class="card-entity">Universidad Camilo José Cela · Centro de Estudios Avanzados</div></div><div class="card-badge">375 h · 15 ECTS</div></div><div class="card-meta">Modalidad: A distancia · 22/01/2025 – 19/05/2025 · Calificación: APTO</div><div class="card-desc">Programa avanzado sobre distribución urbana de mercancías, planificación y regulación, eficiencia y sostenibilidad, inteligencia artificial y machine learning, big data, cloud, blockchain, IoT, 5G, gestión digital de flotas, tráfico y documentación electrónica de transporte.</div><a href="diplomas/Certificado_LOGISTICA URBANA INTELIGENTE DE MERCANCIAS.pdf" target="_blank" class="card-link">Ver certificado en PDF</a></article>
+      </div></section>
 
-      <section class="section">
-        <h2 class="section-title">Gestión, administración y dirección hotelera</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Máster en Administración y Gestión de Empresas</div>
-                <div class="card-entity">MassterCursos · Plataforma de Formación</div>
-              </div>
-              <div class="card-badge">175 h</div>
-            </div>
-            <div class="card-meta">Metodología: Online · Finalización: 16/12/2021 · Calificación: Sobresaliente</div>
-            <div class="card-desc">Dirección y gestión empresarial, planificación estratégica y financiera, marketing, recursos humanos y organización de empresas.</div>
-            <a href="diplomas/Diploma Master en Administración de Empresas.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
+      <section class="section"><h2 class="section-title">Liderazgo, innovación, negociación y desarrollo personal</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Design Thinking</div><div class="card-entity">Instituto Europeo de Posgrado (IEP)</div></div><div class="card-badge">50 h</div></div><div class="card-meta">Finalización: 19/08/2020</div><div class="card-desc">Formación en Design Thinking orientada a innovación, creatividad y resolución estructurada de problemas.</div><a href="diplomas/IMG_20200819_190321.jpg" target="_blank" class="card-link">Ver certificado</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Método Harvard de Negociación</div><div class="card-entity">Instituto Europeo de Posgrado (IEP)</div></div><div class="card-badge">50 h</div></div><div class="card-meta">Finalización: 26/08/2020</div><div class="card-desc">Formación especializada en negociación basada en intereses y búsqueda de acuerdos sostenibles.</div><a href="diplomas/IMG_20200826_184107.jpg" target="_blank" class="card-link">Ver certificado</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Máster en Psicología del Desarrollo Personal, Social y Emocional</div><div class="card-entity">MASSTERCURSOS · Plataforma de Formación</div></div><div class="card-badge">200 h</div></div><div class="card-meta">Metodología: Online · Finalización: 24/02/2022</div><div class="card-desc">Desarrollo personal, social y emocional aplicado a comprensión interpersonal, comunicación y gestión de personas.</div><a href="diplomas/Diploma Psicologia colectiva.pdf" target="_blank" class="card-link">Ver diploma en PDF</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">The Principles of Emotional Intelligence, Leadership and Coaching</div><div class="card-entity">Alison</div></div><div class="card-badge">2026</div></div><div class="card-meta">Certificación: 09/07/2026 · ID 3712-19356217</div><div class="card-desc">Principios de inteligencia emocional, liderazgo y coaching aplicados a gestión y desarrollo de equipos.</div><a href="diplomas/Certificate inteligencia emocional.pdf" target="_blank" class="card-link">Ver certificado en PDF</a></article>
+      </div></section>
 
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Máster en Turismo y Dirección Hotelera</div>
-                <div class="card-entity">MASSTERCURSOS · European Association for Distance Learning (EADL)</div>
-              </div>
-              <div class="card-badge">650 h</div>
-            </div>
-            <div class="card-meta">Metodología: Online · Finalización: 12/01/2026 · Calificación: Sobresaliente</div>
-            <div class="card-desc">Planificación estratégica, dirección de operaciones, gestión económica, calidad de servicio, organización departamental y toma de decisiones.</div>
-            <a href="diplomas/Diploma Master_direccion_Hotelera1.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Gestión de personas, contratación y relaciones laborales</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">ADGD240PO · Salario y Contratación</div>
-                <div class="card-entity">Centro de Estudios Activa Formación SL · Sistema de Formación Profesional para el Empleo</div>
-              </div>
-              <div class="card-badge">100 h</div>
-            </div>
-            <div class="card-meta">Modalidad: Online tutorizada · 18/12/2019 – 19/02/2020</div>
-            <div class="card-desc">Formación en estructura salarial, convenios colectivos, modalidades de contratación, Seguridad Social, altas y bajas, cotización, prestaciones, régimen de autónomos, jornada laboral, infracciones y sanciones en el orden social.</div>
-            <a href="diplomas/diploma salarios y contratacion.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Digitalización, logística y sostenibilidad</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Logística Urbana Inteligente de Mercancías</div>
-                <div class="card-entity">Universidad Camilo José Cela · Centro de Estudios Avanzados</div>
-              </div>
-              <div class="card-badge">375 h · 15 ECTS</div>
-            </div>
-            <div class="card-meta">Modalidad: A distancia · 22/01/2025 – 19/05/2025 · Calificación: APTO</div>
-            <div class="card-desc">Programa avanzado sobre distribución urbana de mercancías, planificación y regulación, eficiencia y sostenibilidad, inteligencia artificial y machine learning, big data, cloud, blockchain, IoT, 5G, gestión digital de flotas, tráfico y documentación electrónica de transporte.</div>
-            <a href="diplomas/Certificado_LOGISTICA URBANA INTELIGENTE DE MERCANCIAS.pdf" target="_blank" class="card-link">Ver certificado en PDF</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Liderazgo, innovación, negociación y desarrollo personal</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Design Thinking</div>
-                <div class="card-entity">Instituto Europeo de Posgrado (IEP)</div>
-              </div>
-              <div class="card-badge">50 h</div>
-            </div>
-            <div class="card-meta">Finalización: 19/08/2020</div>
-            <div class="card-desc">Formación en Design Thinking orientada a innovación, creatividad y resolución estructurada de problemas.</div>
-            <a href="diplomas/IMG_20200819_190321.jpg" target="_blank" class="card-link">Ver certificado</a>
-          </article>
-
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Método Harvard de Negociación</div>
-                <div class="card-entity">Instituto Europeo de Posgrado (IEP)</div>
-              </div>
-              <div class="card-badge">50 h</div>
-            </div>
-            <div class="card-meta">Finalización: 26/08/2020</div>
-            <div class="card-desc">Formación especializada en negociación basada en intereses y búsqueda de acuerdos sostenibles.</div>
-            <a href="diplomas/IMG_20200826_184107.jpg" target="_blank" class="card-link">Ver certificado</a>
-          </article>
-
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Máster en Psicología del Desarrollo Personal, Social y Emocional</div>
-                <div class="card-entity">MASSTERCURSOS · Plataforma de Formación</div>
-              </div>
-              <div class="card-badge">200 h</div>
-            </div>
-            <div class="card-meta">Metodología: Online · Finalización: 24/02/2022</div>
-            <div class="card-desc">Desarrollo personal, social y emocional aplicado a comprensión interpersonal, comunicación y gestión de personas.</div>
-            <a href="diplomas/Diploma Psicologia colectiva.pdf" target="_blank" class="card-link">Ver diploma en PDF</a>
-          </article>
-
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">The Principles of Emotional Intelligence, Leadership and Coaching</div>
-                <div class="card-entity">Alison</div>
-              </div>
-              <div class="card-badge">2026</div>
-            </div>
-            <div class="card-meta">Certificación: 09/07/2026 · ID 3712-19356217</div>
-            <div class="card-desc">Principios de inteligencia emocional, liderazgo y coaching aplicados a gestión y desarrollo de equipos.</div>
-            <a href="diplomas/Certificate inteligencia emocional.pdf" target="_blank" class="card-link">Ver certificado en PDF</a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title">Acreditación oficial de competencias profesionales</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="card-header">
-              <div>
-                <div class="card-title">Acreditación de Unidades de Competencia en Restauración</div>
-                <div class="card-entity">Institut de les Qualificacions Professionals de les Illes Balears</div>
-              </div>
-              <div class="card-badge">Nivel 2–3</div>
-            </div>
-            <div class="card-meta">Clave de registro: BTE/165365/2021 · Palma, 28/07/2021</div>
-            <div class="card-desc">Acreditación oficial de competencias en planificación de servicios de restauración, supervisión de procesos, gestión y dirección departamental, prevención de riesgos, seguridad alimentaria, asesoramiento de vinos y bebidas y comunicación profesional.</div>
-            <a href="diplomas/BTE_165365_2021 Copiar.pdf" target="_blank" class="card-link">Ver acreditación en PDF</a>
-            <div class="note">Acreditación acumulable para la obtención de títulos de FP y certificados de profesionalidad del sector de restauración.</div>
-          </article>
-        </div>
-      </section>
+      <section class="section"><h2 class="section-title">Acreditación oficial de competencias profesionales</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Acreditación de Unidades de Competencia en Restauración</div><div class="card-entity">Institut de les Qualificacions Professionals de les Illes Balears</div></div><div class="card-badge">Nivel 2–3</div></div><div class="card-meta">Clave de registro: BTE/165365/2021 · Palma, 28/07/2021</div><div class="card-desc">Acreditación oficial de competencias en planificación de servicios de restauración, supervisión de procesos, gestión y dirección departamental, prevención de riesgos, seguridad alimentaria, asesoramiento de vinos y bebidas y comunicación profesional.</div><a href="diplomas/BTE_165365_2021 Copiar.pdf" target="_blank" class="card-link">Ver acreditación en PDF</a><div class="note">Acreditación acumulable para la obtención de títulos de FP y certificados de profesionalidad del sector de restauración.</div></article>
+      </div></section>
     </main>
 
     <footer>Página de diplomas y acreditaciones · Ramón Alberto Curbalán Vega</footer>
   </div>
+
+  <script>
+    document.addEventListener('click', function(event){
+      const link=event.target.closest('a.card-link');
+      if(!link) return;
+      const href=link.getAttribute('href')||'';
+      if(!/\.(pdf|jpg|jpeg|png|webp)$/i.test(href)) return;
+      event.preventDefault();
+      location.href='documento.html?file='+encodeURIComponent(href)+'&from=diplomas.html';
+    });
+  </script>
 </body>
 </html>
