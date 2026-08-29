@@ -2,1024 +2,817 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Ramón Alberto Curbalán Vega · Portfolio Hostelería y Restauración</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio profesional de Ramón Alberto Curbalán, especializado en hostelería, restauración y gestión de servicios F&B en hoteles de 4 y 5 estrellas.">
-<link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#0b0d0c" />
+  <meta name="description" content="Portfolio profesional de Ramon A.C. Vega. Dirección de banquetes y eventos, operaciones F&B, liderazgo de equipos, calidad 5 estrellas y visión de negocio en hostelería de lujo." />
+  <title>Ramon A.C. Vega · Hospitality Leadership</title>
   <style>
- @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
 
     :root {
-      --primary: #60a4b8;      /* azul verdoso tipo plantilla BANNO */
-      --primary-dark: #3d6e7d;
-      --bg-body: #f4f4f4;
-      --bg-white: #ffffff;
-      --text-main: #333333;
-      --text-muted: #777777;
-      --border-soft: #e3e3e3;
-      --radius: 4px;
+      --ink: #090b0a;
+      --ink-2: #101311;
+      --ink-3: #171b18;
+      --champagne: #c5a46d;
+      --champagne-soft: #e2d1b0;
+      --ivory: #f2eee5;
+      --ivory-muted: #b9b3a8;
+      --line: rgba(197, 164, 109, 0.24);
+      --line-soft: rgba(242, 238, 229, 0.09);
+      --panel: rgba(255, 255, 255, 0.035);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      --radius: 22px;
     }
-	.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-.top-links {
-  padding: 16px 0 0;
-}
 
-.top-links .container {
-  display: flex;
-  justify-content: flex-end; /* botón alineado con el resto de la página */
-}
-
-
-/* Botón LinkedIn, mismo color de marca pero más compacto */
-.btn-linkedin {
-  display: inline-block;
-  background: var(--primary);
-  color: #ffffff;
-  padding: 8px 18px;
-  font-size: 12px;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-
-.btn-linkedin:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
-}
-/* ===== BOTÓN CORPORATIVO UNIFICADO ===== */
-.btn-primary {
-  display: inline-block;
-  background: var(--primary);
-  color: #ffffff;
-  padding: 10px 24px;
-  font-size: 13px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
-}
-    * {
-      box-sizing: border-box;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
       margin: 0;
-      padding: 0;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--ink);
+      color: var(--ivory);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .site-shell {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 16%, rgba(197,164,109,.08), transparent 28%),
+        radial-gradient(circle at 82% 22%, rgba(197,164,109,.055), transparent 30%),
+        linear-gradient(135deg, #090b0a 0%, #0f1210 48%, #151916 100%);
     }
 
-   body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: var(--bg-body);
-  color: var(--text-main);
-  line-height: 1.6;
-}
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: var(--bg-white);
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    /* HEADER TOP COLOR BLOCK */
-    .top-strip {
-      background: var(--primary);
-      height: 90px;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: 74px;
       display: flex;
       align-items: center;
-      padding: 0 40px;
-      color: #ffffff;
-	  position: relative;   /* clave */
-  overflow: hidden;     /* clave */
+      gap: 28px;
+      padding: 0 34px;
+      border-bottom: 1px solid var(--line-soft);
+      background: rgba(9,11,10,.78);
+      backdrop-filter: blur(18px);
     }
-/* Marca de agua corporativa en header */
-.top-strip::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: url("carpeta imagenes/Marca-cubiertos.png");
-  background-repeat: no-repeat;
-  background-size: 85% auto;
-  background-position: 75% center;
-
-  opacity: 0.07;                 /* MUY sutil */
-  filter: contrast(120%) brightness(110%);
-  pointer-events: none;
-
-  z-index: 0;
-}
-    .logo {
-      font-weight: 600;
-      font-size: 22px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      letter-spacing: .06em;
+      white-space: nowrap;
     }
-
-    .logo span {
-      font-weight: 400;
-      opacity: 0.85;
-    }
-
-    nav {
+    .brand b { color: var(--champagne); font-weight: 600; }
+    .nav {
       margin-left: auto;
-    }
-
-    nav ul {
-      list-style: none;
       display: flex;
-      gap: 24px;
+      align-items: center;
+      gap: 22px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .17em;
+      color: rgba(242,238,229,.68);
+    }
+    .nav a { transition: color .2s ease; }
+    .nav a:hover { color: var(--champagne-soft); }
+    .nav-cv {
+      padding: 9px 14px;
+      border: 1px solid rgba(197,164,109,.35);
+      border-radius: 999px;
+      color: var(--champagne-soft) !important;
+    }
+
+    .cluster-hero {
+      position: relative;
+      min-height: calc(100vh - 74px);
+      overflow: hidden;
+      isolation: isolate;
+      border-bottom: 1px solid var(--line-soft);
+    }
+    .cluster-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -4;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at 64% 50%, #000 20%, transparent 72%);
+    }
+    .cluster-photo {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 45%;
+      z-index: -5;
+      background:
+        linear-gradient(90deg, rgba(9,11,10,.18), rgba(9,11,10,.72) 72%, #090b0a 100%),
+        linear-gradient(0deg, rgba(9,11,10,.55), rgba(9,11,10,.18)),
+        url('imagenes/Presentacion.png') center / cover no-repeat;
+      opacity: .46;
+      filter: grayscale(.28) contrast(1.03);
+    }
+    .cluster-glow {
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197,164,109,.09), transparent 66%);
+      z-index: -3;
+      pointer-events: none;
+    }
+
+    .hero-layout {
+      width: min(1420px, 100%);
+      min-height: calc(100vh - 74px);
+      margin: 0 auto;
+      padding: 54px 44px 38px;
+      display: grid;
+      grid-template-columns: minmax(300px, .78fr) minmax(560px, 1.22fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-copy { position: relative; z-index: 8; max-width: 520px; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--champagne-soft);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .21em;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 42px;
+      height: 1px;
+      background: var(--champagne);
+    }
+    .hero-copy h1 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 5.7vw, 82px);
+      line-height: .98;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+    .hero-copy h1 span { display: block; color: var(--champagne-soft); }
+    .hero-role {
+      margin: 22px 0 0;
+      font-size: clamp(18px, 1.8vw, 26px);
+      letter-spacing: .02em;
+      color: rgba(242,238,229,.9);
+    }
+    .hero-summary {
+      margin: 22px 0 0;
+      max-width: 500px;
+      color: rgba(242,238,229,.66);
       font-size: 14px;
+      line-height: 1.8;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: var(--champagne);
+      color: #12100c;
+      border: 1px solid var(--champagne);
+    }
+    .btn-ghost {
+      border: 1px solid rgba(242,238,229,.16);
+      background: rgba(255,255,255,.025);
+      color: var(--ivory);
+    }
+    .btn-ghost:hover { border-color: rgba(197,164,109,.42); }
+
+    .network-wrap {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 900px;
+    }
+    .cluster-network {
+      position: relative;
+      width: min(650px, 47vw);
+      aspect-ratio: 1;
+      transform-style: preserve-3d;
+      transition: transform .2s ease-out;
+    }
+    .cluster-network::before,
+    .cluster-network::after {
+      content: '';
+      position: absolute;
+      inset: 50%;
+      translate: -50% -50%;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .cluster-network::before {
+      width: 67%;
+      height: 67%;
+      border: 1px solid rgba(197,164,109,.18);
+      box-shadow: 0 0 42px rgba(197,164,109,.045);
+      animation: breathe 7s ease-in-out infinite;
+    }
+    .cluster-network::after {
+      width: 87%;
+      height: 87%;
+      border: 1px dashed rgba(197,164,109,.12);
+      animation: rotateRing 52s linear infinite;
+    }
+    .inner-ring {
+      position: absolute;
+      inset: 50%;
+      translate: -50% -50%;
+      width: 44%;
+      height: 44%;
+      border-radius: 50%;
+      border: 1px solid rgba(242,238,229,.09);
+      animation: rotateRingReverse 34s linear infinite;
+      pointer-events: none;
     }
 
-    nav a {
-      color: #ffffff;
-      opacity: 0.9;
+    .connections {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+    .connections line {
+      stroke: rgba(197,164,109,.26);
+      stroke-width: .55;
+      stroke-dasharray: 2 3;
+      vector-effect: non-scaling-stroke;
+    }
+    .connections circle { fill: rgba(197,164,109,.65); }
+
+    .core {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      width: 228px;
+      height: 228px;
+      border-radius: 50%;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 34% 28%, rgba(197,164,109,.18), transparent 27%),
+        radial-gradient(circle, #242820 0%, #151815 55%, #0c0e0d 100%);
+      border: 1px solid rgba(197,164,109,.48);
+      box-shadow:
+        0 0 0 10px rgba(197,164,109,.025),
+        0 0 0 28px rgba(197,164,109,.012),
+        0 28px 65px rgba(0,0,0,.42),
+        inset 0 0 42px rgba(197,164,109,.05);
+      z-index: 7;
+    }
+    .core::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      border: 1px solid rgba(197,164,109,.13);
+      animation: corePulse 5s ease-in-out infinite;
+    }
+    .core-small {
+      font-size: 9px;
+      line-height: 1.55;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--champagne-soft);
+    }
+    .core h2 {
+      margin: 12px 0 7px;
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      line-height: 1.05;
+      font-weight: 600;
+      letter-spacing: .015em;
+    }
+    .core p {
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.5;
+      color: rgba(242,238,229,.62);
     }
 
-    nav a:hover {
-      opacity: 1;
-      text-decoration: underline;
+    .orbit-node {
+      position: absolute;
+      z-index: 8;
+      min-width: 132px;
+      min-height: 62px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+      text-align: center;
+      border: 1px solid rgba(197,164,109,.24);
+      border-radius: 16px;
+      background: rgba(16,19,17,.72);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.18);
+      transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
+      animation: floatNode 6s ease-in-out infinite;
+    }
+    .orbit-node:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: rgba(197,164,109,.62);
+      background: rgba(35,31,23,.88);
+      box-shadow: 0 16px 38px rgba(0,0,0,.28), 0 0 26px rgba(197,164,109,.06);
+    }
+    .orbit-node strong {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: var(--ivory);
+    }
+    .orbit-node span {
+      font-size: 9px;
+      letter-spacing: .07em;
+      color: rgba(242,238,229,.48);
+    }
+    .node-quality  { left: 50%; top: 2.5%; translate: -50% 0; animation-delay: -.8s; }
+    .node-teams    { left: 1%; top: 34%; animation-delay: -2.1s; }
+    .node-events   { left: 9%; bottom: 13%; animation-delay: -3.5s; }
+    .node-business { right: 0; top: 33%; animation-delay: -1.7s; }
+    .node-training { left: 50%; bottom: 1%; translate: -50% 0; animation-delay: -4.2s; }
+    .node-work     { right: 8%; bottom: 14%; animation-delay: -2.8s; }
+
+    .hero-metrics {
+      position: absolute;
+      left: 44px;
+      right: 44px;
+      bottom: 28px;
+      z-index: 9;
+      display: flex;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .metric {
+      min-width: 140px;
+      padding: 10px 13px;
+      border-left: 1px solid rgba(197,164,109,.36);
+    }
+    .metric b {
+      display: block;
+      font-size: 15px;
+      color: var(--champagne-soft);
+    }
+    .metric span {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: rgba(242,238,229,.43);
     }
 
- /* HERO – formato portada diagonal */
-.hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); /* derecha un poco más ancha */
-  min-height: 360px;
-  border-bottom: 1px solid var(--border-soft);
-  overflow: hidden;
-  background: #fdfdfd;
-  align-items: stretch;
-}
-.hero-right {
-  position: relative;
-  padding: 40px 50px 50px;          /* antes 60px 60px 80px */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: #16323d;                   /* importante: texto oscuro */
-}
-/* Bloque azul diagonal al estilo portada */
-.hero-right::before {
-  content: "";
-  position: absolute;
-  inset: -50px -60px -50px -60px;   /* menos invasivo arriba/abajo/izquierda */
-
-  background: linear-gradient(
-    135deg,
-    #8bc0cf 0%,     /* azul más claro */
-    #9fd0dd 45%,
-    #b5dce5 100%
-  );
-
-  clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
-  z-index: -1;
-}
-
-/* Contenido por encima de la marca de agua */
-.hero > * {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-title {
-font-family: 'Playfair Display', serif;   /* ← clave */
-  font-size: 30px;
-  font-weight: 600;
-  margin-bottom: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #16323d;   /* un punto más oscuro */
-}
-.hero-title-line {
-  display: block;
-}
-.hero-subtitle {
-  font-size: 15px;
-  margin-bottom: 18px;
-  color: #285664; 
-}
-
-.hero-text-main {
-  font-size: 14px;
-  margin-bottom: 14px;
-  max-width: 540px;   /* columna de texto más limpia */
-   color: #24414d; 
-}
-/* Énfasis ejecutivo dentro del texto */
-.text-strong {
-  color:#14323e;       /* más oscuro, serio y ejecutivo */
-  font-weight: 600;
-}
-.hero-highlight {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  margin-bottom: 10px;
-  color: #4b6a74;                 /* gris azulado, muy legible */
-}
-/* Cabecera: texto + avatar alineados y centrados */
-.hero-header {
-  display: flex;
-  flex-direction: row-reverse;  /* avatar a la derecha */
-  align-items: center;          /* centra verticalmente avatar y texto */
-  gap: 24px;
-  margin-bottom: 24px;
-}
-
-/* El bloque de texto se centra respecto al avatar */
-.hero-heading-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* centra las dos líneas del nombre + subtítulo */
-  padding-left:  clamp(12px, 2vw, 24px);
-}
-
-/* Avatar circular */
-.hero-avatar {
-  position: static;
-  width: 120px;
-  height: 200px;
-  border-radius: 50%;
-  border: 4px solid #ffffff;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  flex-shrink: 0;
-}
-
-.hero-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Ajuste fino del texto al lado del avatar */
-.hero-heading-text .hero-highlight {
-  margin-bottom: 10px;
-}
-
-.hero-heading-text .hero-title {
-  margin-bottom: 10px;
-}
-.hero-left {
-  position: relative;
-  display: flex;
-  align-items: center;      /* centra verticalmente */
-  justify-content: center;  /* por si la columna es más ancha */
-  overflow: hidden;
-}
-/* Overlay muy suave encima de la foto para equilibrar */
-.hero-left::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.10), rgba(0,0,0,0.22));
-  mix-blend-mode: multiply;
-  pointer-events: none;
-  z-index: 1;
-}
-.hero-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;  /* centra bien tu figura */
-   z-index: 0;
-}
-.btn-primary {
-  display: inline-block;
-  background: var(--primary);
-  color: #ffffff;
-  padding: 10px 26px;
-  font-size: 14px;
-  border-radius: var(--radius);
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-}
-
-.hero-image-box {
-  text-align: center;
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  padding: 16px;
-  background: #fafafa;
-}
-
-.hero-image-box img {
-  border-radius: var(--radius);
-  margin-bottom: 10px;
-}
-
-.hero-image-caption {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.hero-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center; /* centrado en tu figura */
-}
-/* FEATURES (3 columnas) */
-.features {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-
-  /* NUEVO: banda con fondo y efecto “card” grande */
-  background: #f5f7f9;
-  border-radius: 18px;
-  padding: 40px 40px 48px;
-  margin: 32px 40px 40px;
-  text-align: center;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.04);
-}
-
-.feature-icon {
-  width: 40px;
-  height: 40px;
-  margin: 0 auto 10px;
-  border: 2px solid var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: var(--primary);
-}
-
-.feature-title {
-  font-size: 15px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-.feature-text {
-  font-family: 'Bodoni Moda', 'Bodoni MT Condensed', 'Bodoni MT', 'Didot', 'Times New Roman', serif;
-
-  font-size: 14px;
-  line-height: 1.75;
-
-  /* MÁS CONTRASTE, SIGUE SIENDO ELEGANTE */
-  color: #1f1f1f;          /* negro suave, no carbón */
-  font-weight: 500;        /* clave: da cuerpo sin endurecer */
-
-  text-align: justify;
-  text-justify: inter-word;
-
-  margin-bottom: 18px;
-}
-
-
-.feature-link {
-  font-size: 12px;
-  color: var(--primary-dark);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-}
-
-/* ABOUT + TESTIMONIALS */
-.bottom-section {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-  gap: 48px;
-
-  /* NUEVO: banda de fondo */
-  background: #f5f7f9;
-  border-radius: 18px;
-  padding: 40px 40px 48px;
-  margin: 0 40px 40px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.04);
-}
-
-.section-title {
-  font-size: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  margin-bottom: 10px;
-  color: #444;
-}
-
-.section-text {
-  font-size: 14px;
-  color: var(--text-muted);
-}
-.section-text p {
-  font-family: 'Bodoni Moda', 'Bodoni MT Condensed', 'Bodoni MT', 'Didot', 'Times New Roman', serif;
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.7;
-  font-size: 14px;
-  color: var(--text-main);
-}
-
-
-
-.testimonial {
-  border-left: 4px solid var(--primary);
-  padding-left: 16px;
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.testimonial-author {
-  font-size: 13px;
-  margin-top: 4px;
-  color: #555;
-  font-weight: 600;
-}
-
-footer {
-  text-align: center;
-  font-size: 11px;
-  color: var(--text-muted);
-  padding: 16px 10px 24px;
-  border-top: 1px solid var(--border-soft);
-  background: #f9f9f9;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero::before {
-    background-size: 80% auto;
-    background-position: 50% 55%;
-    opacity: 0.14;
-  }
-
-  .features {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .bottom-section {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero::before {
-    background-size: 80% auto;
-    background-position: 50% 55%;
-    opacity: 0.14;
-  }
-
-  .features {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .bottom-section {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* ==========================
-   RESPONSIVE EXTRA (≤600px)
-   ========================== */
-@media (max-width: 600px) {
-  .hero,
-  .features,
-  .bottom-section {
-    padding: 24px 16px 32px;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  nav ul {
-    gap: 14px;
-    font-size: 12px;
-  }
-}
-
-/* ==========================
-   AJUSTE HERO EN MÓVIL (≤768px)
-   ========================== */
-@media (max-width: 768px) {
-
-  .top-strip {
-    height: auto;
-    padding: 20px;
-  }
-
-  .logo {
-    font-size: 18px;
-    letter-spacing: 0.12em;
-  }
-
-  /* Hero en una sola columna */
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: unset;
-  }
-
-  /* Imagen principal */
-  .hero-left {
-    height: 320px;
-  }
-
-  .hero-cover {
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  /* Bloque derecho */
-  .hero-right {
-    padding: 28px 20px 32px;
-  }
-
-  /* Eliminamos la diagonal en móvil */
-  .hero-right::before {
-    clip-path: none;
-    inset: 0;
-  }
-
-  /* Avatar más pequeño */
-  .hero-avatar {
-    width: 90px;
-    height: 90px;
-  }
-
-  .hero-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 16px;
-  }
-
-  .hero-heading-text {
-    padding-left: 0;
-    align-items: center;
-  }
-
-  .hero-title {
-    font-size: 22px;
-    line-height: 1.2;
-  }
-
-  .hero-subtitle {
-    font-size: 14px;
-  }
-
-  .hero-text-main {
-    font-size: 13px;
-    text-align: center;
-  }
-
-  .btn-primary {
-    margin: 16px auto 0;
-  }
-}
-
-/* ==========================
-   SECCIÓN DE CONTACTO
-   ========================== */
-
-/* Para que el scroll ancle bien debajo del header */
-#contacto {
-  scroll-margin-top: 110px;
-}
-
-/* Fondo de la sección y centrado de la tarjeta */
-.contacto-section {
-  padding: 40px 16px 60px;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-	padding: 0;
-}
-
-/* Tarjeta de presentación */
-.contact-card {
-  width: 100%;
-  max-width: 420px;
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 24px 26px 22px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  border-left: 4px solid #356975;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-/* Efecto “zoom” al pulsar CONTACTO en el menú */
-.contact-card.contact-highlight {
-  transform: scale(1.03);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.20);
-}
-
-.contact-title {
-  font-size: 18px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #1d1d1f;
-  margin-bottom: 14px;
-}
-
-.contact-label {
-  font-weight: 600;
-  color: #333;
-}
-
-.contact-card p {
-  margin: 4px 0;
-  font-size: 14px;
-  color: #555;
-}
-
-.contact-card a {
-  color: #356975;
-  text-decoration: none;
-}
-
-.contact-card a:hover {
-  text-decoration: underline;
-}
-
-.contact-actions {
-  margin-top: 16px;
-}
-
-/* Aquí redefinimos el botón LinkedIn para que tenga forma de píldora;
-   si NO quieres cambiar el de arriba de todo, cambia esta clase a .btn-linkedin-contact */
-.btn-linkedin {
-  display: inline-block;
-  padding: 9px 22px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-
-  background: #5f8f9b;              /* azul verdoso más suave */
-  color: #ffffff;                   /* texto perfectamente legible */
-
-  border-radius: 999px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-
-  transition: background 0.25s ease,
-              transform 0.2s ease,
-              box-shadow 0.2s ease;
-}
-
-.btn-linkedin:hover {
-  background: #3d6e7d;              /* tu primary-dark */
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
-}
-
-
-/* FOOTER centrado y alineado con la página */
-footer {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 11px;
-  color: #777;
-  padding: 12px 16px 20px;
-  border-top: 1px solid #e3e3e3;
-  background: #f9f9f9;
-}
-/* ===============================
-   PROUESTA DE VALOR + TESTIMONIO
-   =============================== */
-
-.valor-testimonio {
-  display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.1fr);
-  gap: 48px;
-  align-items: flex-start;
- 
-}
-
-/* Columna izquierda */
-.valor-col .section-text {
-  max-width: 620px;
-}
-
-/* Columna derecha */
-.testimonio-col {
-   max-width: 420px;
-}
-	  
-	  }
+    .content {
+      background: #f1ede4;
+      color: #1d201e;
+    }
+    .section {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 92px 0;
+    }
+    .section-kicker {
+      margin-bottom: 12px;
+      color: #8b7048;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-weight: 600;
+    }
+    .section h2 {
+      margin: 0;
+      max-width: 760px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      font-size: clamp(34px, 4.2vw, 56px);
+      line-height: 1.04;
+      letter-spacing: -.015em;
+    }
+    .section-lead {
+      max-width: 760px;
+      margin: 22px 0 0;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #555b57;
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+    .pillar {
+      min-height: 255px;
+      padding: 26px;
+      border-radius: 20px;
+      border: 1px solid rgba(29,32,30,.1);
+      background: rgba(255,255,255,.42);
+    }
+    .pillar-index {
+      font-family: 'Playfair Display', serif;
+      font-size: 31px;
+      color: #a4875a;
+    }
+    .pillar h3 { margin: 28px 0 10px; font-size: 16px; letter-spacing: .02em; }
+    .pillar p { margin: 0; color: #5e635f; font-size: 13px; line-height: 1.75; }
+
+    .work-section { padding-top: 0; }
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 38px;
+    }
+    .work-card {
+      position: relative;
+      min-height: 220px;
+      padding: 26px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #171a18;
+      color: var(--ivory);
+      border: 1px solid rgba(255,255,255,.06);
+      transition: transform .22s ease, border-color .22s ease;
+    }
+    .work-card:hover { transform: translateY(-3px); border-color: rgba(197,164,109,.35); }
+    .work-card::after {
+      content: '↗';
+      position: absolute;
+      right: 22px;
+      top: 18px;
+      color: var(--champagne);
+      font-size: 20px;
+    }
+    .work-card small {
+      color: var(--champagne-soft);
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      font-size: 9px;
+    }
+    .work-card h3 {
+      margin: 46px 0 8px;
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      font-weight: 500;
+    }
+    .work-card p { margin: 0; max-width: 480px; color: rgba(242,238,229,.58); font-size: 13px; line-height: 1.7; }
+
+    .identity-panel {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      overflow: hidden;
+      border-radius: 26px;
+      background: #151816;
+      color: var(--ivory);
+      min-height: 390px;
+      box-shadow: var(--shadow);
+    }
+    .identity-photo {
+      min-height: 390px;
+      background:
+        linear-gradient(0deg, rgba(9,11,10,.25), rgba(9,11,10,.06)),
+        url('imagenes/ramon-perfil.png') center 22% / cover no-repeat;
+      filter: grayscale(.18);
+    }
+    .identity-copy { padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+    .identity-copy h3 {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 500;
+    }
+    .identity-copy p { margin: 18px 0 0; max-width: 620px; color: rgba(242,238,229,.64); line-height: 1.85; font-size: 14px; }
+    .identity-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+
+    footer {
+      padding: 28px 34px;
+      background: #0a0c0b;
+      border-top: 1px solid var(--line-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(242,238,229,.42);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+    }
+
+    @keyframes floatNode {
+      0%,100% { margin-top: 0; }
+      50% { margin-top: -7px; }
+    }
+    @keyframes rotateRing { to { rotate: 360deg; } }
+    @keyframes rotateRingReverse { to { rotate: -360deg; } }
+    @keyframes breathe {
+      0%,100% { opacity: .7; scale: 1; }
+      50% { opacity: 1; scale: 1.025; }
+    }
+    @keyframes corePulse {
+      0%,100% { opacity: .45; scale: 1; }
+      50% { opacity: .9; scale: 1.035; }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        padding-top: 70px;
+        padding-bottom: 86px;
+      }
+      .hero-copy { max-width: 760px; }
+      .network-wrap { min-height: 620px; }
+      .cluster-network { width: min(650px, 82vw); }
+      .cluster-photo { width: 66%; opacity: .3; }
+      .hero-metrics { position: static; margin: -44px 34px 30px; flex-wrap: wrap; }
+      .metric { flex: 1 1 180px; }
+      .pillars { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .topbar { height: 64px; padding: 0 18px; }
+      .brand { font-size: 14px; }
+      .nav a:not(.nav-cv) { display: none; }
+      .nav { gap: 8px; }
+      .hero-layout { min-height: auto; padding: 56px 20px 44px; gap: 18px; }
+      .cluster-photo { width: 100%; opacity: .2; }
+      .hero-copy h1 { font-size: clamp(44px, 14vw, 64px); }
+      .hero-summary { font-size: 13px; }
+      .network-wrap { min-height: auto; display: block; padding-top: 34px; }
+      .cluster-network {
+        width: 100%;
+        aspect-ratio: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        transform: none !important;
+      }
+      .cluster-network::before,
+      .cluster-network::after,
+      .inner-ring,
+      .connections { display: none; }
+      .core {
+        position: relative;
+        left: auto;
+        top: auto;
+        translate: none;
+        grid-column: 1 / -1;
+        margin: 0 auto 24px;
+        width: 205px;
+        height: 205px;
+      }
+      .orbit-node {
+        position: static;
+        translate: none !important;
+        min-width: 0;
+        min-height: 78px;
+        animation: none;
+      }
+      .hero-metrics { margin: 0 20px 30px; display: grid; grid-template-columns: 1fr 1fr; }
+      .metric { min-width: 0; }
+      .section { width: min(100% - 36px, 1180px); padding: 70px 0; }
+      .work-grid { grid-template-columns: 1fr; }
+      .identity-panel { grid-template-columns: 1fr; }
+      .identity-photo { min-height: 310px; }
+      .identity-copy { padding: 30px 24px 34px; }
+      footer { flex-direction: column; padding: 24px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      .cluster-network { transform: none !important; }
+    }
   </style>
 </head>
 <body>
-  <div class="page">
-
-    <!-- BLOQUE SUPERIOR -->
-    <header class="top-strip">
-      <div class="logo">
-        PORTFOLIO PROFESIONAL</span>
-      </div>
-      <nav>
-  <ul>
-    <li>
-      <a 
-        href="PDF/Presentacion_profecional.pdf"
-        target="_blank"
-        rel="noopener noreferrer" >
-        Perfil
-      </a>
-    </li>
-    <li> 
-  <a 
-    href="diplomas.html"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Formación
-  </a>
-</li>
-    <li><a href="https://raymonchu48.github.io/Portfolio/" target="_blank" rel="noopener">Perfil Digital</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-  </ul>
-</nav>
+  <div class="site-shell" id="inicio">
+    <header class="topbar">
+      <a class="brand" href="#inicio">RAMON <b>A.C.</b> VEGA</a>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#cluster">Cluster</a>
+        <a href="#perfil">Perfil</a>
+        <a href="#trabajo">Trabajo</a>
+        <a href="diplomas.html" target="_blank" rel="noopener">Formación</a>
+        <a href="galeria.html" target="_blank" rel="noopener">Galería</a>
+        <a class="nav-cv" href="PDF/Curriculum_2026.pdf" target="_blank" rel="noopener">C.V.</a>
+      </nav>
     </header>
 
-    <!-- HERO PRINCIPAL -->
-   <section class="hero" id="perfil">
+    <main>
+      <section class="cluster-hero" id="cluster">
+        <div class="cluster-photo" aria-hidden="true"></div>
+        <div class="cluster-glow" aria-hidden="true"></div>
 
-  <!-- COLUMNA IZQUIERDA: FOTO GRANDE -->
-  <div class="hero-left">
-    <img
-      src="imagenes/Presentacion.png"
-      alt="Ramon Alberto Curbalan Vega en restaurante de alta gama"
-      class="hero-cover"
-    >
-  </div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="eyebrow">Hospitality Professional System</div>
+            <h1>RAMON A.C.<span>VEGA</span></h1>
+            <p class="hero-role">Leadership · Operations · Business</p>
+            <p class="hero-summary">
+              Dirección operativa de restauración, banquetes y eventos en entornos hoteleros de alta exigencia. Un perfil construido sobre servicio 5★, liderazgo de equipos, control del negocio y ejecución precisa.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#network">Explorar el cluster</a>
+              <a class="btn btn-ghost" href="PDF/Curriculum_2026.pdf" target="_blank" rel="noopener">Ver C.V. ejecutivo</a>
+            </div>
+          </div>
 
-  <!-- COLUMNA DERECHA: AVATAR + TEXTO EN BLOQUE AZUL -->
-  <div class="hero-right">
+          <div class="network-wrap" id="network">
+            <div class="cluster-network" aria-label="Cluster de competencias profesionales">
+              <div class="inner-ring" aria-hidden="true"></div>
 
-    <!-- Cabecera con avatar + nombre -->
-    <div class="hero-header">
-      <div class="hero-avatar">
-        <img
-          src="imagenes/ramon-perfil.png"
-          alt="Ramon Alberto Curbalan Vega"
-        >
-      </div>
+              <svg class="connections" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="50" y1="50" x2="50" y2="10"></line>
+                <line x1="50" y1="50" x2="14" y2="39"></line>
+                <line x1="50" y1="50" x2="20" y2="79"></line>
+                <line x1="50" y1="50" x2="86" y2="39"></line>
+                <line x1="50" y1="50" x2="50" y2="92"></line>
+                <line x1="50" y1="50" x2="81" y2="79"></line>
+                <circle cx="50" cy="10" r=".5"></circle>
+                <circle cx="14" cy="39" r=".5"></circle>
+                <circle cx="20" cy="79" r=".5"></circle>
+                <circle cx="86" cy="39" r=".5"></circle>
+                <circle cx="50" cy="92" r=".5"></circle>
+                <circle cx="81" cy="79" r=".5"></circle>
+              </svg>
 
-      <div class="hero-heading-text">
-        <div class="hero-highlight">
-          HOSTELERÍA · HOTELES 5★ Y GRAN LUJO · F&B
+              <div class="core">
+                <div class="core-small">Hospitality · F&amp;B<br>Banquets &amp; Events</div>
+                <h2>RAMON A.C.<br>VEGA</h2>
+                <p>Leadership · Operations · Business</p>
+              </div>
+
+              <a class="orbit-node node-quality" href="PDF/Servicio.pdf" target="_blank" rel="noopener">
+                <strong>Calidad 5★</strong><span>Service Excellence</span>
+              </a>
+              <a class="orbit-node node-teams" href="PDF/Gestion-Equipos.pdf" target="_blank" rel="noopener">
+                <strong>Equipos</strong><span>Leadership</span>
+              </a>
+              <a class="orbit-node node-events" href="PDF/Manual_Eventos.pdf" target="_blank" rel="noopener">
+                <strong>Eventos</strong><span>Banquets &amp; Events</span>
+              </a>
+              <a class="orbit-node node-business" href="Analisis -Rentabilidad-Hoteles.pdf" target="_blank" rel="noopener">
+                <strong>Negocio</strong><span>Profitability</span>
+              </a>
+              <a class="orbit-node node-training" href="diplomas.html" target="_blank" rel="noopener">
+                <strong>Formación</strong><span>Continuous Learning</span>
+              </a>
+              <a class="orbit-node node-work" href="galeria.html" target="_blank" rel="noopener">
+                <strong>Proyectos</strong><span>Selected Work</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-       <h1 class="hero-title">
-  <span class="hero-title-line">RAMON ALBERTO</span>
-  <span class="hero-title-line">CURBALAN VEGA</span>
-</h1>
+        <div class="hero-metrics" aria-label="Indicadores de experiencia">
+          <div class="metric"><b>23+ años</b><span>Experiencia profesional</span></div>
+          <div class="metric"><b>5★ · Gran Lujo</b><span>Entornos hoteleros</span></div>
+          <div class="metric"><b>F&amp;B</b><span>Operaciones y servicio</span></div>
+          <div class="metric"><b>Eventos</b><span>Dirección y coordinación</span></div>
+        </div>
+      </section>
 
-        <h2 class="hero-subtitle">
-          Manager de restauración y banquetes en hoteles de gran lujo
-        </h2>
-      </div>
-    </div>
-
-    <!-- Texto principal -->
-    <p class="hero-text-main">
-      <span class="text-strong">Profesional con más de 23 años de experiencia en hostelería y restauración,
-      desarrollando mi carrera en hoteles de 5 estrellas Gran Lujo y especializándome
-      en la dirección de eventos gestión de equipos y
-      optimización de la rentabilidad. Destaco por mi liderazgo, atención al cliente,
-      control económico y dominio avanzado de herramientas POS, respaldado por formación en turismo, dirección hotelera
-      y gestión empresarial. Este perfil me posiciona como alta responsabilidad en F&B y restauración.</span>
-    </p>
-
-    <p class="hero-text-main">
-      <span class="text-strong">
-        Dedicación a trabajar con objetivos, indicadores de calidad y control de costes, impulsando mejoras en satisfacción
-        del cliente, ingresos por banquetes y eficiencia del servicio mediante equipos bien formados y procesos claros.
-      </span>
-    </p>
-
-    <!-- Botón CV -->
-    <a href="PDF/Curriculum_2026.pdf" target="_blank" class="btn-primary">
-      VER C.V EJECUTIVO
-    </a>
-
-    <!-- Tarjeta de frase (la cajita blanca) -->
-    <div class="hero-image-box">
-      <p class="hero-image-caption">
-        "Perfil orientado a F&B, servicio de alto nivel y gestión operativa en hoteles 4–5 estrellas, con foco en experiencia del huésped, coordinación de equipos y cumplimiento de estándares de cadena."
-      </p>
-    </div>
-
-  </div>
-</section>
-
-    <!-- TRES BLOQUES TIPO “SERVICIOS” -->
-    <section class="features" id="experiencia">
-      <article>
-        <div class="feature-icon">F&B</div>
-        <h3 class="feature-title">Servicio de calidad 5★</h3>
-        <p class="feature-text">
-          Servicio 5★ como sistema de procesos precisos, equipos alineados y experiencia de cliente consistente.
-		  Entiendo el servicio premium como un equilibrio entre procesos bien definidos, equipos bien dirigidos y una experiencia
-		  personalizada que supere expectativas sin perder eficiencia ni rentabilidad. La calidad no es un gesto puntual, es un sistema sostenido en el tiempo.
-Garantizo estándares de excelencia operativa sin perder eficiencia ni control del detalle.
-El lujo, para mí, es método, coherencia y resultado medible.
-        </p>
-        <a
-  href=" PDF/Servicio.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="btn-primary"
->
-  CALIDAD/SERVICIO
-</a>
-      </article>
-
-      <article>
-        <div class="feature-icon">EQ</div>
-        <h3 class="feature-title">Gestión de equipos </h3>
-        <p class="feature-text">
-          Lidero equipos en entornos de alta exigencia combinando dirección operativa, coaching estratégico y psicología aplicada.
-Especializado en motivación, delegación eficaz y mejora del rendimiento colectivo.
-Gestiono personas con foco en objetivos, cohesión del equipo y experiencia del cliente.
-Mi liderazgo se basa en estructura, comunicación clara y resultados sostenibles.
-        </p>
-        <a
-  href="PDF/Gestion-Equipos.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  class="btn-primary"
->
-  Motivación
-</a>
-      </article>
-
-      <article>
-        <div class="feature-icon">PL</div>
-        <h3 class="feature-title">Visión de negocio</h3>
-        <p class="feature-text">
-         Aporto una visión operativa y estratégica del área de restauración y eventos, 
-		 combinando gestión de equipos, control de costes y Project Management aplicado al día a día del negocio.
-		 Trabajo estrechamente con dirección general, RR. HH. y finanzas para transformar objetivos empresariales en acciones concretas:
-		 planificación de recursos, optimización de procesos, implantación de estándares y seguimiento de KPIs. 
-        </p>
-        <div class="feature-link"></div>
-		<a 
-  href=" PDF/PTD.pdf"
-  class="btn-primary"
->
-  Proyecto PTD
-</a>
-
-      </article>
-    </section>
-
-    <!-- BLOQUE INFERIOR: ABOUT + TESTIMONIOS -->
-    <section class="bottom-section" id="formacion">
-		
-	<section class="valor-testimonio">
-
-    <!-- COLUMNA IZQUIERDA -->
-    <div class="valor-col">
-     
-        <h3 class="section-title">Propuesta de Valor</h3>
-        <div class="section-text">
-        
-          <p>
-           "Profesional de F&B y restauración con experiencia en entornos de alta exigencia, donde la excelencia en el servicio, la imagen de marca y la rentabilidad deben avanzar alineadas".
+      <div class="content">
+        <section class="section" id="perfil">
+          <div class="section-kicker">Leadership profile</div>
+          <h2>El lujo no es improvisación. Es método, equipo y consistencia.</h2>
+          <p class="section-lead">
+            Mi enfoque de gestión integra experiencia de cliente, disciplina operativa, liderazgo y lectura económica del negocio. La excelencia en hostelería se sostiene cuando el estándar de servicio, las personas y los objetivos de rentabilidad trabajan como un único sistema.
           </p>
-		   <p>
-		   "Mi enfoque se apoya en metodologías ágiles para mejorar la eficiencia operativa, reducir riesgos y maximizar la experiencia del cliente, siempre con orientación a resultados y mejora continua. Busco seguir creciendo en posiciones de responsabilidad dentro de F&B, aportando liderazgo, visión de negocio y capacidad de ejecución".
-        </p>
-		<p>
-		Manager de Banquetes & Eventos | F&B Operations | Project Management aplicado a Restauración | Optimización de Costes y Experiencia del Cliente
-		</p>
-		<!-- Botón PDF en la zona en blanco -->
-<div class="propuesta-valor-cta">
-  <a href=" PDF/Manual_premium.pdf"
-     class="btn-linkedin"
-     target="_blank"
-     rel="noopener">
-    Manual eventos
-  </a>
-</div>
-</div>
-</div>
 
-           <aside class="testimonio-col">
-        <h3 class="section-title">Testimonio profesional</h3>
-        <div class="testimonial">
-          “Ramón ha trabajado en diferentes outlets del hotel, integrándose en el equipo
-          de Banquetes y siendo promocionado a Supervisor de Pool Bar. Gestionaba horarios,
-          supervisaba los servicios en mi ausencia y diseñaba cartas de bebidas con sus precios
-          de venta. Tener a Ramón en un hotel es un activo para cualquier organización.”
-        </div>
-        <div class="testimonial-author">
-           F&B Director, Park Hyatt Mallorca
-        </div>
-      </aside>
-    </section>
-		
-<!-- SECCIÓN DE CONTACTO (FUERA del bottom-section) -->
-    <section id="contacto" class="contacto-section">
-      <div class="contact-card">
-        <h3 class="contact-title">Contacto</h3>
+          <div class="pillars">
+            <article class="pillar">
+              <div class="pillar-index">01</div>
+              <h3>Servicio de calidad 5★</h3>
+              <p>Estándares claros, atención al detalle y experiencia coherente. El servicio premium se diseña, se entrena, se supervisa y se mide.</p>
+            </article>
+            <article class="pillar">
+              <div class="pillar-index">02</div>
+              <h3>Gestión de equipos</h3>
+              <p>Liderazgo operativo con comunicación directa, delegación, motivación y desarrollo del rendimiento colectivo en contextos de alta exigencia.</p>
+            </article>
+            <article class="pillar">
+              <div class="pillar-index">03</div>
+              <h3>Visión de negocio</h3>
+              <p>Control de costes, planificación de recursos, seguimiento de KPIs y mejora de procesos para transformar objetivos de dirección en ejecución diaria.</p>
+            </article>
+          </div>
+        </section>
 
-        <p><span class="contact-label">Ubicación:</span> Illes Baleares, España</p>
-        <p><span class="contact-label">Email:</span>
-          <a href="mailto:ramonalberto.curbalvega@gmail.com">
-            ramonalberto.curbalvega@gmail.com
-          </a>
-        </p>
-        <p><span class="contact-label">Teléfono:</span>
-          <a href="tel:+34640724160">+34 640724160</a>
-        </p>
+        <section class="section work-section" id="trabajo">
+          <div class="section-kicker">Selected professional work</div>
+          <h2>Documentación, método y criterio operativo.</h2>
+          <p class="section-lead">
+            Una selección de materiales profesionales que muestran cómo traduzco experiencia y conocimiento en herramientas aplicables a operaciones, eventos, servicio y rentabilidad.
+          </p>
 
-        <div class="contact-actions">
-          <a class="btn-linkedin"
-             href="https://www.linkedin.com/in/ramon-alberto-curbalan-vega-754042167"
-             target="_blank" rel="noopener">
-            LINKEDIN
-          </a>
-        </div>
+          <div class="work-grid">
+            <a class="work-card" href="PDF/Manual_Eventos.pdf" target="_blank" rel="noopener">
+              <small>Banquets &amp; Events</small>
+              <h3>Manual de Eventos</h3>
+              <p>Organización, coordinación y estándares para la ejecución profesional de eventos y banquetes.</p>
+            </a>
+            <a class="work-card" href="Analisis -Rentabilidad-Hoteles.pdf" target="_blank" rel="noopener">
+              <small>Business</small>
+              <h3>Análisis de Rentabilidad</h3>
+              <p>Visión económica aplicada a la operación hotelera, control y lectura de resultados.</p>
+            </a>
+            <a class="work-card" href="PDF/Gestion-Equipos.pdf" target="_blank" rel="noopener">
+              <small>Leadership</small>
+              <h3>Gestión de Equipos</h3>
+              <p>Liderazgo, motivación, organización y rendimiento colectivo en equipos de servicio.</p>
+            </a>
+            <a class="work-card" href="PDF/Servicio.pdf" target="_blank" rel="noopener">
+              <small>Service Excellence</small>
+              <h3>Calidad y Servicio</h3>
+              <p>Principios operativos para sostener una experiencia premium con consistencia y control.</p>
+            </a>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="identity-panel">
+            <div class="identity-photo" role="img" aria-label="Retrato profesional de Ramon A.C. Vega"></div>
+            <div class="identity-copy">
+              <div class="section-kicker">Professional identity</div>
+              <h3>Ramon A.C. Vega</h3>
+              <p>
+                Perfil profesional orientado a dirección de restauración, F&amp;B, banquetes y eventos, con experiencia en hoteles de 5 estrellas y Gran Lujo. Combino conocimiento operativo, gestión de personas y visión empresarial para crear servicios fiables, rentables y a la altura de una experiencia premium.
+              </p>
+              <div class="identity-links">
+                <a class="btn btn-primary" href="PDF/Perfil_C.V.pdf" target="_blank" rel="noopener">Perfil profesional</a>
+                <a class="btn btn-ghost" href="diplomas.html" target="_blank" rel="noopener">Formación</a>
+                <a class="btn btn-ghost" href="galeria.html" target="_blank" rel="noopener">Galería</a>
+                <a class="btn btn-ghost" href="https://raymonchu48.github.io/Portfolio/" target="_blank" rel="noopener">Perfil digital</a>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
+    </main>
 
     <footer>
-      © <span id="year"></span> Ramón Alberto Curbalán Vega · Portfolio profesional de hostelería y restauración.
+      <span>Ramon A.C. Vega · Hospitality Leadership Portfolio</span>
+      <a href="#inicio">Volver al cluster ↑</a>
     </footer>
-  </div> <!-- .page -->
+  </div>
 
   <script>
-    // Año del footer
-    const yearSpan = document.getElementById('year');
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
+    (() => {
+      const network = document.querySelector('.cluster-network');
+      if (!network || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    // Zoom suave al pulsar CONTACTO
-    const contactLink = document.querySelector('a[href="#contacto"]');
-    const contactCard = document.querySelector('.contact-card');
+      const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      if (!canHover) return;
 
-    if (contactLink && contactCard) {
-      contactLink.addEventListener('click', function () {
-        contactCard.classList.add('contact-highlight');
-        setTimeout(function () {
-          contactCard.classList.remove('contact-highlight');
-        }, 800);
+      const wrap = network.closest('.network-wrap');
+      wrap.addEventListener('mousemove', (event) => {
+        const rect = wrap.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        network.style.transform = `rotateX(${(-y * 3.5).toFixed(2)}deg) rotateY(${(x * 4.5).toFixed(2)}deg)`;
       });
-    }
+      wrap.addEventListener('mouseleave', () => {
+        network.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      });
+    })();
   </script>
 </body>
 </html>
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
