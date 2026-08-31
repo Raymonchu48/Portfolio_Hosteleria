@@ -2,331 +2,242 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Galería de eventos 5★ GL – Ramon Curbalán</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <title>Galería profesional · RACV Cluster</title>
+  <meta name="description" content="Galería profesional de eventos, F&B, reuniones y montajes 5★ GL de Ramón Alberto Curbalán Vega.">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,650&family=Manrope:wght@400;500;600;700&display=swap');
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root{
+      --deep:#071217;
+      --deep-2:#0a1820;
+      --panel:#0d1d24;
+      --panel-2:#10252e;
+      --ink:#eaf3f5;
+      --muted:#93a9b0;
+      --cyan:#73b9ca;
+      --cyan-2:#a5d8e2;
+      --gold:#c8a66c;
+      --line:rgba(137,201,217,.20);
+      --shadow:0 20px 70px rgba(0,0,0,.38);
     }
 
-    body {
-      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #e3e3e3;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      font-family:'Manrope',sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(61,141,165,.18), transparent 28%),
+        radial-gradient(circle at 86% 8%, rgba(199,163,106,.09), transparent 24%),
+        linear-gradient(145deg,#061116 0%,#091820 48%,#071217 100%);
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;opacity:.16;
+      background-image:
+        linear-gradient(rgba(115,185,202,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(115,185,202,.08) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 78%);
     }
 
-    /* Fondo general y centrado del Mac */
-    .galeria-body {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 24px 0;
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    .topbar{
+      position:sticky;top:0;z-index:30;
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+      min-height:72px;padding:14px clamp(18px,4vw,56px);
+      background:rgba(6,17,22,.84);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
     }
-
-    .laptop-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
+    .brand{display:flex;align-items:center;gap:13px;min-width:0}
+    .brand-mark{
+      width:34px;height:34px;border:1px solid rgba(115,185,202,.5);
+      display:grid;place-items:center;transform:rotate(45deg);
+      box-shadow:0 0 24px rgba(115,185,202,.12);
     }
-
-    /* Imagen del iMac / MacBook con tu wallpaper dentro */
-    .laptop-frame {
-      position: relative;
-      width: 1200px;
-      max-width: 96vw;
-      aspect-ratio: 16 / 9;
-      background-image: url("Fondo_iOS.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    .brand-mark span{transform:rotate(-45deg);font-size:10px;color:var(--cyan-2);font-weight:700}
+    .brand-copy strong{display:block;font-size:12px;letter-spacing:.16em;color:var(--cyan-2)}
+    .brand-copy small{display:block;margin-top:3px;font-size:10px;letter-spacing:.12em;color:var(--muted)}
+    .top-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-btn{
+      padding:9px 13px;border:1px solid var(--line);border-radius:999px;
+      font-size:11px;letter-spacing:.08em;color:#c9d9dd;background:rgba(255,255,255,.025);
+      transition:.22s ease;
     }
+    .nav-btn:hover{border-color:rgba(115,185,202,.55);color:#fff;background:rgba(115,185,202,.08)}
+    .nav-btn.primary{border-color:rgba(115,185,202,.52);color:#071217;background:var(--cyan-2);font-weight:700}
 
-    /* Zona donde va la ventana de Safari con la galería */
-    .laptop-screen {
-      position: absolute;
-      top: 90px;
-      left: 80px;
-      right: 80px;
-      bottom: 130px;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
+    .shell{width:min(1320px,calc(100% - 36px));margin:0 auto;padding:54px 0 60px}
+    .hero{
+      display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:28px;
+      align-items:end;padding:34px 0 40px;border-bottom:1px solid var(--line);
     }
-
-    /* Ventana tipo Safari */
-    .browser-window {
-      width: 100%;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.85);
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
+    .eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700;margin-bottom:13px}
+    h1{
+      font-family:'Fraunces',serif;font-size:clamp(42px,6vw,78px);line-height:.98;
+      letter-spacing:-.035em;font-weight:650;
     }
-
-    .browser-topbar {
-      height: 34px;
-      display: flex;
-      align-items: center;
-      padding: 0 12px 0 14px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(235,238,245,0.9));
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+    .hero p{margin-top:20px;max-width:780px;color:#acc0c6;font-size:15px;line-height:1.75}
+    .hero-panel{
+      border:1px solid var(--line);background:linear-gradient(145deg,rgba(15,36,45,.9),rgba(9,24,31,.75));
+      padding:20px;border-radius:16px;box-shadow:var(--shadow);
     }
+    .panel-label{font-size:10px;color:var(--muted);letter-spacing:.18em;margin-bottom:14px}
+    .status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+    .status-chip{padding:11px 12px;border:1px solid rgba(115,185,202,.15);background:rgba(115,185,202,.045);border-radius:10px}
+    .status-chip b{display:block;color:var(--cyan-2);font-size:16px;margin-bottom:2px}
+    .status-chip span{font-size:9px;letter-spacing:.13em;color:var(--muted)}
 
-    .browser-buttons {
-      display: flex;
-      gap: 6px;
-      margin-right: 16px;
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:36px 0 20px}
+    .section-head h2{font-size:15px;letter-spacing:.17em;text-transform:uppercase}
+    .section-head p{font-size:11px;color:var(--muted);letter-spacing:.08em}
+
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{
+      position:relative;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:15px;
+      background:linear-gradient(150deg,rgba(16,37,46,.94),rgba(9,23,30,.95));
+      box-shadow:0 12px 35px rgba(0,0,0,.22);cursor:pointer;transition:.25s ease;
     }
+    .card:hover{transform:translateY(-4px);border-color:rgba(115,185,202,.46);box-shadow:0 18px 44px rgba(0,0,0,.32),0 0 30px rgba(115,185,202,.06)}
+    .image-wrap{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0b171c}
+    .image-wrap::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(7,18,23,.76));pointer-events:none}
+    .card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .4s ease}
+    .card:hover img{transform:scale(1.035)}
+    .card-body{padding:17px 17px 19px}
+    .card-kicker{font-size:9px;font-weight:700;color:var(--gold);letter-spacing:.18em;margin-bottom:8px}
+    .card h3{font-size:17px;line-height:1.25;margin-bottom:8px;color:#f1f7f8}
+    .card p{font-size:12px;line-height:1.6;color:var(--muted)}
+    .card-index{position:absolute;top:12px;right:12px;z-index:2;padding:5px 8px;border-radius:999px;background:rgba(6,17,22,.76);border:1px solid rgba(255,255,255,.12);font-size:9px;letter-spacing:.1em;color:#d7e6e9}
 
-    .browser-buttons .btn {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
+    footer{margin-top:44px;padding:22px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#718990;font-size:10px;letter-spacing:.12em}
+
+    .lightbox{
+      position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:24px;
+      background:rgba(2,8,11,.91);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
     }
+    .lightbox[hidden]{display:none}
+    .viewer{width:min(1180px,96vw);height:min(820px,90vh);display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;border:1px solid rgba(115,185,202,.25);border-radius:18px;background:#071217;box-shadow:0 35px 110px rgba(0,0,0,.7)}
+    .viewer-top{display:flex;justify-content:space-between;align-items:center;padding:13px 15px;border-bottom:1px solid var(--line);background:#0b1a21}
+    .viewer-top span{font-size:10px;color:var(--cyan-2);letter-spacing:.16em}
+    .close-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer;font-size:20px}
+    .viewer-stage{position:relative;min-height:0;display:grid;place-items:center;background:radial-gradient(circle at center,#10262f,#050d11 72%)}
+    .viewer-stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;padding:14px}
+    .arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(3,11,14,.65);color:#fff;cursor:pointer;font-size:25px}
+    .arrow.prev{left:14px}.arrow.next{right:14px}
+    .viewer-meta{padding:15px 18px 18px;border-top:1px solid var(--line);background:#0b1a21}
+    .viewer-meta small{display:block;color:var(--gold);letter-spacing:.16em;font-size:9px;margin-bottom:6px}
+    .viewer-meta strong{font-size:17px}.viewer-meta p{margin-top:5px;color:var(--muted);font-size:12px}
 
-    .browser-buttons .close { background: #ff5f57; }
-    .browser-buttons .minimize { background: #febc2e; }
-    .browser-buttons .maximize { background: #28c840; }
-
-    .browser-url {
-      flex: 1;
-      height: 22px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.95);
-      border: 1px solid rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      font-family: 'Manrope', sans-serif;
-      font-size: 10.5px;
-      font-weight: 500;
-      color: #606971;
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr}.hero-panel{max-width:520px}.gallery-grid{grid-template-columns:repeat(2,1fr)}
     }
-
-    .browser-content {
-      flex: 1;
-      overflow-y: auto;
-      overflow-x: hidden;
-      padding: 18px 20px 22px;
+    @media(max-width:680px){
+      .topbar{align-items:flex-start}.brand-copy strong{font-size:10px}.top-actions{gap:6px}.nav-btn{padding:8px 10px;font-size:9px}
+      .shell{width:min(100% - 24px,1320px);padding-top:30px}.hero{padding-top:22px}.hero p{font-size:13px}.gallery-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column;gap:7px}.viewer{height:88vh}.arrow{width:40px;height:40px}
     }
-
-    /* Scrollbar tipo macOS */
-    .browser-content::-webkit-scrollbar {
-      width: 8px;
-    }
-    .browser-content::-webkit-scrollbar-track {
-      background: #edf0f4;
-      border-radius: 8px;
-    }
-    .browser-content::-webkit-scrollbar-thumb {
-      background-color: #3d8db8;
-      border-radius: 8px;
-      border: 2px solid #edf0f4;
-    }
-    .browser-content::-webkit-scrollbar-thumb:hover {
-      background-color: #2f6f92;
-    }
-    .browser-content {
-      scrollbar-width: thin;
-      scrollbar-color: #3d8db8 #edf0f4;
-    }
-
-    /* Contenido de la galería */
-    .galeria {
-      max-width: 100%;
-    }
-
-    .galeria h1 {
-      font-family: 'Fraunces', Georgia, serif;
-      font-size: 24px;
-      font-weight: 650;
-      letter-spacing: -0.015em;
-      margin-bottom: 6px;
-      color: #17212a;
-    }
-
-    .galeria-intro {
-      font-family: 'Manrope', sans-serif;
-      font-size: 12.5px;
-      font-weight: 500;
-      line-height: 1.55;
-      color: #46525b;
-      margin-bottom: 18px;
-      padding: 7px 13px;
-      border-radius: 999px;
-      display: inline-block;
-      background: rgba(255,255,255,0.85);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-
-    .galeria-grid {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .galeria-grid figure {
-      background: #ffffff;
-      border: 1px solid #e1e1e1;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-    }
-
-    .galeria-grid img {
-      width: 100%;
-      height: 135px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .galeria-grid figcaption {
-      font-family: 'Manrope', sans-serif;
-      font-size: 12.5px;
-      font-weight: 500;
-      color: #344047;
-      padding: 10px 12px 12px;
-      line-height: 1.45;
-    }
-
-    /* Responsive: tablet / móvil */
-    @media (max-width: 1024px) {
-      .galeria-body {
-        align-items: flex-start;
-        padding: 16px 0;
-      }
-
-      .laptop-frame {
-        width: 100vw;
-        max-width: 100vw;
-      }
-
-      .laptop-screen {
-        top: 70px;
-        left: 18px;
-        right: 18px;
-        bottom: 120px;
-      }
-
-      .galeria-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-      .laptop-screen {
-        top: 55px;
-        left: 10px;
-        right: 10px;
-        bottom: 90px;
-      }
-
-      .browser-window {
-        border-radius: 12px;
-      }
-
-      .browser-content {
-        padding: 14px 14px 16px;
-      }
-
-      .galeria-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .galeria h1 {
-        font-size: 21px;
-      }
-    }
-
   </style>
 </head>
-
-<body class="galeria-body">
-  <div class="laptop-wrapper">
-    <div class="laptop-frame">
-      <div class="laptop-screen">
-        <div class="browser-window">
-          <div class="browser-topbar">
-            <div class="browser-buttons">
-              <span class="btn close"></span>
-              <span class="btn minimize"></span>
-              <span class="btn maximize"></span>
-            </div>
-            <div class="browser-url">www.ramon-curbalan.com/galeria</div>
-          </div>
-
-          <div class="browser-content">
-            <main class="galeria">
-              <h1>Galería de eventos 5★ GL</h1>
-              <p class="galeria-intro">
-                Selección de fotografías de montajes, coffee stations, reuniones, recepciones, cenas y almuerzos de gala desarrollados en entornos de alta exigencia.
-              </p>
-
-              <div class="galeria-grid">
-                <figure>
-                  <img src="imagenes/galeria/coffe-station-1.jpeg" alt="Coffee station premium">
-                  <figcaption>Coffee station premium preparada para servicio de convenciones y reuniones corporativas.</figcaption>
-                </figure>
-
-                <figure>
-                  <img src="imagenes/galeria/gala-1.jpeg" alt="Gala exterior">
-                  <figcaption>Montaje de gala exterior en entorno de gran lujo.</figcaption>
-                </figure>
-
-                <figure>
-                  <img src="imagenes/galeria/meeting.jpeg" alt="Sala meeting">
-                  <figcaption>Sala de reunión y conferencia preparada para formato corporativo.</figcaption>
-                </figure>
-
-                <figure>
-                  <img src="imagenes/galeria/mesa-privada.jpeg" alt="Mesa privada">
-                  <figcaption>Mesa privada para alta dirección y reuniones estratégicas.</figcaption>
-                </figure>
-
-                <figure>
-                  <img src="imagenes/galeria/mesa-alm.jpg" alt="Restaurante premium">
-                  <figcaption>Montaje de restaurante para almuerzo y servicio premium.</figcaption>
-                </figure>
-
-                <figure>
-                  <img src="imagenes/galeria/recepcion.jpeg" alt="Estación de bebidas">
-                  <figcaption>Estación de bebidas preparada para recepción de invitados.</figcaption>
-                </figure>
-
-                <figure>
-                  <img src="imagenes/galeria/recepcion-coctel.jpg" alt="Recepción cocktail">
-                  <figcaption>Recepción cocktail en patio exterior con montaje de apoyo.</figcaption>
-                </figure>
-
-                <figure>
-                  <img src="imagenes/galeria/cena-gala.jpg" alt="Cena de gala">
-                  <figcaption>Cena de gala con montaje de mesa y ambientación floral.</figcaption>
-                </figure>
-
-                <figure>
-                  <img src="imagenes/galeria/coffe-breaks.jpg" alt="Coffee break">
-                  <figcaption>Coffee break y estación de bebidas para reuniones y eventos.</figcaption>
-                </figure>
-              </div>
-            </main>
-          </div>
-        </div>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark"><span>R</span></div>
+      <div class="brand-copy">
+        <strong>RACV // PROFESSIONAL CLUSTER</strong>
+        <small>MODULE 05 · VISUAL GALLERY</small>
       </div>
     </div>
+    <nav class="top-actions">
+      <a class="nav-btn" href="diplomas.html">FORMACIÓN</a>
+      <a class="nav-btn primary" href="index.html">← VOLVER AL CLUSTER</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">MODULE 05 / VISUAL EVIDENCE</div>
+        <h1>Galería<br>profesional</h1>
+        <p>Selección de montajes, operaciones F&amp;B, reuniones, recepciones y galas desarrolladas en entornos de alta exigencia, presentada como archivo visual del Professional Cluster.</p>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-label">GALLERY TELEMETRY</div>
+        <div class="status-grid">
+          <div class="status-chip"><b>09</b><span>IMÁGENES</span></div>
+          <div class="status-chip"><b>5★</b><span>GRAN LUJO</span></div>
+          <div class="status-chip"><b>F&amp;B</b><span>OPERATIONS</span></div>
+          <div class="status-chip"><b>LIVE</b><span>ARCHIVE</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="section-head">
+      <h2>Visual Evidence Archive</h2>
+      <p>PULSA UNA IMAGEN PARA ABRIR EL VISOR</p>
+    </div>
+
+    <section class="gallery-grid" id="gallery">
+      <article class="card" data-index="0"><div class="image-wrap"><span class="card-index">01</span><img src="imagenes/galeria/cluster-coffee-station.jpg" alt="Coffee station premium"></div><div class="card-body"><div class="card-kicker">BEVERAGE OPERATIONS</div><h3>Coffee station premium</h3><p>Servicio preparado para convenciones y reuniones corporativas.</p></div></article>
+      <article class="card" data-index="1"><div class="image-wrap"><span class="card-index">02</span><img src="imagenes/galeria/cluster-gala-exterior.jpg" alt="Gala exterior"></div><div class="card-body"><div class="card-kicker">OUTDOOR GALA</div><h3>Gala exterior</h3><p>Montaje de gala exterior en un entorno de gran lujo.</p></div></article>
+      <article class="card" data-index="2"><div class="image-wrap"><span class="card-index">03</span><img src="imagenes/galeria/cluster-meeting.jpg" alt="Sala meeting"></div><div class="card-body"><div class="card-kicker">CORPORATE MEETING</div><h3>Sala meeting</h3><p>Sala de reunión y conferencia preparada para formato corporativo.</p></div></article>
+      <article class="card" data-index="3"><div class="image-wrap"><span class="card-index">04</span><img src="imagenes/galeria/cluster-mesa-privada.jpg" alt="Mesa privada"></div><div class="card-body"><div class="card-kicker">PRIVATE DINING</div><h3>Mesa privada</h3><p>Mesa privada para alta dirección y reuniones estratégicas.</p></div></article>
+      <article class="card" data-index="4"><div class="image-wrap"><span class="card-index">05</span><img src="imagenes/galeria/cluster-restaurante.jpg" alt="Restaurante premium"></div><div class="card-body"><div class="card-kicker">RESTAURANT OPERATIONS</div><h3>Restaurante premium</h3><p>Montaje de restaurante para almuerzo y servicio premium.</p></div></article>
+      <article class="card" data-index="5"><div class="image-wrap"><span class="card-index">06</span><img src="imagenes/galeria/cluster-estacion-bebidas.jpg" alt="Estación de bebidas"></div><div class="card-body"><div class="card-kicker">WELCOME STATION</div><h3>Estación de bebidas</h3><p>Estación de bebidas preparada para recepción de invitados.</p></div></article>
+      <article class="card" data-index="6"><div class="image-wrap"><span class="card-index">07</span><img src="imagenes/galeria/cluster-recepcion-coctel.jpg" alt="Recepción cocktail"></div><div class="card-body"><div class="card-kicker">COCKTAIL RECEPTION</div><h3>Recepción cocktail</h3><p>Recepción cocktail en patio exterior con montaje de apoyo.</p></div></article>
+      <article class="card" data-index="7"><div class="image-wrap"><span class="card-index">08</span><img src="imagenes/mesa-gala-dia.jpg" alt="Cena de gala"></div><div class="card-body"><div class="card-kicker">BANQUET GALA</div><h3>Cena de gala</h3><p>Montaje de mesa de gala con ejecución orientada al detalle.</p></div></article>
+      <article class="card" data-index="8"><div class="image-wrap"><span class="card-index">09</span><img src="imagenes/coffe-breaks.jpg" alt="Coffee break"></div><div class="card-body"><div class="card-kicker">COFFEE BREAKS</div><h3>Coffee break</h3><p>Estación de coffee break para reuniones y eventos.</p></div></article>
+    </section>
+
+    <footer><span>RACV // VISUAL EVIDENCE ARCHIVE</span><span>HOSTELERÍA · F&amp;B · EVENT OPERATIONS · 2026</span></footer>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="viewer" role="dialog" aria-modal="true" aria-label="Visor de galería">
+      <div class="viewer-top"><span>RACV // PHOTO INSPECTOR</span><button class="close-btn" id="closeBtn" aria-label="Cerrar">×</button></div>
+      <div class="viewer-stage"><button class="arrow prev" id="prevBtn" aria-label="Anterior">‹</button><img id="viewerImg" src="" alt=""><button class="arrow next" id="nextBtn" aria-label="Siguiente">›</button></div>
+      <div class="viewer-meta"><small id="viewerKicker"></small><strong id="viewerTitle"></strong><p id="viewerText"></p></div>
+    </div>
   </div>
+
+  <script>
+    const cards = [...document.querySelectorAll('.card')];
+    const lightbox = document.getElementById('lightbox');
+    const viewerImg = document.getElementById('viewerImg');
+    const viewerKicker = document.getElementById('viewerKicker');
+    const viewerTitle = document.getElementById('viewerTitle');
+    const viewerText = document.getElementById('viewerText');
+    let current = 0;
+
+    function show(index){
+      current = (index + cards.length) % cards.length;
+      const card = cards[current];
+      const img = card.querySelector('img');
+      viewerImg.src = img.src;
+      viewerImg.alt = img.alt;
+      viewerKicker.textContent = card.querySelector('.card-kicker').textContent;
+      viewerTitle.textContent = card.querySelector('h3').textContent;
+      viewerText.textContent = card.querySelector('p').textContent;
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+    function closeViewer(){lightbox.hidden=true;document.body.style.overflow=''}
+    cards.forEach((card,i)=>card.addEventListener('click',()=>show(i)));
+    document.getElementById('closeBtn').addEventListener('click',closeViewer);
+    document.getElementById('prevBtn').addEventListener('click',()=>show(current-1));
+    document.getElementById('nextBtn').addEventListener('click',()=>show(current+1));
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox) closeViewer()});
+    document.addEventListener('keydown',e=>{
+      if(lightbox.hidden) return;
+      if(e.key==='Escape') closeViewer();
+      if(e.key==='ArrowLeft') show(current-1);
+      if(e.key==='ArrowRight') show(current+1);
+    });
+  </script>
 </body>
 </html>
