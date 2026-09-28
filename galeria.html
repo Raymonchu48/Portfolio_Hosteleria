@@ -110,6 +110,7 @@
     .image-wrap{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0b171c}
     .image-wrap::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(7,18,23,.76));pointer-events:none}
     .card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .4s ease}
+    .card--bar-premium img{object-position:center 78%}
     .card:hover img{transform:scale(1.035)}
     .card-body{padding:17px 17px 19px}
     .card-kicker{font-size:9px;font-weight:700;color:var(--gold);letter-spacing:.18em;margin-bottom:8px}
@@ -129,8 +130,8 @@
     .viewer-top{display:flex;justify-content:space-between;align-items:center;padding:13px 15px;border-bottom:1px solid var(--line);background:#0b1a21}
     .viewer-top span{font-size:10px;color:var(--cyan-2);letter-spacing:.16em}
     .close-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer;font-size:20px}
-    .viewer-stage{position:relative;min-height:0;display:grid;place-items:center;background:radial-gradient(circle at center,#10262f,#050d11 72%)}
-    .viewer-stage img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;padding:14px}
+    .viewer-stage{position:relative;min-height:0;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at center,#10262f,#050d11 72%)}
+    .viewer-stage img{width:100%;height:100%;min-width:0;min-height:0;display:block;object-fit:contain;padding:14px}
     .arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(3,11,14,.65);color:#fff;cursor:pointer;font-size:25px}
     .arrow.prev{left:14px}.arrow.next{right:14px}
     .viewer-meta{padding:15px 18px 18px;border-top:1px solid var(--line);background:#0b1a21}
@@ -194,7 +195,7 @@
       <article class="card" data-index="6"><div class="image-wrap"><span class="card-index">07</span><img src="imagenes/galeria/cluster-recepcion-coctel.jpg" alt="Recepción cocktail"></div><div class="card-body"><div class="card-kicker">COCKTAIL RECEPTION</div><h3>Recepción cocktail</h3><p>Recepción cocktail en patio exterior con montaje de apoyo.</p></div></article>
       <article class="card" data-index="7"><div class="image-wrap"><span class="card-index">08</span><img src="imagenes/mesa-gala-dia.jpg" alt="Cena de gala"></div><div class="card-body"><div class="card-kicker">BANQUET GALA</div><h3>Cena de gala</h3><p>Montaje de mesa de gala con ejecución orientada al detalle.</p></div></article>
       <article class="card" data-index="8"><div class="image-wrap"><span class="card-index">09</span><img src="imagenes/coffe-breaks.jpg" alt="Coffee break"></div><div class="card-body"><div class="card-kicker">COFFEE BREAKS</div><h3>Coffee break</h3><p>Estación de coffee break para reuniones y eventos.</p></div></article>
-      <article class="card" data-index="9"><div class="image-wrap"><span class="card-index">10</span><img src="imagenes/galeria/bar-premium-2026.jpg" alt="Bar premium"></div><div class="card-body"><div class="card-kicker">PREMIUM BAR</div><h3>Bar premium</h3><p>Bar de alta gama preparado para ofrecer un servicio elegante y cuidado.</p></div></article>
+      <article class="card card--bar-premium" data-index="9"><div class="image-wrap"><span class="card-index">10</span><img src="imagenes/galeria/bar-premium-2026.jpg" alt="Bar premium"></div><div class="card-body"><div class="card-kicker">PREMIUM BAR</div><h3>Bar premium</h3><p>Bar de alta gama preparado para ofrecer un servicio elegante y cuidado.</p></div></article>
       <article class="card" data-index="10"><div class="image-wrap"><span class="card-index">11</span><img src="imagenes/galeria/cena-boda-interior-2026.jpg" alt="Cena de boda en interior"></div><div class="card-body"><div class="card-kicker">WEDDING DINNER · INDOOR</div><h3>Cena de boda · interior</h3><p>Montaje de cena de boda en salón con decoración floral y servicio de alta gama.</p></div></article>
       <article class="card" data-index="11"><div class="image-wrap"><span class="card-index">12</span><img src="imagenes/galeria/cena-boda-exterior-2026.jpg" alt="Cena de boda en exterior"></div><div class="card-body"><div class="card-kicker">WEDDING DINNER · OUTDOOR</div><h3>Cena de boda · exterior</h3><p>Mesa imperial para cena de boda al aire libre con montaje floral y luz natural.</p></div></article>
     </section>
