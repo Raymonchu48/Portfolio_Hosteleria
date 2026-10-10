@@ -1,0 +1,316 @@
+/*
+  RACV · capa de acabado técnico
+  Líneas finas, relieve y profundidad inspirados en un styleguide físico,
+  conservando la paleta y la arquitectura original de cada página.
+*/
+
+:root{
+  --craft-cyan:rgba(157,210,222,.42);
+  --craft-cyan-soft:rgba(115,185,202,.12);
+  --craft-gold:rgba(199,163,106,.34);
+  --craft-light:rgba(255,255,255,.08);
+  --craft-dark:rgba(0,0,0,.34);
+}
+
+body{position:relative;isolation:isolate}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:999;
+  pointer-events:none;
+  box-shadow:inset 0 0 120px rgba(0,0,0,.18);
+}
+
+/* HOME · CLUSTER */
+.portfolio-home::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent 0 6%,rgba(157,210,222,.035) 6% 6.08%,transparent 6.08% 94%,rgba(157,210,222,.035) 94% 94.08%,transparent 94.08%),
+    linear-gradient(180deg,transparent 0 13%,rgba(199,163,106,.028) 13% 13.08%,transparent 13.08% 87%,rgba(199,163,106,.028) 87% 87.08%,transparent 87.08%);
+}
+.portfolio-home .topbar{
+  box-shadow:inset 0 1px rgba(255,255,255,.045),0 10px 30px rgba(0,0,0,.24);
+}
+.portfolio-home .cluster-stage{
+  box-shadow:inset -18px 0 40px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.025);
+}
+.portfolio-home .stage-heading{isolation:isolate}
+.portfolio-home .stage-heading::after{
+  content:"";
+  display:block;
+  width:min(100%,640px);
+  height:7px;
+  margin-top:18px;
+  border-top:1px solid rgba(157,210,222,.20);
+  background:
+    linear-gradient(90deg,var(--craft-cyan) 0 46px,transparent 46px calc(100% - 26px),var(--craft-gold) calc(100% - 26px) 100%) top left/100% 1px no-repeat;
+  opacity:.8;
+}
+.portfolio-home .cluster-canvas::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.48;
+  background:
+    linear-gradient(31deg,transparent 0 49.86%,rgba(157,210,222,.10) 49.92% 50.02%,transparent 50.08%),
+    linear-gradient(149deg,transparent 0 49.86%,rgba(199,163,106,.075) 49.92% 50.02%,transparent 50.08%),
+    repeating-linear-gradient(90deg,transparent 0 79px,rgba(157,210,222,.04) 80px,transparent 81px),
+    repeating-linear-gradient(0deg,transparent 0 79px,rgba(157,210,222,.035) 80px,transparent 81px);
+  mask-image:radial-gradient(circle at center,black 0 46%,transparent 80%);
+  -webkit-mask-image:radial-gradient(circle at center,black 0 46%,transparent 80%);
+}
+.portfolio-home .cluster-map{z-index:1}
+.portfolio-home .node{
+  border-color:rgba(157,210,222,.30);
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.075),
+    inset 0 -1px rgba(0,0,0,.32),
+    0 3px 0 rgba(3,12,16,.55),
+    0 16px 34px rgba(0,0,0,.28);
+}
+.portfolio-home .node::before{
+  content:"";
+  position:absolute;
+  left:14px;
+  right:14px;
+  top:7px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--craft-cyan),transparent);
+  opacity:.72;
+  pointer-events:none;
+}
+.portfolio-home .node:hover,
+.portfolio-home .node.is-active{
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.11),
+    inset 0 -1px rgba(0,0,0,.32),
+    0 4px 0 rgba(3,12,16,.52),
+    0 20px 42px rgba(0,0,0,.33),
+    0 0 22px rgba(115,185,202,.10);
+}
+.portfolio-home .core{
+  box-shadow:
+    inset 0 2px 2px rgba(255,255,255,.10),
+    inset 0 -12px 28px rgba(0,0,0,.25),
+    0 0 0 13px rgba(115,185,202,.035),
+    0 0 0 30px rgba(115,185,202,.018),
+    0 8px 0 rgba(2,10,14,.32),
+    0 28px 74px rgba(0,0,0,.46);
+}
+.portfolio-home .inspector{
+  border-left:1px solid rgba(255,255,255,.025);
+  box-shadow:inset 1px 0 rgba(157,210,222,.07),-18px 0 44px rgba(0,0,0,.16);
+}
+.portfolio-home .inspector-head{position:relative;box-shadow:inset 0 1px rgba(255,255,255,.045)}
+.portfolio-home .inspector-head::after{
+  content:"";
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg,var(--craft-cyan),transparent 62%,var(--craft-gold));
+}
+.portfolio-home .metric,
+.portfolio-home .panel-actions a,
+.portfolio-home .panel-actions button,
+.portfolio-home .topnav a,
+.portfolio-home .topnav button,
+.portfolio-home .desk-tabs button,
+.portfolio-home .desk-actions a{
+  box-shadow:inset 0 1px rgba(255,255,255,.075),inset 0 -1px rgba(0,0,0,.32),0 4px 10px rgba(0,0,0,.16);
+}
+.portfolio-home .metric{position:relative;overflow:hidden}
+.portfolio-home .metric::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.028),transparent 45%);
+}
+.portfolio-home .control-desk{
+  box-shadow:inset 0 1px rgba(157,210,222,.10),0 -12px 34px rgba(0,0,0,.23);
+}
+.portfolio-home .control-label::after{
+  content:"";
+  height:1px;
+  flex:1;
+  margin:0 4px;
+  background:linear-gradient(90deg,rgba(157,210,222,.20),transparent);
+}
+
+/* GALERÍA */
+.gallery-page{
+  background-attachment:fixed;
+}
+.gallery-page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.52;
+  background:
+    linear-gradient(90deg,transparent 7%,rgba(157,210,222,.055) 7% 7.08%,transparent 7.08% 93%,rgba(157,210,222,.055) 93% 93.08%,transparent 93.08%),
+    repeating-linear-gradient(0deg,transparent 0 109px,rgba(157,210,222,.022) 110px,transparent 111px);
+}
+.gallery-page .topbar{
+  box-shadow:inset 0 1px rgba(255,255,255,.05),0 12px 34px rgba(0,0,0,.24);
+}
+.gallery-page .hero-panel,
+.gallery-page .card,
+.gallery-page .viewer{
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.07),
+    inset 0 -1px rgba(0,0,0,.28),
+    0 4px 0 rgba(2,10,14,.30),
+    0 20px 48px rgba(0,0,0,.27);
+}
+.gallery-page .section-head{position:relative}
+.gallery-page .section-head::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:10px;
+  height:1px;
+  z-index:-1;
+  background:linear-gradient(90deg,var(--craft-cyan),transparent 68%,var(--craft-gold));
+}
+.gallery-page .card::before{
+  content:"";
+  position:absolute;
+  inset:6px;
+  z-index:3;
+  border:1px solid rgba(255,255,255,.035);
+  border-radius:10px;
+  pointer-events:none;
+}
+.gallery-page .card-body{position:relative}
+.gallery-page .card-body::before{
+  content:"";
+  position:absolute;
+  left:17px;
+  right:17px;
+  top:0;
+  height:1px;
+  background:linear-gradient(90deg,var(--craft-gold),transparent 72%);
+}
+.gallery-page .card-index,
+.gallery-page .nav-btn,
+.gallery-page .status-chip,
+.gallery-page .close-btn,
+.gallery-page .arrow{
+  box-shadow:inset 0 1px rgba(255,255,255,.09),inset 0 -1px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.18);
+}
+
+/* FORMACIÓN · mantiene la paleta clara original */
+.diplomas-page{
+  background:
+    linear-gradient(90deg,transparent 0 5%,rgba(61,110,125,.045) 5% 5.08%,transparent 5.08% 95%,rgba(61,110,125,.045) 95% 95.08%,transparent 95.08%),
+    repeating-linear-gradient(0deg,#f2f4f5 0 69px,rgba(61,110,125,.035) 70px,#f2f4f5 71px);
+}
+.diplomas-page .page{
+  border:1px solid rgba(61,110,125,.14);
+  box-shadow:inset 0 1px rgba(255,255,255,.85),0 3px 0 rgba(61,110,125,.08),0 24px 70px rgba(37,74,86,.13);
+}
+.diplomas-page header{position:relative;overflow:hidden;box-shadow:inset 0 1px rgba(255,255,255,.22),inset 0 -1px rgba(28,74,88,.24)}
+.diplomas-page header::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(112deg,transparent 0 64%,rgba(255,255,255,.10) 64.08% 64.2%,transparent 64.28%),
+    repeating-linear-gradient(90deg,transparent 0 84px,rgba(255,255,255,.055) 85px,transparent 86px);
+}
+.diplomas-page header::after{
+  content:"";
+  position:absolute;
+  left:34px;
+  right:34px;
+  bottom:13px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(255,255,255,.75),transparent 64%,rgba(255,255,255,.28));
+}
+.diplomas-page header > *{position:relative;z-index:1}
+.diplomas-page .section-title{position:relative}
+.diplomas-page .section-title::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  width:72px;
+  height:2px;
+  background:linear-gradient(90deg,var(--primary),rgba(61,110,125,.20));
+}
+.diplomas-page .card{
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+  box-shadow:inset 0 1px rgba(255,255,255,.95),inset 0 -1px rgba(61,110,125,.07),0 3px 0 rgba(61,110,125,.06),0 12px 26px rgba(37,74,86,.08);
+}
+.diplomas-page .card::after{
+  content:"";
+  position:absolute;
+  inset:6px;
+  z-index:0;
+  border:1px solid rgba(61,110,125,.055);
+  border-radius:6px;
+  pointer-events:none;
+}
+.diplomas-page .card:hover{
+  transform:translateY(-2px);
+  border-color:rgba(96,164,184,.42);
+  box-shadow:inset 0 1px rgba(255,255,255,1),0 4px 0 rgba(61,110,125,.07),0 18px 34px rgba(37,74,86,.13);
+}
+.diplomas-page .card-badge{
+  border:1px solid rgba(61,110,125,.13);
+  box-shadow:inset 0 1px rgba(255,255,255,.95),inset 0 -1px rgba(61,110,125,.08),0 4px 9px rgba(61,110,125,.08);
+}
+
+/* VISOR DE DOCUMENTOS */
+.document-page::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent 6%,rgba(157,210,222,.045) 6% 6.08%,transparent 6.08% 94%,rgba(157,210,222,.045) 94% 94.08%,transparent 94.08%),
+    repeating-linear-gradient(0deg,transparent 0 94px,rgba(157,210,222,.025) 95px,transparent 96px);
+}
+.document-page .viewer-bar{
+  box-shadow:inset 0 1px rgba(255,255,255,.055),0 12px 36px rgba(0,0,0,.24);
+}
+.document-page .btn{
+  box-shadow:inset 0 1px rgba(255,255,255,.09),inset 0 -1px rgba(0,0,0,.28),0 4px 12px rgba(0,0,0,.18);
+}
+.document-page .viewport{
+  background:
+    linear-gradient(135deg,transparent 0 49.94%,rgba(157,210,222,.055) 50%,transparent 50.06%),
+    radial-gradient(circle at 50% 0,rgba(115,185,202,.08),transparent 32%);
+}
+.document-page .frame{
+  outline:1px solid rgba(157,210,222,.06);
+  outline-offset:6px;
+  box-shadow:inset 0 1px rgba(255,255,255,.10),0 5px 0 rgba(0,0,0,.16),0 26px 76px rgba(0,0,0,.35);
+}
+
+@media(max-width:680px){
+  body::after{box-shadow:inset 0 0 60px rgba(0,0,0,.12)}
+  .portfolio-home .cluster-canvas::before{display:none}
+  .portfolio-home .stage-heading::after{margin-top:14px}
+  .gallery-page .section-head::after{display:none}
+  .diplomas-page header::after{left:18px;right:18px}
+  .document-page .frame{outline-offset:3px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .diplomas-page .card{transition:none}
+}
