@@ -24,6 +24,42 @@
     .inspector{background:rgba(9,24,30,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-direction:column;min-height:0}.inspector-head{padding:20px 20px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.inspector-head strong{font-size:10px;letter-spacing:.16em;text-transform:uppercase}.inspector-code{color:var(--cyan);font-size:9px;letter-spacing:.11em}.inspector-body{padding:22px 20px 24px;overflow-y:auto;flex:1}.panel-index{color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}.inspector h2{margin:0;font-family:'Fraunces',Georgia,serif;font-size:29px;line-height:1.05;color:#f5f8f9;letter-spacing:-.025em}.panel-role{margin-top:8px;color:var(--cyan2);font-size:11px;line-height:1.5;font-weight:600}.panel-copy{margin:16px 0 0;color:#9fb2b8;font-size:12px;line-height:1.72}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:20px 0 0}.metric{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(255,255,255,.022)}.metric strong{display:block;font-family:'Fraunces',Georgia,serif;color:#eff6f7;font-size:21px;line-height:1}.metric span{display:block;margin-top:5px;color:#758e96;font-size:8px;letter-spacing:.10em;text-transform:uppercase}.panel-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.panel-actions a,.panel-actions button{min-height:38px;display:grid;place-items:center;border-radius:9px;border:1px solid rgba(115,185,202,.28);background:rgba(115,185,202,.08);color:#d9eaee;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s}.panel-actions a:hover,.panel-actions button:hover{background:rgba(115,185,202,.16);border-color:rgba(157,210,222,.56)}.panel-actions .primary{background:var(--cyan);color:#071419;border-color:var(--cyan)}.panel-actions .primary:hover{background:var(--cyan2)}.field-note{margin-top:22px;border-top:1px solid var(--line);padding-top:17px}.field-note-label{color:#728b93;font-size:8px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}.field-note blockquote{margin:0;color:#b3c3c7;font-family:'Fraunces',Georgia,serif;font-size:13px;line-height:1.55}.field-note cite{display:block;margin-top:8px;color:#708890;font-size:9px;font-style:normal}
     .ownership-row{grid-column:1/-1;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:8px;border-top:1px solid rgba(144,196,210,.12);color:#6f8991;font-size:8px;letter-spacing:.10em;text-transform:uppercase}.ownership-row strong{color:#9dd2de;font-weight:700}.control-desk{border-top:1px solid var(--line);background:rgba(5,14,18,.94);padding:11px 18px;display:grid;grid-template-columns:minmax(260px,.75fr) minmax(300px,1fr) auto;gap:18px;align-items:center;position:sticky;bottom:0;z-index:45}.control-block{min-width:0}.control-label{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;color:#758d94;font-size:8px;letter-spacing:.13em;text-transform:uppercase}.control-label output{color:var(--cyan2)}input[type=range]{width:100%;accent-color:var(--cyan)}.desk-tabs,.desk-actions{display:flex;gap:7px;flex-wrap:wrap}.desk-tabs button,.desk-actions a{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.025);color:#9bb0b6;padding:8px 10px;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;cursor:pointer;transition:.2s;white-space:nowrap}.desk-tabs button:hover,.desk-tabs button.active,.desk-actions a:hover{color:#eef6f7;border-color:rgba(115,185,202,.52);background:rgba(115,185,202,.10)}.desk-actions{justify-content:flex-end}
     .contact-popover{position:fixed;inset:0;background:rgba(2,8,11,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:20px}.contact-popover.open{display:grid}.contact-card{width:min(460px,100%);border:1px solid rgba(157,210,222,.34);border-radius:20px;background:linear-gradient(145deg,#10262e,#0a1a20);padding:26px;box-shadow:0 30px 90px rgba(0,0,0,.46)}.contact-card h3{font-family:'Fraunces',Georgia,serif;margin:0 0 14px;font-size:28px}.contact-card p{margin:8px 0;color:#9fb1b7;font-size:12px}.contact-card strong{color:#e6f0f2}.contact-close{float:right;border:1px solid var(--line);border-radius:50%;width:30px;height:30px;background:transparent;cursor:pointer}.contact-links{display:flex;gap:8px;margin-top:18px}.contact-links a{padding:9px 12px;border-radius:8px;border:1px solid rgba(115,185,202,.30);background:rgba(115,185,202,.08);font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+    /* Títulos · halo ámbar y línea de luz inspirados en la referencia */
+    .stage-heading h1,
+    .inspector h2{
+      position:relative;
+      isolation:isolate;
+      width:fit-content;
+      max-width:100%;
+    }
+    .stage-heading h1::before,
+    .inspector h2::before{
+      content:'';
+      position:absolute;
+      z-index:-1;
+      pointer-events:none;
+      border-radius:18px;
+      background:
+        linear-gradient(90deg,rgba(255,132,40,.14),rgba(255,195,104,.09) 48%,transparent 84%),
+        radial-gradient(ellipse at 18% 50%,rgba(255,188,92,.30),rgba(255,150,54,.11) 42%,transparent 72%);
+      filter:blur(12px);
+    }
+    .stage-heading h1::before{inset:-.18em -.38em;opacity:.84}
+    .inspector h2::before{inset:-.28em -.48em;opacity:.72;filter:blur(10px)}
+    .stage-heading h1::after,
+    .inspector h2::after{
+      content:'';
+      position:absolute;
+      top:.10em;
+      bottom:.08em;
+      width:2px;
+      border-radius:999px;
+      pointer-events:none;
+      background:linear-gradient(180deg,transparent 0%,#ffc46f 16%,#ff8b35 52%,#ffd08a 84%,transparent 100%);
+      box-shadow:0 0 4px rgba(255,255,255,.72),0 0 10px rgba(255,151,59,.92),0 0 22px rgba(255,133,35,.56);
+    }
+    .stage-heading h1::after{left:-14px}
+    .inspector h2::after{left:-11px}
     /* RCV · botón de inicio con aro prismático y profundidad óptica */
     .brand-mark{
       position:relative;
