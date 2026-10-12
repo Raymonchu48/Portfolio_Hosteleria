@@ -712,3 +712,48 @@ body::after{
   .portfolio-home .desk-tabs button::after,
   .portfolio-home .desk-actions a::after{transition:none}
 }
+
+
+/* RCV · LUZ TURQUESA BAJO MENÚ SUPERIOR · 2026-10-12 */
+/* CLUSTER · FORMACIÓN · GALERÍA · PERFIL DIGITAL.
+   Mismo acabado cian de los controles inferiores; sin imágenes. */
+.portfolio-home .topnav a,
+.portfolio-home .topnav button{
+  position:relative;
+  isolation:isolate;
+}
+.portfolio-home .topnav a::after,
+.portfolio-home .topnav button::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  left:14%;
+  right:14%;
+  bottom:-2px;
+  height:2px;
+  z-index:1;
+  border-radius:999px;
+  background:linear-gradient(90deg,
+    transparent,
+    rgba(51,227,248,.78) 18%,
+    rgba(184,255,255,.98) 50%,
+    rgba(51,227,248,.78) 82%,
+    transparent);
+  box-shadow:0 -2px 8px rgba(35,235,251,.43),
+             0 4px 11px rgba(0,221,239,.34);
+  opacity:.88;
+  transition:opacity .2s ease,box-shadow .2s ease;
+}
+.portfolio-home .topnav a:hover::after,
+.portfolio-home .topnav button:hover::after,
+.portfolio-home .topnav .active::after,
+.portfolio-home .topnav a:focus-visible::after,
+.portfolio-home .topnav button:focus-visible::after{
+  opacity:1;
+  box-shadow:0 -3px 11px rgba(46,244,255,.70),
+             0 5px 16px rgba(0,226,242,.52);
+}
+@media(prefers-reduced-motion:reduce){
+  .portfolio-home .topnav a::after,
+  .portfolio-home .topnav button::after{transition:none}
+}
