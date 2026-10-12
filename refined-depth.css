@@ -1270,3 +1270,207 @@ body::after{
   border-color:rgba(188,247,255,.83);
   box-shadow:inset 0 1px rgba(255,255,255,.12),0 0 18px rgba(33,217,242,.21);
 }
+
+
+/* RACV · HABLEMOS / CONTACTO EDITORIAL PREMIUM · 2026-10-12 */
+/* Rediseño exclusivo del modal de contacto, sin superponer imágenes. */
+.portfolio-home .contact-popover{
+  padding:18px;
+  background:rgba(2,10,14,.77);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.portfolio-home .contact-card{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  width:min(560px,100%);
+  max-height:calc(100dvh - 36px);
+  overflow-y:auto;
+  padding:36px 38px 38px;
+  border:1px solid rgba(150,213,226,.43);
+  border-radius:22px;
+  background:
+    radial-gradient(ellipse at 93% 4%,rgba(76,165,183,.11),transparent 45%),
+    linear-gradient(148deg,#112c36 0%,#0c212a 51%,#091a21 100%);
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.075),
+    inset 0 -1px rgba(0,0,0,.38),
+    0 32px 94px rgba(0,0,0,.59),
+    0 0 32px rgba(54,185,210,.09);
+}
+.portfolio-home .contact-card::before{
+  content:"";
+  position:absolute;
+  inset:auto 3% -1px;
+  z-index:0;
+  height:110px;
+  pointer-events:none;
+  background:radial-gradient(ellipse 75% 72% at 50% 100%,rgba(25,226,244,.16),transparent 78%);
+  filter:blur(10px);
+}
+.portfolio-home .contact-card::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  pointer-events:none;
+  left:8%;
+  right:8%;
+  bottom:0;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(51,225,243,.8) 20%,rgba(188,252,255,.98) 50%,rgba(51,225,243,.8) 80%,transparent);
+  box-shadow:0 -2px 12px rgba(29,229,245,.53),0 5px 17px rgba(13,221,241,.29);
+}
+.portfolio-home .contact-card > *{position:relative;z-index:1}
+.portfolio-home .contact-card .contact-close{
+  position:absolute;
+  top:22px;
+  right:23px;
+  z-index:3;
+  float:none;
+  width:36px;
+  height:36px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(145,210,224,.31);
+  border-radius:50%;
+  background:rgba(11,32,41,.75);
+  color:#e4f6fa;
+  font-size:20px;
+  line-height:1;
+  transition:background .2s,border-color .2s,transform .2s;
+}
+.portfolio-home .contact-card .contact-close:hover,
+.portfolio-home .contact-card .contact-close:focus-visible{
+  color:#fff;
+  background:rgba(41,100,118,.75);
+  border-color:rgba(181,242,253,.78);
+  transform:rotate(90deg);
+}
+.portfolio-home .contact-intro{padding:0 40px 25px 0;margin-bottom:17px;border-bottom:1px solid rgba(133,207,222,.20)}
+.portfolio-home .contact-intro .eyebrow{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+  color:#b8d7df;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.portfolio-home .contact-intro .eyebrow::before{
+  content:"";
+  width:31px;
+  height:1px;
+  background:#87c7d5;
+  box-shadow:0 0 10px rgba(66,212,235,.27);
+}
+.portfolio-home .contact-card h3{
+  width:fit-content;
+  max-width:100%;
+  margin:0 0 11px;
+  color:#f5fcfd;
+  font-family:'Fraunces',Georgia,serif;
+  font-size:clamp(38px,5.5vw,48px);
+  font-weight:600;
+  line-height:1.1;
+  letter-spacing:-.035em;
+  text-shadow:0 1px rgba(255,255,255,.13),0 9px 25px rgba(0,0,0,.29);
+}
+.portfolio-home .contact-card .contact-lead{
+  margin:0;
+  max-width:44ch;
+  color:#b5cbd2;
+  font-size:12.5px;
+  font-weight:500;
+  line-height:1.85;
+}
+.portfolio-home .contact-details{display:grid;gap:2px}
+.portfolio-home .contact-details p{
+  display:grid;
+  grid-template-columns:94px minmax(0,1fr);
+  gap:15px;
+  align-items:start;
+  margin:0;
+  padding:11px 0;
+  border-bottom:1px solid rgba(129,193,206,.11);
+  color:#c4d9de;
+  font-size:12px;
+  line-height:1.65;
+}
+.portfolio-home .contact-details p:last-child{border-bottom:0}
+.portfolio-home .contact-details strong{
+  color:#e7f2f4;
+  font-weight:700;
+}
+.portfolio-home .contact-details a{
+  color:#b9dce4;
+  text-decoration:none;
+  overflow-wrap:anywhere;
+  transition:color .2s ease;
+}
+.portfolio-home .contact-details a:hover,
+.portfolio-home .contact-details a:focus-visible{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.portfolio-home .contact-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+.portfolio-home .contact-links a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  min-width:121px;
+  padding:12px 17px;
+  border:1px solid rgba(120,207,224,.39);
+  border-radius:9px;
+  background:linear-gradient(145deg,rgba(34,85,102,.58),rgba(13,48,61,.76));
+  box-shadow:inset 0 1px rgba(255,255,255,.10),0 8px 20px rgba(0,0,0,.15);
+  color:#eefcff;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  transition:background .2s ease,border-color .2s ease,transform .2s ease;
+}
+.portfolio-home .contact-links a::after{
+  content:"";
+  position:absolute;
+  left:14%;
+  right:14%;
+  bottom:-2px;
+  height:2px;
+  border-radius:999px;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(70,225,241,.86),rgba(187,252,255,.96),rgba(70,225,241,.86),transparent);
+  box-shadow:0 -3px 9px rgba(28,227,243,.39),0 4px 10px rgba(0,219,239,.25);
+}
+.portfolio-home .contact-links a:hover,
+.portfolio-home .contact-links a:focus-visible{
+  color:#fff;
+  border-color:rgba(177,239,251,.84);
+  background:linear-gradient(145deg,rgba(42,113,130,.80),rgba(13,56,72,.91));
+  transform:translateY(-2px);
+}
+.portfolio-home .contact-close:focus-visible,
+.portfolio-home .contact-links a:focus-visible{outline:2px solid #9deefb;outline-offset:3px}
+@media(max-width:560px){
+  .portfolio-home .contact-card{padding:28px 24px 31px;border-radius:18px}
+  .portfolio-home .contact-card .contact-close{top:16px;right:16px}
+  .portfolio-home .contact-intro{padding-right:33px}
+  .portfolio-home .contact-card h3{font-size:39px}
+  .portfolio-home .contact-details p{grid-template-columns:1fr;gap:2px}
+  .portfolio-home .contact-links a{flex:1 1 110px}
+}
+@media(prefers-reduced-motion:reduce){
+  .portfolio-home .contact-card .contact-close,
+  .portfolio-home .contact-details a,
+  .portfolio-home .contact-links a{transition:none}
+  .portfolio-home .contact-card .contact-close:hover,
+  .portfolio-home .contact-card .contact-links a:hover{transform:none}
+}
