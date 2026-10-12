@@ -1064,3 +1064,191 @@ body::after{
 @media(prefers-reduced-motion:reduce){
   .diplomas-page .card,.diplomas-page .card-link{transition:none}
 }
+
+
+/* RACV · GALERÍA PREMIUM EN SINTONÍA CON EL CLÚSTER · 2026-10-12 */
+/* Acabado técnico sin imágenes superpuestas ni cambios al contenido. */
+.gallery-page{
+  --gallery-cyan:#82d7e8;
+  --gallery-line:rgba(127,208,226,.32);
+  background:
+    radial-gradient(ellipse at 50% 0%,rgba(42,144,163,.16),transparent 39%),
+    radial-gradient(ellipse at 87% 65%,rgba(199,163,106,.06),transparent 30%),
+    linear-gradient(145deg,#08161c,#0a1a21 52%,#071318);
+}
+.gallery-page .topbar{
+  isolation:isolate;
+  border-bottom:1px solid rgba(60,208,232,.40);
+  background:linear-gradient(180deg,rgba(5,16,21,.95),rgba(8,30,39,.94));
+  box-shadow:0 13px 35px rgba(0,0,0,.23),0 7px 21px rgba(15,207,239,.10);
+}
+.gallery-page .topbar::before{
+  content:"";
+  position:absolute;
+  inset:auto 5% 0;
+  height:75%;
+  z-index:0;
+  pointer-events:none;
+  background:radial-gradient(ellipse 72% 94% at 50% 100%,rgba(28,230,249,.26),rgba(0,186,214,.11) 52%,transparent 100%);
+  filter:blur(10px);
+}
+.gallery-page .topbar::after{
+  content:"";
+  position:absolute;
+  bottom:-1px;
+  left:5%;
+  right:5%;
+  height:2px;
+  z-index:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(40,229,246,.72) 17%,rgba(180,253,255,.98) 50%,rgba(40,229,246,.72) 83%,transparent);
+  box-shadow:0 -2px 10px rgba(44,228,248,.56),0 5px 17px rgba(14,209,239,.20);
+}
+.gallery-page .topbar > *{position:relative;z-index:1}
+.gallery-page .nav-btn{
+  position:relative;
+  border-radius:9px;
+  border-color:rgba(135,208,226,.33);
+  background:rgba(11,35,44,.61);
+  box-shadow:inset 0 1px rgba(255,255,255,.09),0 5px 13px rgba(0,0,0,.17);
+}
+.gallery-page .nav-btn::after{
+  content:"";
+  position:absolute;
+  left:16%;
+  right:16%;
+  bottom:-2px;
+  height:2px;
+  border-radius:999px;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(47,221,240,.79),rgba(185,254,255,.97),rgba(47,221,240,.79),transparent);
+  box-shadow:0 0 10px rgba(39,225,247,.42);
+  opacity:.84;
+}
+.gallery-page .nav-btn:hover::after,
+.gallery-page .nav-btn:focus-visible::after{
+  opacity:1;
+  box-shadow:0 0 13px rgba(44,243,255,.69);
+}
+.gallery-page .hero{border-bottom-color:rgba(123,192,209,.23)}
+.gallery-page .eyebrow{
+  color:#d1af7a;
+  text-shadow:0 0 13px rgba(199,163,106,.13);
+}
+.gallery-page .hero h1{
+  color:#f5fbfc;
+  -webkit-text-stroke:.35px rgba(213,244,250,.26);
+  text-shadow:0 -1px rgba(255,255,255,.20),0 4px 0 rgba(0,0,0,.14),0 9px 27px rgba(0,0,0,.30);
+}
+.gallery-page .hero p{color:#b9ced5;line-height:1.85}
+.gallery-page .hero-panel{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+  border-color:rgba(128,206,225,.29);
+  background:linear-gradient(142deg,rgba(22,53,65,.95),rgba(9,27,36,.97));
+  box-shadow:inset 0 1px rgba(255,255,255,.08),0 13px 36px rgba(0,0,0,.19);
+}
+.gallery-page .hero-panel::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:12%;
+  right:12%;
+  height:2px;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(69,224,242,.73),rgba(183,254,255,.95),rgba(69,224,242,.73),transparent);
+  box-shadow:0 -3px 12px rgba(25,225,243,.40);
+}
+.gallery-page .status-chip{
+  border-color:rgba(138,201,215,.27);
+  background:linear-gradient(145deg,rgba(32,69,78,.37),rgba(8,28,37,.52));
+  border-radius:10px;
+}
+.gallery-page .status-chip b{color:#c0f3fb}
+.gallery-page .status-chip span{color:#a5bcc5}
+.gallery-page .section-head h2{
+  color:#e2f6fa;
+  -webkit-text-stroke:.12px rgba(255,255,255,.16);
+  text-shadow:0 1px 9px rgba(52,201,228,.12);
+}
+.gallery-page .section-head::after{
+  background:linear-gradient(90deg,rgba(113,228,243,.53),transparent 74%,rgba(199,163,106,.19));
+}
+.gallery-page .gallery-grid{gap:19px}
+.gallery-page .card{
+  border:1px solid rgba(131,205,223,.34);
+  border-radius:16px;
+  background:linear-gradient(150deg,rgba(17,43,54,.98),rgba(7,24,31,.98));
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.09),
+    0 4px 0 rgba(1,12,18,.24),
+    0 18px 34px rgba(0,0,0,.24);
+}
+.gallery-page .card::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:12%;
+  right:12%;
+  height:2px;
+  z-index:4;
+  border-radius:999px;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(43,221,243,.77) 19%,rgba(169,252,255,.98) 50%,rgba(43,221,243,.77) 81%,transparent);
+  box-shadow:0 -3px 11px rgba(27,218,242,.43),0 5px 14px rgba(10,197,231,.18);
+  opacity:.90;
+}
+.gallery-page .card:hover,
+.gallery-page .card:focus-within{
+  transform:translateY(-3px);
+  border-color:rgba(150,229,244,.72);
+  box-shadow:inset 0 1px rgba(255,255,255,.12),0 5px 0 rgba(1,12,18,.23),0 22px 45px rgba(0,0,0,.29),0 6px 23px rgba(22,215,238,.13);
+}
+.gallery-page .image-wrap{
+  background:#12232a;
+  border-bottom:1px solid rgba(141,207,223,.18);
+}
+.gallery-page .image-wrap::after{
+  height:23%;
+  background:linear-gradient(transparent,rgba(6,20,27,.33));
+}
+.gallery-page .card img{
+  image-rendering:auto;
+  filter:none;
+}
+.gallery-page .card--reception-original img{object-position:center 51%}
+.gallery-page .card-body{padding:19px 20px 23px}
+.gallery-page .card-body::before{
+  left:20px;
+  right:20px;
+  background:linear-gradient(90deg,rgba(213,177,113,.64),transparent 75%);
+}
+.gallery-page .card-kicker{color:#d6b27b;letter-spacing:.17em}
+.gallery-page .card h3{
+  color:#f0f8f9;
+  font-size:17px;
+  line-height:1.37;
+  text-shadow:0 1px 2px rgba(0,0,0,.30);
+}
+.gallery-page .card p{color:#afc4cc;line-height:1.72}
+.gallery-page .card-index{
+  border:1px solid rgba(177,232,242,.26);
+  background:rgba(7,24,31,.87);
+  color:#e6f8fb;
+  border-radius:9px;
+  box-shadow:0 7px 20px rgba(0,0,0,.22);
+}
+.gallery-page .viewer{
+  border-color:rgba(117,215,231,.43);
+  box-shadow:0 35px 110px rgba(0,0,0,.70),0 0 35px rgba(39,220,239,.08);
+}
+.gallery-page .viewer-stage img{object-fit:contain;filter:none}
+@media(max-width:680px){
+  .gallery-page .topbar::before{height:65%}
+  .gallery-page .card-body{padding:17px 17px 21px}
+  .gallery-page .gallery-grid{gap:16px}
+}
+@media(prefers-reduced-motion:reduce){
+  .gallery-page .card{transition:none}
+}
