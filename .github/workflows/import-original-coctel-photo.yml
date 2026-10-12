@@ -1,0 +1,48 @@
+name: Import high-resolution cocktail reception photo
+on:
+  push:
+    paths:
+      - '.github/workflows/import-original-coctel-photo.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-photo:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download original uploaded photo and verify unchanged bytes
+        env:
+          SOURCE_IMAGE_URL: 'https://d2ol7oe51mr4n9.cloudfront.net/user_3IHAZtjGdFzomzk5Pp0lAW9zg6A/559ddc9a-110e-42c7-9e5f-d105401ebfe0.jpg'
+        run: |
+          curl --fail --location --silent --show-error --retry 3 "$SOURCE_IMAGE_URL" -o 'imagenes/galeria/recepcion-coctel-alta-calidad-2026.jpg'
+          echo 'd1e49e4ec031bfdde2adbf5b61e55a6a59e261183ca12b26c192bba7ea6c731a  imagenes/galeria/recepcion-coctel-alta-calidad-2026.jpg' | sha256sum --check
+      - name: Update only the reception card image and gallery CSS version
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path("galeria.html")
+          original=p.read_text(encoding="utf-8")
+          old_image='src="imagenes/galeria/cluster-recepcion-coctel.jpg"'
+          new_image='src="imagenes/galeria/recepcion-coctel-alta-calidad-2026.jpg"'
+          old_card='<article class="card" data-index="5">'
+          new_card='<article class="card card--reception-original" data-index="5">'
+          old_css='refined-depth.css?v=20261010-1'
+          new_css='refined-depth.css?v=20261012-galeria-1'
+          assert original.count(old_image)==1
+          assert original.count(old_card)==1
+          assert original.count(old_css)==1
+          modified=(original
+              .replace(old_image,new_image)
+              .replace(old_card,new_card)
+              .replace(old_css,new_css))
+          p.write_text(modified,encoding="utf-8")
+          PY
+      - name: Commit unchanged photo and gallery-only references
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 'imagenes/galeria/recepcion-coctel-alta-calidad-2026.jpg' galeria.html
+          git commit -m "Use original high-quality cocktail photo and updated gallery finish"
+          git push origin HEAD:main
