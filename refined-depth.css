@@ -447,3 +447,64 @@ body::after{
     text-shadow:0 -1px 0 rgba(255,255,255,.24),1px 2px 0 rgba(2,12,17,.76),0 5px 9px rgba(0,0,0,.48);
   }
 }
+
+
+/* RCV · HAZ CIAN INFERIOR · CABECERA HOME (2026-10-12) */
+/* Iluminación integrada por CSS: no son imágenes superpuestas. */
+.portfolio-home .topbar{
+  isolation:isolate;
+  background:linear-gradient(180deg,rgba(5,16,21,.94),rgba(5,22,29,.92));
+  border-bottom:1px solid rgba(72,227,242,.40);
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.055),
+    0 12px 30px rgba(0,0,0,.24),
+    0 9px 28px rgba(0,190,224,.12);
+}
+.portfolio-home .topbar::before{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  left:3%;
+  right:3%;
+  bottom:0;
+  height:min(78px,100%);
+  z-index:0;
+  background:radial-gradient(
+    ellipse 77% 90% at 50% 100%,
+    rgba(32,247,255,.38) 0%,
+    rgba(0,212,239,.23) 33%,
+    rgba(1,157,198,.075) 67%,
+    transparent 100%
+  );
+  filter:blur(8px);
+}
+.portfolio-home .topbar::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  bottom:-1px;
+  left:5%;
+  right:5%;
+  height:2px;
+  z-index:0;
+  border-radius:999px;
+  background:linear-gradient(
+    90deg,transparent 0%,
+    rgba(27,218,242,.72) 12%,
+    rgba(119,252,255,.98) 50%,
+    rgba(27,218,242,.72) 88%,
+    transparent 100%
+  );
+  box-shadow:
+    0 -2px 11px rgba(22,241,255,.70),
+    0 -10px 30px rgba(0,205,238,.25),
+    0 5px 17px rgba(10,230,247,.36);
+}
+.portfolio-home .topbar > *{
+  position:relative;
+  z-index:1;
+}
+@media (max-width:620px){
+  .portfolio-home .topbar::before{height:65px}
+  .portfolio-home .topbar::after{left:7%;right:7%}
+}
