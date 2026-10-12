@@ -24,6 +24,64 @@
     .inspector{background:rgba(9,24,30,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-direction:column;min-height:0}.inspector-head{padding:20px 20px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.inspector-head strong{font-size:10px;letter-spacing:.16em;text-transform:uppercase}.inspector-code{color:var(--cyan);font-size:9px;letter-spacing:.11em}.inspector-body{padding:22px 20px 24px;overflow-y:auto;flex:1}.panel-index{color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}.inspector h2{margin:0;font-family:'Fraunces',Georgia,serif;font-size:29px;line-height:1.05;color:#f5f8f9;letter-spacing:-.025em}.panel-role{margin-top:8px;color:var(--cyan2);font-size:11px;line-height:1.5;font-weight:600}.panel-copy{margin:16px 0 0;color:#9fb2b8;font-size:12px;line-height:1.72}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:20px 0 0}.metric{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(255,255,255,.022)}.metric strong{display:block;font-family:'Fraunces',Georgia,serif;color:#eff6f7;font-size:21px;line-height:1}.metric span{display:block;margin-top:5px;color:#758e96;font-size:8px;letter-spacing:.10em;text-transform:uppercase}.panel-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.panel-actions a,.panel-actions button{min-height:38px;display:grid;place-items:center;border-radius:9px;border:1px solid rgba(115,185,202,.28);background:rgba(115,185,202,.08);color:#d9eaee;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s}.panel-actions a:hover,.panel-actions button:hover{background:rgba(115,185,202,.16);border-color:rgba(157,210,222,.56)}.panel-actions .primary{background:var(--cyan);color:#071419;border-color:var(--cyan)}.panel-actions .primary:hover{background:var(--cyan2)}.field-note{margin-top:22px;border-top:1px solid var(--line);padding-top:17px}.field-note-label{color:#728b93;font-size:8px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}.field-note blockquote{margin:0;color:#b3c3c7;font-family:'Fraunces',Georgia,serif;font-size:13px;line-height:1.55}.field-note cite{display:block;margin-top:8px;color:#708890;font-size:9px;font-style:normal}
     .ownership-row{grid-column:1/-1;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:8px;border-top:1px solid rgba(144,196,210,.12);color:#6f8991;font-size:8px;letter-spacing:.10em;text-transform:uppercase}.ownership-row strong{color:#9dd2de;font-weight:700}.control-desk{border-top:1px solid var(--line);background:rgba(5,14,18,.94);padding:11px 18px;display:grid;grid-template-columns:minmax(260px,.75fr) minmax(300px,1fr) auto;gap:18px;align-items:center;position:sticky;bottom:0;z-index:45}.control-block{min-width:0}.control-label{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;color:#758d94;font-size:8px;letter-spacing:.13em;text-transform:uppercase}.control-label output{color:var(--cyan2)}input[type=range]{width:100%;accent-color:var(--cyan)}.desk-tabs,.desk-actions{display:flex;gap:7px;flex-wrap:wrap}.desk-tabs button,.desk-actions a{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.025);color:#9bb0b6;padding:8px 10px;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;cursor:pointer;transition:.2s;white-space:nowrap}.desk-tabs button:hover,.desk-tabs button.active,.desk-actions a:hover{color:#eef6f7;border-color:rgba(115,185,202,.52);background:rgba(115,185,202,.10)}.desk-actions{justify-content:flex-end}
     .contact-popover{position:fixed;inset:0;background:rgba(2,8,11,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:20px}.contact-popover.open{display:grid}.contact-card{width:min(460px,100%);border:1px solid rgba(157,210,222,.34);border-radius:20px;background:linear-gradient(145deg,#10262e,#0a1a20);padding:26px;box-shadow:0 30px 90px rgba(0,0,0,.46)}.contact-card h3{font-family:'Fraunces',Georgia,serif;margin:0 0 14px;font-size:28px}.contact-card p{margin:8px 0;color:#9fb1b7;font-size:12px}.contact-card strong{color:#e6f0f2}.contact-close{float:right;border:1px solid var(--line);border-radius:50%;width:30px;height:30px;background:transparent;cursor:pointer}.contact-links{display:flex;gap:8px;margin-top:18px}.contact-links a{padding:9px 12px;border-radius:8px;border:1px solid rgba(115,185,202,.30);background:rgba(115,185,202,.08);font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+    /* RCV · botón de inicio con aro prismático y profundidad óptica */
+    .brand-mark{
+      position:relative;
+      isolation:isolate;
+      flex:0 0 38px;
+      overflow:visible;
+      background:linear-gradient(145deg,rgba(24,46,54,.94),rgba(5,14,18,.98));
+      box-shadow:inset 0 1px 2px rgba(255,255,255,.13),inset 0 -5px 12px rgba(0,0,0,.38),0 5px 13px rgba(0,0,0,.26);
+      transition:transform .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease;
+    }
+    .brand-mark::before{
+      content:'';
+      position:absolute;
+      inset:-4px;
+      z-index:1;
+      border-radius:50%;
+      padding:2px;
+      pointer-events:none;
+      background:conic-gradient(from 20deg,#eafcff 0deg,#56ccff 42deg,#7b6cff 88deg,#ff5f8f 135deg,#ff9a43 178deg,#fff1a8 220deg,#5ef0d2 270deg,#56ccff 318deg,#eafcff 360deg);
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      opacity:.22;
+      filter:saturate(1.2) brightness(1.08);
+      animation:rcvPrismSpin 3.4s linear infinite paused;
+      transition:opacity .28s ease,filter .28s ease;
+    }
+    .brand-mark::after{
+      content:'';
+      position:absolute;
+      inset:-12px;
+      z-index:-1;
+      border-radius:50%;
+      pointer-events:none;
+      background:radial-gradient(circle at 55% 13%,rgba(255,255,255,.92) 0 2%,rgba(88,207,255,.46) 8%,rgba(255,114,78,.25) 17%,transparent 43%);
+      filter:blur(4px);
+      opacity:.12;
+      transition:opacity .28s ease,transform .28s ease;
+    }
+    .brand-mark:hover,
+    .brand-mark:focus-visible{
+      color:#fff;
+      border-color:rgba(238,252,255,.52);
+      transform:translateY(-1px) scale(1.075);
+      box-shadow:inset 0 1px 3px rgba(255,255,255,.24),inset 0 -6px 14px rgba(0,0,0,.42),0 7px 18px rgba(0,0,0,.34),0 0 16px rgba(94,214,255,.20);
+    }
+    .brand-mark:hover::before,
+    .brand-mark:focus-visible::before{
+      opacity:1;
+      filter:saturate(1.45) brightness(1.32) drop-shadow(0 0 5px rgba(121,219,255,.72));
+      animation-play-state:running;
+    }
+    .brand-mark:hover::after,
+    .brand-mark:focus-visible::after{opacity:.9;transform:scale(1.12)}
+    .brand-mark:focus-visible{outline:2px solid rgba(157,210,222,.72);outline-offset:7px}
+    .brand-mark:active{transform:translateY(0) scale(.98)}
+    @keyframes rcvPrismSpin{to{transform:rotate(1turn)}}
+    @media(prefers-reduced-motion:reduce){.brand-mark::before{animation:none}.brand-mark{transition:none}}
     @media(max-width:1120px){.workspace{grid-template-columns:minmax(0,1fr) 320px}.brand{min-width:auto}.status-strip{display:none}.node{width:128px}}@media(max-width:860px){.topbar{position:relative;align-items:flex-start;flex-wrap:wrap}.topnav{width:100%;margin-left:0;justify-content:flex-start}.workspace{grid-template-columns:1fr}.cluster-stage{border-right:0;border-bottom:1px solid var(--line)}.inspector{min-height:480px}.control-desk{position:relative;grid-template-columns:1fr}.desk-actions{justify-content:flex-start}}@media(max-width:620px){.topbar{padding:13px 14px}.brand-copy strong{font-size:10px}.brand-copy span{font-size:8px}.topnav a,.topnav button{padding:7px 8px;font-size:8px}.stage-heading{padding:23px 18px 0}.stage-heading h1{font-size:38px}.stage-heading p{font-size:12px}.cluster-canvas{height:auto;margin:24px 16px 20px;overflow:visible}.cluster-map{position:relative;inset:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;transform:none!important}.link-map{display:none}.core{position:relative;left:auto;top:auto;transform:none;grid-column:1/-1;margin:28px auto 30px;width:156px;height:156px}.core:hover{transform:scale(1.02)}.core-photo{width:100px;height:100px}.node,.node:hover,.node.is-active{position:relative;left:auto;top:auto;width:100%;min-height:94px;transform:none;animation:none!important}.node:hover,.node.is-active{transform:translateY(-2px)}.stage-footer{padding:4px 18px 22px}.inspector-body{padding:20px 18px 24px}.inspector h2{font-size:27px}.panel-actions{grid-template-columns:1fr}}
   </style>
   <link rel="stylesheet" href="refined-depth.css?v=20261010-4">
@@ -31,7 +89,7 @@
 <body class="portfolio-home">
 <div class="app-shell">
   <header class="topbar">
-    <div class="brand"><div class="brand-mark">RCV</div><div class="brand-copy"><strong>Professional Cluster 01</strong><span>Ramón Alberto Curbalán Vega · Hospitality Operating System</span></div></div>
+    <div class="brand"><a class="brand-mark" href="index.html" aria-label="Volver al inicio" title="Inicio">RCV</a><div class="brand-copy"><strong>Professional Cluster 01</strong><span>Ramón Alberto Curbalán Vega · Hospitality Operating System</span></div></div>
     <div class="status-strip"><span class="status-dot"></span><span>F&B · Events · Leadership · Project Management</span></div>
     <nav class="topnav" aria-label="Navegación principal"><button type="button" class="active" data-select="profile">Cluster</button><a href="diplomas.html">Formación</a><a href="galeria.html">Galería</a><a href="https://raymonchu48.github.io/Portfolio/" target="_blank" rel="noopener">Perfil digital</a></nav>
   </header>
