@@ -616,3 +616,99 @@ body::after{
   }
   .portfolio-home .topnav{margin-left:0}
 }
+
+
+/* RCV · LUZ TURQUESA INFERIOR EN TARJETAS Y CONTROLES · 2026-10-12 */
+/* Efecto creado con CSS, sin imágenes ni capas ajenas al clúster.
+   Los nodos mantienen intactos sus pseudo-elementos y el borde de selección. */
+.portfolio-home .node{
+  background:
+    linear-gradient(90deg,transparent,rgba(65,231,246,.82) 18%,rgba(185,255,255,.98) 50%,rgba(65,231,246,.82) 82%,transparent)
+      center bottom / 76% 2px no-repeat,
+    radial-gradient(ellipse 74% 40px at 50% 100%,rgba(14,224,243,.17),transparent 78%)
+      center bottom / 100% 44px no-repeat,
+    linear-gradient(145deg,rgba(17,39,47,.95),rgba(7,19,24,.92)) padding-box,
+    linear-gradient(128deg,rgba(157,210,222,.68),rgba(115,185,202,.16) 38%,rgba(199,163,106,.16) 68%,rgba(157,210,222,.48)) border-box;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.095),
+    inset 0 -1px rgba(0,0,0,.32),
+    0 3px 0 rgba(3,12,16,.55),
+    0 16px 34px rgba(0,0,0,.22),
+    0 7px 16px -4px rgba(11,224,242,.43),
+    0 0 20px rgba(115,185,202,.07);
+}
+.portfolio-home .node:hover,
+.portfolio-home .node.is-active{
+  background:
+    linear-gradient(90deg,transparent,rgba(84,241,255,.93) 18%,#ddffff 50%,rgba(84,241,255,.93) 82%,transparent)
+      center bottom / 78% 2px no-repeat,
+    radial-gradient(ellipse 78% 45px at 50% 100%,rgba(25,236,250,.22),transparent 80%)
+      center bottom / 100% 46px no-repeat,
+    linear-gradient(145deg,rgba(28,62,72,.97),rgba(9,24,30,.95)) padding-box,
+    linear-gradient(128deg,rgba(197,235,242,.88),rgba(115,185,202,.28) 42%,rgba(199,163,106,.24) 72%,rgba(157,210,222,.72)) border-box;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.11),
+    inset 0 -1px rgba(0,0,0,.32),
+    0 4px 0 rgba(3,12,16,.52),
+    0 20px 42px rgba(0,0,0,.27),
+    0 8px 21px -3px rgba(11,230,249,.56),
+    0 0 26px rgba(115,185,202,.12);
+}
+/* Las métricas ya usan ::after para un reflejo: la nueva línea va en ::before. */
+.portfolio-home .metric{position:relative}
+.portfolio-home .metric::before{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  left:12%;right:12%;bottom:0;
+  height:2px;
+  z-index:1;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(65,231,246,.78) 20%,rgba(185,255,255,.97) 50%,rgba(65,231,246,.78) 80%,transparent);
+  box-shadow:0 -2px 9px rgba(39,236,255,.50),0 -8px 19px rgba(0,205,230,.19);
+}
+.portfolio-home .metric{
+  box-shadow:inset 0 1px rgba(255,255,255,.085),inset 0 -1px rgba(0,0,0,.32),0 4px 10px rgba(0,0,0,.16),0 7px 16px -4px rgba(12,220,241,.28);
+}
+/* Botones del inspector y controles inferiores; no se aplica al menú superior. */
+.portfolio-home .panel-actions a,
+.portfolio-home .panel-actions button,
+.portfolio-home .desk-tabs button,
+.portfolio-home .desk-actions a{
+  position:relative;
+  isolation:isolate;
+}
+.portfolio-home .panel-actions a::after,
+.portfolio-home .panel-actions button::after,
+.portfolio-home .desk-tabs button::after,
+.portfolio-home .desk-actions a::after{
+  content:"";
+  position:absolute;
+  z-index:1;
+  pointer-events:none;
+  left:12%;right:12%;bottom:-2px;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,transparent,rgba(51,227,248,.78) 18%,rgba(184,255,255,.98) 50%,rgba(51,227,248,.78) 82%,transparent);
+  box-shadow:0 -2px 8px rgba(35,235,251,.43),0 4px 11px rgba(0,221,239,.34);
+  opacity:.85;
+  transition:opacity .2s ease,box-shadow .2s ease;
+}
+.portfolio-home .desk-tabs button::after,
+.portfolio-home .desk-actions a::after{
+  left:16%;right:16%;bottom:-1px;height:1.5px;
+}
+.portfolio-home .panel-actions a:hover::after,
+.portfolio-home .panel-actions button:hover::after,
+.portfolio-home .desk-tabs button:hover::after,
+.portfolio-home .desk-tabs button.active::after,
+.portfolio-home .desk-actions a:hover::after{
+  opacity:1;
+  box-shadow:0 -3px 11px rgba(46,244,255,.70),0 5px 16px rgba(0,226,242,.52);
+}
+@media(prefers-reduced-motion:reduce){
+  .portfolio-home .panel-actions a::after,
+  .portfolio-home .panel-actions button::after,
+  .portfolio-home .desk-tabs button::after,
+  .portfolio-home .desk-actions a::after{transition:none}
+}
