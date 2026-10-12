@@ -592,7 +592,7 @@ body::after{
   .portfolio-home .topnav{
     grid-column:1;
     grid-row:3;
-    width:100%;
+    width:auto;
     justify-content:flex-start;
     margin-left:55px;
   }
