@@ -18,11 +18,13 @@
     @media(max-width:700px){.viewer-bar{grid-template-columns:1fr;gap:9px}.doc-meta{text-align:left;order:-1}.doc-meta strong{font-size:15px}.status{display:none}.actions{justify-content:flex-start}.viewport{padding:8px}.frame{height:calc(100vh - 138px);border-radius:10px}}
   </style>
   <link rel="stylesheet" href="refined-depth.css?v=20261010-1">
+  <link rel="stylesheet" href="language-switch.css">
+  <script src="language-preference.js"></script>
 </head>
 <body class="document-page">
   <div class="viewer">
     <header class="viewer-bar">
-      <div class="actions">
+      <div class="actions"><nav class="language-switch" aria-label="Idioma"><a href="documento.html?lang=es" lang="es" aria-label="Español" aria-current="page">🇪🇸 ES</a><a href="en/documento.html?lang=en" lang="en" aria-label="English">🇬🇧 EN</a></nav>
         <a class="btn primary" href="index.html">← Inicio</a>
         <button class="btn" id="backBtn" type="button">← Volver</button>
       </div>
@@ -35,7 +37,7 @@
     const params=new URLSearchParams(location.search);
     const file=params.get('file')||'';
     const from=params.get('from')||'index.html';
-    const safeFrom=['index.html','diplomas.html','galeria.html'].includes(from)?from:'index.html';
+    const safeFrom=['index.html','diplomas.html','galeria.html','en/index.html','en/diplomas.html','en/galeria.html'].includes(from)?from:'index.html';
     const isSafe=/^(?!\/\/)(?!.*\.\.)(?!.*:\/\/)[^?#]+\.(pdf|jpg|jpeg|png|webp)$/i.test(file);
     const frame=document.getElementById('frame');
     const titleEl=document.getElementById('docTitle');
@@ -61,5 +63,6 @@
       }
     }
   </script>
+<script src="language-switch.js"></script>
 </body>
 </html>

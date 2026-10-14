@@ -219,13 +219,15 @@
       .portfolio-home .workspace {overflow:visible}
     }
   </style>
+  <link rel="stylesheet" href="language-switch.css">
+  <script src="language-preference.js"></script>
 </head>
 <body class="portfolio-home">
 <div class="app-shell">
   <header class="topbar">
     <div class="brand"><a class="brand-mark" href="index.html" aria-label="Volver al inicio" title="Inicio">RCV</a><div class="brand-copy"><span>Ramón Alberto Curbalán Vega · Hospitality Operating System</span></div></div>
     <div class="status-strip"><span class="status-dot"></span><span>F&B · Events · Leadership · Project Management</span></div>
-    <nav class="topnav" aria-label="Navegación principal"><button type="button" class="active" data-select="profile">Cluster</button><a href="diplomas.html">Formación</a><a href="galeria.html">Galería</a><a href="https://raymonchu48.github.io/Portfolio/" target="_blank" rel="noopener">Perfil digital</a></nav>
+    <nav class="topnav" aria-label="Navegación principal"><div role="group" class="language-switch" aria-label="Idioma"><a href="index.html?lang=es" lang="es" aria-label="Español" aria-current="page">🇪🇸 ES</a><a href="en/index.html?lang=en" lang="en" aria-label="English">🇬🇧 EN</a></div><button type="button" class="active" data-select="profile">Cluster</button><a href="diplomas.html">Formación</a><a href="galeria.html">Galería</a><a href="https://raymonchu48.github.io/Portfolio/" target="_blank" rel="noopener">Perfil digital</a></nav>
   </header>
 
   <main class="workspace">
@@ -270,5 +272,6 @@ const clusterCanvas=document.getElementById('clusterCanvas'),autoToggle=document
 const popover=document.getElementById('contactPopover'),contactAction=document.getElementById('contactAction'),contactClose=document.getElementById('contactClose');function openContact(){popover.classList.add('open')}function closeContact(){popover.classList.remove('open')}contactAction.addEventListener('click',openContact);contactClose.addEventListener('click',closeContact);popover.addEventListener('click',e=>{if(e.target===popover)closeContact()});
 document.addEventListener('keydown',e=>{const map={'1':'fnb','2':'events','3':'leadership','4':'project','5':'gallery','6':'formation'};if(map[e.key])selectPanel(map[e.key]);if(e.key.toLowerCase()==='a')toggleAuto();if(e.key==='Escape')closeContact()});selectPanel('profile');
 </script>
+<script src="language-switch.js"></script>
 </body>
 </html>

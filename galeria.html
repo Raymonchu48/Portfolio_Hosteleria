@@ -151,6 +151,8 @@
     }
   </style>
   <link rel="stylesheet" href="refined-depth.css?v=20261012-galeria-2">
+  <link rel="stylesheet" href="language-switch.css">
+  <script src="language-preference.js"></script>
 </head>
 <body class="gallery-page">
   <header class="topbar">
@@ -161,7 +163,8 @@
         <small>MODULE 05 · VISUAL GALLERY</small>
       </div>
     </div>
-    <nav class="top-actions">
+    <nav class="language-switch" aria-label="Idioma"><a href="galeria.html?lang=es" lang="es" aria-label="Español" aria-current="page">🇪🇸 ES</a><a href="en/galeria.html?lang=en" lang="en" aria-label="English">🇬🇧 EN</a></nav>
+      <nav class="top-actions">
       <a class="nav-btn" href="diplomas.html">FORMACIÓN</a>
       <a class="nav-btn primary" href="index.html">← VOLVER AL CLUSTER</a>
     </nav>
@@ -253,5 +256,6 @@
       if(e.key==='ArrowRight') show(current+1);
     });
   </script>
+<script src="language-switch.js"></script>
 </body>
 </html>

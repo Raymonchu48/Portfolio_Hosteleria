@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Professional portfolio of Ramón Alberto Curbalán Vega · F&B, banquets, events, leadership and Project Management in luxury hospitality." />
+  <meta name="theme-color" content="#081318" />
+  <meta name="copyright" content="© 2026 Ramón Alberto Curbalán Vega · Exclusive use by the owner" />
+  <title>RACV // Professional Cluster · Hospitality Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{--ink:#eaf3f5;--muted:#93a9b0;--deep:#081318;--panel:#0d1d24;--line:rgba(144,196,210,.20);--cyan:#73b9ca;--cyan2:#9dd2de;--gold:#c7a36a;--white:#fff;--cluster-scale:1}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;font-family:'Manrope',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:radial-gradient(circle at 18% 18%,rgba(88,168,188,.16),transparent 28%),radial-gradient(circle at 82% 78%,rgba(199,163,106,.08),transparent 24%),linear-gradient(135deg,#071116 0%,#0b171d 48%,#081318 100%);color:var(--ink);overflow-x:hidden}a{color:inherit;text-decoration:none}button,input{font:inherit}button{color:inherit}.app-shell{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+    .topbar{min-height:74px;padding:14px 24px;border-bottom:1px solid var(--line);background:rgba(6,16,20,.82);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);display:flex;align-items:center;gap:22px;position:sticky;top:0;z-index:50}.brand{min-width:290px;display:flex;align-items:center;gap:12px}.brand-mark{width:38px;height:38px;border:1px solid rgba(157,210,222,.52);border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;letter-spacing:.09em;color:var(--cyan2);box-shadow:inset 0 0 18px rgba(115,185,202,.08)}.brand-copy strong,.brand-copy span{display:block}.brand-copy strong{font-size:12px;letter-spacing:.16em;text-transform:uppercase}.brand-copy span{margin-top:0;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}.status-strip{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:10px;letter-spacing:.12em;text-transform:uppercase}.status-dot{width:7px;height:7px;border-radius:50%;background:#7ec69d;box-shadow:0 0 12px rgba(126,198,157,.7)}.topnav{margin-left:auto;display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.topnav a,.topnav button{border:1px solid var(--line);background:rgba(255,255,255,.025);padding:8px 11px;border-radius:8px;color:#c8d8dc;font-size:10px;letter-spacing:.11em;text-transform:uppercase;cursor:pointer;transition:.2s}.topnav a:hover,.topnav button:hover,.topnav .active{color:#fff;border-color:rgba(115,185,202,.58);background:rgba(115,185,202,.11)}
+    .workspace{display:grid;grid-template-columns:minmax(0,1fr) 360px;min-height:calc(100vh - 148px)}.cluster-stage{position:relative;min-width:0;overflow:hidden;border-right:1px solid var(--line);background-image:linear-gradient(100deg,rgba(4,16,21,.52),rgba(5,20,26,.28) 58%,rgba(5,18,23,.42)),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),url('imagenes/fondo-restaurante-gran-lujo.webp');background-size:100% 100%,34px 34px,34px 34px,cover;background-position:center,0 0,0 0,center;background-repeat:no-repeat,repeat,repeat,no-repeat}.cluster-stage:before,.cluster-stage:after{content:'';position:absolute;pointer-events:none;border-radius:50%}.cluster-stage:before{width:420px;height:420px;top:23%;left:31%;border:1px solid rgba(115,185,202,.08);box-shadow:0 0 110px rgba(115,185,202,.05)}.cluster-stage:after{width:240px;height:240px;top:35%;left:39%;border:1px solid rgba(199,163,106,.08)}.stage-heading{position:relative;z-index:3;padding:28px 30px 0;max-width:720px}.eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:9px;color:var(--cyan2);font-size:10px;letter-spacing:.18em;text-transform:uppercase}.eyebrow:before{content:'';width:32px;height:1px;background:var(--cyan)}.stage-heading h1{margin:0;font-family:'Fraunces',Georgia,serif;font-size:clamp(34px,4.5vw,64px);line-height:.98;letter-spacing:-.035em;font-weight:600;color:#f3f8f9}.stage-heading p{margin:13px 0 0;max-width:650px;color:#9eb2b8;font-size:13px;line-height:1.75}
+    .cluster-canvas{position:relative;height:565px;margin:2px 20px 18px;z-index:4;overflow:visible}.cluster-map{position:absolute;inset:0;transform:scale(var(--cluster-scale));transform-origin:50% 50%;transition:transform .25s ease}.link-map{position:absolute;inset:0;width:100%;height:100%;overflow:visible;opacity:.72;pointer-events:none}.link-map line{stroke:rgba(115,185,202,.28);stroke-width:.18;stroke-dasharray:1.1 1.4}.link-map circle{fill:rgba(115,185,202,.45)}
+    .core{position:absolute;left:50%;top:50%;width:178px;height:178px;transform:translate(-50%,-50%);border:1px solid rgba(157,210,222,.42);border-radius:50%;background:radial-gradient(circle at 35% 25%,rgba(115,185,202,.24),rgba(11,29,36,.94) 62%);display:grid;place-items:center;box-shadow:0 0 0 13px rgba(115,185,202,.035),0 0 0 30px rgba(115,185,202,.018),0 25px 70px rgba(0,0,0,.42);cursor:pointer;transition:.25s;z-index:6}.core:hover{transform:translate(-50%,-50%) scale(1.025)}.core:before,.core:after{content:'';position:absolute;border-radius:50%;border:1px dashed rgba(115,185,202,.21);pointer-events:none}.core:before{inset:-22px;animation:spin 32s linear infinite}.core:after{inset:-45px;border-color:rgba(199,163,106,.12);animation:spinReverse 44s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@keyframes spinReverse{to{transform:rotate(-360deg)}}.core-photo{width:112px;height:112px;border-radius:50%;overflow:hidden;border:2px solid rgba(255,255,255,.74);background:#19313a;box-shadow:0 12px 30px rgba(0,0,0,.32)}.core-photo img{width:100%;height:100%;object-fit:cover}.core-label{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font-size:9px;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;color:#cfe2e7;background:rgba(6,16,20,.72);padding:5px 8px;border-radius:999px}
+    .node{position:absolute;width:142px;min-height:86px;transform:translate(-50%,-50%);border:1px solid rgba(115,185,202,.24);border-radius:16px;background:linear-gradient(145deg,rgba(17,39,47,.93),rgba(7,19,24,.90));box-shadow:0 12px 34px rgba(0,0,0,.22);padding:13px 13px 12px;text-align:left;cursor:pointer;z-index:7;transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease}.node:hover,.node.is-active{transform:translate(-50%,-50%) translateY(-3px);border-color:rgba(157,210,222,.76);background:linear-gradient(145deg,rgba(28,62,72,.96),rgba(9,24,30,.94));box-shadow:0 16px 42px rgba(0,0,0,.28),0 0 0 1px rgba(115,185,202,.05)}.node.is-active:after{content:'';position:absolute;inset:5px;border-radius:11px;border:1px solid rgba(199,163,106,.23);pointer-events:none}.node-kicker{display:block;color:var(--gold);font-size:9px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:5px}.node strong{display:block;font-size:12px;letter-spacing:.04em;line-height:1.28;color:#edf5f6}.node span:last-child{display:block;margin-top:6px;color:#7f9aa2;font-size:9px;letter-spacing:.07em;text-transform:uppercase}.node-fnb{left:50%;top:13%}.node-events{left:83%;top:28%}.node-leadership{left:81%;top:72%}.node-project{left:50%;top:87%}.node-gallery{left:18%;top:72%}.node-formation{left:17%;top:28%}.cluster-canvas.is-auto .node-fnb{animation:floatA 5.2s ease-in-out infinite}.cluster-canvas.is-auto .node-events{animation:floatB 5.8s ease-in-out infinite .2s}.cluster-canvas.is-auto .node-leadership{animation:floatA 6.1s ease-in-out infinite .5s}.cluster-canvas.is-auto .node-project{animation:floatB 5.5s ease-in-out infinite .7s}.cluster-canvas.is-auto .node-gallery{animation:floatA 5.9s ease-in-out infinite .4s}.cluster-canvas.is-auto .node-formation{animation:floatB 6.3s ease-in-out infinite .1s}@keyframes floatA{0%,100%{translate:0 0}50%{translate:0 -6px}}@keyframes floatB{0%,100%{translate:0 0}50%{translate:4px 4px}}
+    .stage-footer{display:flex;align-items:center;gap:10px;padding:0 30px 24px;color:#6f8991;font-size:9px;letter-spacing:.13em;text-transform:uppercase}.stage-footer .line{height:1px;flex:1;background:var(--line)}
+    .inspector{background:rgba(9,24,30,.84);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;flex-direction:column;min-height:0}.inspector-head{padding:20px 20px 16px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}.inspector-head strong{font-size:10px;letter-spacing:.16em;text-transform:uppercase}.inspector-code{color:var(--cyan);font-size:9px;letter-spacing:.11em}.inspector-body{padding:22px 20px 24px;overflow-y:auto;flex:1}.panel-index{color:var(--gold);font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}.inspector h2{margin:0;font-family:'Fraunces',Georgia,serif;font-size:29px;line-height:1.05;color:#f5f8f9;letter-spacing:-.025em}.panel-role{margin-top:8px;color:var(--cyan2);font-size:11px;line-height:1.5;font-weight:600}.panel-copy{margin:16px 0 0;color:#9fb2b8;font-size:12px;line-height:1.72}.metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:20px 0 0}.metric{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(255,255,255,.022)}.metric strong{display:block;font-family:'Fraunces',Georgia,serif;color:#eff6f7;font-size:21px;line-height:1}.metric span{display:block;margin-top:5px;color:#758e96;font-size:8px;letter-spacing:.10em;text-transform:uppercase}.panel-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.panel-actions a,.panel-actions button{min-height:38px;display:grid;place-items:center;border-radius:9px;border:1px solid rgba(115,185,202,.28);background:rgba(115,185,202,.08);color:#d9eaee;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:.2s}.panel-actions a:hover,.panel-actions button:hover{background:rgba(115,185,202,.16);border-color:rgba(157,210,222,.56)}.panel-actions .primary{background:var(--cyan);color:#071419;border-color:var(--cyan)}.panel-actions .primary:hover{background:var(--cyan2)}.field-note{margin-top:22px;border-top:1px solid var(--line);padding-top:17px}.field-note-label{color:#728b93;font-size:8px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}.field-note blockquote{margin:0;color:#b3c3c7;font-family:'Fraunces',Georgia,serif;font-size:13px;line-height:1.55}.field-note cite{display:block;margin-top:8px;color:#708890;font-size:9px;font-style:normal}
+    .ownership-row{grid-column:1/-1;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:8px;border-top:1px solid rgba(144,196,210,.12);color:#6f8991;font-size:8px;letter-spacing:.10em;text-transform:uppercase}.ownership-row strong{color:#9dd2de;font-weight:700}.control-desk{border-top:1px solid var(--line);background:rgba(5,14,18,.94);padding:11px 18px;display:grid;grid-template-columns:minmax(260px,.75fr) minmax(300px,1fr) auto;gap:18px;align-items:center;position:sticky;bottom:0;z-index:45}.control-block{min-width:0}.control-label{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px;color:#758d94;font-size:8px;letter-spacing:.13em;text-transform:uppercase}.control-label output{color:var(--cyan2)}input[type=range]{width:100%;accent-color:var(--cyan)}.desk-tabs,.desk-actions{display:flex;gap:7px;flex-wrap:wrap}.desk-tabs button,.desk-actions a{border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.025);color:#9bb0b6;padding:8px 10px;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;cursor:pointer;transition:.2s;white-space:nowrap}.desk-tabs button:hover,.desk-tabs button.active,.desk-actions a:hover{color:#eef6f7;border-color:rgba(115,185,202,.52);background:rgba(115,185,202,.10)}.desk-actions{justify-content:flex-end}
+    .contact-popover{position:fixed;inset:0;background:rgba(2,8,11,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:20px}.contact-popover.open{display:grid}.contact-card{width:min(460px,100%);border:1px solid rgba(157,210,222,.34);border-radius:20px;background:linear-gradient(145deg,#10262e,#0a1a20);padding:26px;box-shadow:0 30px 90px rgba(0,0,0,.46)}.contact-card h3{font-family:'Fraunces',Georgia,serif;margin:0 0 14px;font-size:28px}.contact-card p{margin:8px 0;color:#9fb1b7;font-size:12px}.contact-card strong{color:#e6f0f2}.contact-close{float:right;border:1px solid var(--line);border-radius:50%;width:30px;height:30px;background:transparent;cursor:pointer}.contact-links{display:flex;gap:8px;margin-top:18px}.contact-links a{padding:9px 12px;border-radius:8px;border:1px solid rgba(115,185,202,.30);background:rgba(115,185,202,.08);font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+    /* Títulos · halo ámbar y línea de luz inspirados en la referencia */
+    .stage-heading h1,
+    .inspector h2{
+      position:relative;
+      isolation:isolate;
+      width:fit-content;
+      max-width:100%;
+    }
+    .stage-heading h1::before,
+    .inspector h2::before{
+      content:'';
+      position:absolute;
+      z-index:-1;
+      pointer-events:none;
+      border-radius:18px;
+      background:
+        linear-gradient(90deg,rgba(255,132,40,.14),rgba(255,195,104,.09) 48%,transparent 84%),
+        radial-gradient(ellipse at 18% 50%,rgba(255,188,92,.30),rgba(255,150,54,.11) 42%,transparent 72%);
+      filter:blur(12px);
+    }
+    .stage-heading h1::before{inset:-.18em -.38em;opacity:.84}
+    .inspector h2::before{inset:-.28em -.48em;opacity:.72;filter:blur(10px)}
+    .stage-heading h1::after,
+    .inspector h2::after{
+      content:'';
+      position:absolute;
+      top:.10em;
+      bottom:.08em;
+      width:2px;
+      border-radius:999px;
+      pointer-events:none;
+      background:linear-gradient(180deg,transparent 0%,#ffc46f 16%,#ff8b35 52%,#ffd08a 84%,transparent 100%);
+      box-shadow:0 0 4px rgba(255,255,255,.72),0 0 10px rgba(255,151,59,.92),0 0 22px rgba(255,133,35,.56);
+    }
+    .stage-heading h1::after{left:-14px}
+    .inspector h2::after{left:-11px}
+    /* RCV · botón de inicio con aro prismático y profundidad óptica */
+    .brand-mark{
+      position:relative;
+      isolation:isolate;
+      flex:0 0 38px;
+      overflow:visible;
+      background:linear-gradient(145deg,rgba(24,46,54,.94),rgba(5,14,18,.98));
+      box-shadow:inset 0 1px 2px rgba(255,255,255,.13),inset 0 -5px 12px rgba(0,0,0,.38),0 5px 13px rgba(0,0,0,.26);
+      transition:transform .28s ease,color .28s ease,border-color .28s ease,box-shadow .28s ease;
+    }
+    .brand-mark::before{
+      content:'';
+      position:absolute;
+      inset:-4px;
+      z-index:1;
+      border-radius:50%;
+      padding:2px;
+      pointer-events:none;
+      background:conic-gradient(from 20deg,#eafcff 0deg,#56ccff 42deg,#7b6cff 88deg,#ff5f8f 135deg,#ff9a43 178deg,#fff1a8 220deg,#5ef0d2 270deg,#56ccff 318deg,#eafcff 360deg);
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      opacity:.22;
+      filter:saturate(1.2) brightness(1.08);
+      animation:rcvPrismSpin 3.4s linear infinite paused;
+      transition:opacity .28s ease,filter .28s ease;
+    }
+    .brand-mark::after{
+      content:'';
+      position:absolute;
+      inset:-12px;
+      z-index:-1;
+      border-radius:50%;
+      pointer-events:none;
+      background:radial-gradient(circle at 55% 13%,rgba(255,255,255,.92) 0 2%,rgba(88,207,255,.46) 8%,rgba(255,114,78,.25) 17%,transparent 43%);
+      filter:blur(4px);
+      opacity:.12;
+      transition:opacity .28s ease,transform .28s ease;
+    }
+    .brand-mark:hover,
+    .brand-mark:focus-visible{
+      color:#fff;
+      border-color:rgba(238,252,255,.52);
+      transform:translateY(-1px) scale(1.075);
+      box-shadow:inset 0 1px 3px rgba(255,255,255,.24),inset 0 -6px 14px rgba(0,0,0,.42),0 7px 18px rgba(0,0,0,.34),0 0 16px rgba(94,214,255,.20);
+    }
+    .brand-mark:hover::before,
+    .brand-mark:focus-visible::before{
+      opacity:1;
+      filter:saturate(1.45) brightness(1.32) drop-shadow(0 0 5px rgba(121,219,255,.72));
+      animation-play-state:running;
+    }
+    .brand-mark:hover::after,
+    .brand-mark:focus-visible::after{opacity:.9;transform:scale(1.12)}
+    .brand-mark:focus-visible{outline:2px solid rgba(157,210,222,.72);outline-offset:7px}
+    .brand-mark:active{transform:translateY(0) scale(.98)}
+    @keyframes rcvPrismSpin{to{transform:rotate(1turn)}}
+    @media(prefers-reduced-motion:reduce){.brand-mark::before{animation:none}.brand-mark{transition:none}}
+    @media(max-width:1120px){.workspace{grid-template-columns:minmax(0,1fr) 320px}.brand{min-width:auto}.status-strip{display:none}.node{width:128px}}@media(max-width:860px){.topbar{position:relative;align-items:flex-start;flex-wrap:wrap}.topnav{width:100%;margin-left:0;justify-content:flex-start}.workspace{grid-template-columns:1fr}.cluster-stage{border-right:0;border-bottom:1px solid var(--line)}.inspector{min-height:480px}.control-desk{position:relative;grid-template-columns:1fr}.desk-actions{justify-content:flex-start}}@media(max-width:620px){.topbar{padding:13px 14px}.brand-copy strong{font-size:10px}.brand-copy span{font-size:8px}.topnav a,.topnav button{padding:7px 8px;font-size:8px}.stage-heading{padding:23px 18px 0}.stage-heading h1{font-size:38px}.stage-heading p{font-size:12px}.cluster-canvas{height:auto;margin:24px 16px 20px;overflow:visible}.cluster-map{position:relative;inset:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;transform:none!important}.link-map{display:none}.core{position:relative;left:auto;top:auto;transform:none;grid-column:1/-1;margin:28px auto 30px;width:156px;height:156px}.core:hover{transform:scale(1.02)}.core-photo{width:100px;height:100px}.node,.node:hover,.node.is-active{position:relative;left:auto;top:auto;width:100%;min-height:94px;transform:none;animation:none!important}.node:hover,.node.is-active{transform:translateY(-2px)}.stage-footer{padding:4px 18px 22px}.inspector-body{padding:20px 18px 24px}.inspector h2{font-size:27px}.panel-actions{grid-template-columns:1fr}}
+  </style>
+  <link rel="stylesheet" href="refined-depth.css?v=20261012-hablemos-1">
+
+  <!-- RACV · ENCAJE INTEGRAL DEL CLÚSTER EN LA PRIMERA PANTALLA · 2026-10-14 -->
+  <!-- Distribución en código: sin imágenes ni elementos superpuestos. -->
+  <style>
+    @media (min-width:861px) {
+      html {height:100%}
+      body.portfolio-home {height:100dvh;min-height:0;overflow:hidden}
+      .portfolio-home .app-shell {
+        height:100dvh;
+        min-height:0;
+        display:grid;
+        grid-template-rows:auto minmax(0,1fr) auto;
+      }
+      .portfolio-home .topbar {position:relative;top:auto;flex-shrink:0}
+      .portfolio-home .workspace {min-height:0;min-width:0;overflow:hidden}
+      .portfolio-home .cluster-stage {
+        display:flex;
+        flex-direction:column;
+        min-height:0;
+        min-width:0;
+        overflow:hidden;
+      }
+      .portfolio-home .stage-heading {
+        flex:0 0 auto;
+        padding:clamp(11px,1.7vh,20px) 26px 0;
+      }
+      .portfolio-home .stage-heading h1 {
+        font-size:clamp(32px,3.55vw,56px);
+        line-height:1.02;
+      }
+      .portfolio-home .stage-heading p {
+        margin-top:8px;
+        font-size:clamp(11px,.75vw,13px);
+        line-height:1.48;
+      }
+      .portfolio-home .stage-heading::after {height:2px;margin-top:9px}
+      .portfolio-home .cluster-canvas {
+        flex:1 1 auto;
+        height:auto;
+        min-height:0;
+        margin:0 20px;
+        overflow:visible;
+      }
+      .portfolio-home .node-fnb {top:17%}
+      .portfolio-home .node-project {top:83%}
+      .portfolio-home .stage-footer {
+        flex:0 0 auto;
+        min-height:18px;
+        padding:0 26px 8px;
+      }
+      .portfolio-home .inspector {min-height:0;overflow:hidden}
+      .portfolio-home .inspector-body {min-height:0;overflow-y:auto}
+      .portfolio-home .control-desk {
+        position:relative;
+        bottom:auto;
+        padding:8px 16px 6px;
+        gap:10px 14px;
+      }
+      .portfolio-home .ownership-row {padding-top:5px}
+    }
+    @media (min-width:861px) and (max-width:1220px) {
+      .portfolio-home .topbar {padding:10px 18px 14px;row-gap:5px}
+      .portfolio-home .brand-copy > span {font-size:clamp(16px,1.75vw,21px)}
+      .portfolio-home .status-strip {line-height:1.35;font-size:10px}
+      .portfolio-home .topnav a,
+      .portfolio-home .topnav button {padding:6px 9px}
+      .portfolio-home .stage-heading h1 {font-size:clamp(30px,3.1vw,45px)}
+    }
+    @media (min-width:861px) and (max-height:800px) {
+      .portfolio-home .topbar {min-height:0;padding-top:10px;padding-bottom:12px;row-gap:4px}
+      .portfolio-home .brand-copy > span {font-size:clamp(16px,1.5vw,23px)}
+      .portfolio-home .status-strip {font-size:10px;line-height:1.3}
+      .portfolio-home .stage-heading {padding:8px 22px 0}
+      .portfolio-home .stage-heading h1 {font-size:clamp(29px,3vw,47px)}
+      .portfolio-home .stage-heading p {margin-top:6px;font-size:11px;line-height:1.37}
+      .portfolio-home .stage-heading::after {margin-top:6px;height:1px}
+      .portfolio-home .cluster-canvas {margin:0 18px}
+      .portfolio-home .node {min-height:75px;padding:9px 11px 8px}
+      .portfolio-home .node strong {font-size:11px}
+      .portfolio-home .node-kicker {font-size:8px;margin-bottom:3px}
+      .portfolio-home .node span:last-child {font-size:8px;margin-top:4px}
+      .portfolio-home .core {width:158px;height:158px}
+      .portfolio-home .core-photo {width:103px;height:103px}
+      .portfolio-home .core::before {inset:-18px}
+      .portfolio-home .core::after {inset:-36px}
+      .portfolio-home .stage-footer {padding-bottom:5px}
+      .portfolio-home .control-desk {padding:6px 12px 5px;gap:6px 10px}
+      .portfolio-home .desk-tabs button,
+      .portfolio-home .desk-actions a {padding:6px 8px}
+      .portfolio-home .ownership-row {padding-top:3px}
+    }
+    /* Pantallas excepcionalmente bajas: conserva acceso a todo sin recortarlo. */
+    @media (min-width:861px) and (max-height:560px) {
+      body.portfolio-home {height:auto;min-height:100dvh;overflow-y:auto}
+      .portfolio-home .app-shell {height:auto;min-height:620px;grid-template-rows:auto minmax(450px,1fr) auto}
+      .portfolio-home .workspace {overflow:visible}
+    }
+  </style>
+  <link rel="stylesheet" href="language-switch.css">
+  <script src="language-preference.js"></script>
+</head>
+<body class="portfolio-home">
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand"><a class="brand-mark" href="en/index.html" aria-label="Back to home" title="Home">RCV</a><div class="brand-copy"><span>Ramón Alberto Curbalán Vega · Hospitality Operating System</span></div></div>
+    <div class="status-strip"><span class="status-dot"></span><span>F&B · Events · Leadership · Project Management</span></div>
+    <nav class="topnav" aria-label="Main navigation"><div role="group" class="language-switch" aria-label="Language"><a href="index.html?lang=es" lang="es" aria-label="Español">🇪🇸 ES</a><a href="en/index.html?lang=en" lang="en" aria-label="English" aria-current="page">🇬🇧 EN</a></div><button type="button" class="active" data-select="profile">Cluster</button><a href="en/diplomas.html">Training</a><a href="en/galeria.html">Gallery</a><a href="https://raymonchu48.github.io/Portfolio/" target="_blank" rel="noopener">Digital profile</a></nav>
+  </header>
+
+  <main class="workspace">
+    <section class="cluster-stage" aria-label="Interactive professional cluster">
+      <div class="stage-heading"><div class="eyebrow">Professional portfolio · 5★ Grand Luxury Hotels</div><h1>Operational leadership with a business perspective.</h1><p>An interactive map of experience, leadership and training in food service and events. Select a node to explore each professional area and open its supporting documents.</p></div>
+      <div class="cluster-canvas is-auto" id="clusterCanvas"><div class="cluster-map" id="clusterMap">
+        <svg class="link-map" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13"></line><line x1="50" y1="50" x2="83" y2="28"></line><line x1="50" y1="50" x2="81" y2="72"></line><line x1="50" y1="50" x2="50" y2="87"></line><line x1="50" y1="50" x2="18" y2="72"></line><line x1="50" y1="50" x2="17" y2="28"></line><circle cx="50" cy="50" r=".75"></circle></svg>
+        <button class="core" type="button" data-select="profile" aria-label="Professional profile"><span class="core-photo"><img src="imagenes/ramon-perfil.png" alt="Ramón Alberto Curbalán Vega"></span><span class="core-label">RACV // CORE</span></button>
+        <button class="node node-fnb" type="button" data-select="fnb"><span class="node-kicker">01 · Operations</span><strong>F&B / 5★ Service</strong><span>Quality · costs · experience</span></button>
+        <button class="node node-events" type="button" data-select="events"><span class="node-kicker">02 · Events</span><strong>Banquets & Events</strong><span>Planning · delivery · client</span></button>
+        <button class="node node-leadership" type="button" data-select="leadership"><span class="node-kicker">03 · People</span><strong>Team leadership</strong><span>Motivation · coaching · performance</span></button>
+        <button class="node node-project" type="button" data-select="project"><span class="node-kicker">04 · PM</span><strong>Project Management</strong><span>Agile · processes · KPIs</span></button>
+        <button class="node node-gallery" type="button" data-select="gallery"><span class="node-kicker">05 · Visual</span><strong>Professional gallery</strong><span>Setups · galas · coffee stations</span></button>
+        <button class="node node-formation" type="button" data-select="formation"><span class="node-kicker">06 · Learning</span><strong>Training & credentials</strong><span>Management · business · expertise</span></button>
+      </div></div>
+      <div class="stage-footer"><span>Interactive professional cluster</span><span class="line"></span><span>Keys 1–6 · ESC close contact · A auto</span></div>
+    </section>
+
+    <aside class="inspector" aria-live="polite">
+      <div class="inspector-head"><strong>Profile Inspector</strong><span class="inspector-code" id="panelCode">RACV-00</span></div>
+      <div class="inspector-body"><div class="panel-index" id="panelIndex">Core profile</div><h2 id="panelTitle">Ramón Alberto Curbalán Vega</h2><div class="panel-role" id="panelRole">Food & Beverage and Banqueting Manager · 5★ Grand Luxury Hotels</div><p class="panel-copy" id="panelCopy">Hospitality and food service professional with over 23 years of experience, specialising in event management, team leadership, financial control, guest experience and operational improvement. I combine project methodology, a focus on results and premium service standards.</p><div class="metrics" id="panelMetrics"><div class="metric"><strong>23+</strong><span>Years of experience</span></div><div class="metric"><strong>5★ GL</strong><span>Service environments</span></div><div class="metric"><strong>F&B</strong><span>Operations</span></div><div class="metric"><strong>PM</strong><span>Improvement & delivery</span></div></div><div class="panel-actions"><a class="primary" id="primaryAction" href="en/documento.html?file=PDF%2FCurriculum_2026.pdf&from=en/index.html">View executive CV</a><button type="button" id="contactAction">Contact</button></div><div class="field-note" id="fieldNote"><div class="field-note-label">Field note · professional endorsement</div><blockquote>“Having Ramón in a hotel is an asset to any organisation.”</blockquote><cite>F&B Director · Park Hyatt Mallorca</cite></div></div>
+    </aside>
+  </main>
+
+  <footer class="control-desk">
+    <div class="control-block"><div class="control-label"><span>Cluster focus</span><output id="focusOutput">100%</output></div><input id="focusRange" type="range" min="86" max="108" value="100" aria-label="Cluster scale"></div>
+    <div class="control-block"><div class="control-label"><span>Control desk</span><span id="autoState">AUTO ON</span></div><div class="desk-tabs"><button type="button" class="active" data-select="profile">Profile</button><button type="button" data-select="fnb">F&B</button><button type="button" data-select="events">Events</button><button type="button" data-select="leadership">Teams</button><button type="button" data-select="project">Project</button><button type="button" id="autoToggle">Auto</button></div></div>
+    <div class="desk-actions"><a href="en/documento.html?file=PDF%2FCurriculum_2026.pdf&from=en/index.html">CV</a><a href="en/diplomas.html">Diplomas</a><a href="en/galeria.html">Gallery</a><a href="en/documento.html?file=PDF%2FManual_Ejecutivo_Eventos_Editable.pdf&from=en/index.html">Events manual</a></div>
+    <div class="ownership-row"><span>© 2026 Ramón Alberto Curbalán Vega · Design, structure, text and original materials protected.</span><strong>LICENCE / EXCLUSIVE USE BY THE OWNER · Reproduction, modification or distribution requires express permission.</strong></div>
+  </footer>
+</div>
+
+<div class="contact-popover" id="contactPopover" role="dialog" aria-modal="true" aria-labelledby="contactTitle"><div class="contact-card"><button type="button" class="contact-close" id="contactClose" aria-label="Close">×</button><div class="contact-intro"><div class="eyebrow">Professional connection</div><h3 id="contactTitle">Let’s talk</h3><p class="contact-lead">Let’s discuss opportunities, collaborations and projects in hospitality, F&amp;B and premium events.</p></div><div class="contact-details"><p><strong>Location:</strong> Balearic Islands, Spain</p><p><strong>Email:</strong> <a href="mailto:ramonalberto.curbalvega@gmail.com">ramonalberto.curbalvega@gmail.com</a></p><p><strong>Phone:</strong> <a href="tel:+34640724160">+34 640 724 160</a></p></div><div class="contact-links"><a href="mailto:ramonalberto.curbalvega@gmail.com">Email</a><a href="https://www.linkedin.com/in/ramon-alberto-curbalan-vega-754042167" target="_blank" rel="noopener">LinkedIn</a></div></div></div>
+
+<script>
+const panels={profile:{code:'RACV-00',index:'Core profile',title:'Ramón Alberto Curbalán Vega',role:'Food & Beverage and Banqueting Manager · 5★ Grand Luxury Hotels',copy:'Hospitality and food service professional with over 23 years of experience, specialising in event management, team leadership, financial control, guest experience and operational improvement. I combine project methodology, a focus on results and premium service standards.',metrics:[['23+','Years of experience'],['5★ GL','Service environments'],['F&B','Operations'],['PM','Improvement & delivery']],action:['View executive CV','en/documento.html?file=PDF%2FCurriculum_2026.pdf&from=en/index.html'],note:['“Having Ramón in a hotel is an asset to any organisation.”','F&B Director · Park Hyatt Mallorca']},fnb:{code:'RACV-01',index:'Operations node',title:'F&B / 5★ Service',role:'Service, profitability and guest experience',copy:'I see premium service as a system: precise processes, aligned teams and a consistent experience. I focus on detail, costs, quality standards and continuous improvement to safeguard both guest satisfaction and profitability.',metrics:[['5★','Standard'],['F&B','Core'],['KPI','Tracking'],['CX','Experience']],action:['Quality / service','en/documento.html?file=PDF%2FServicio.pdf&from=en/index.html'],note:['“For me, luxury means method, consistency and measurable results.”','Operating principle']},events:{code:'RACV-02',index:'Events node',title:'Banquets & Events',role:'Planning, coordination and delivery of demanding services',copy:'Operational management of events and banquets, focusing on resource planning, cross-department coordination, scheduling, setup, service, client communication and quality control. The goal is to make every event a predictable, elegant and profitable operation.',metrics:[['B&E','Operations'],['FLOW','Service'],['5★','Quality'],['ROI','Control']],action:['Open events manual','en/documento.html?file=PDF%2FManual_Ejecutivo_Eventos_Editable.pdf&from=en/index.html'],note:['“Planning before delivery reduces friction, risk and operating costs.”','Events approach']},leadership:{code:'RACV-03',index:'People node',title:'Team leadership',role:'Operational management, strategic coaching and applied psychology',copy:'I lead teams in demanding environments through structure, clear communication, effective delegation and a focus on goals. I build cohesion, autonomy and sustainable performance, with guest experience as the team’s shared reference point.',metrics:[['EQ','Leadership'],['TEAM','Cohesion'],['COACH','Development'],['KPI','Performance']],action:['Team management','en/documento.html?file=PDF%2FGestion_Equipos_Liderazgo_Portfolio.pdf&from=en/index.html'],note:['“People management works when goals, responsibility and communication are aligned.”','Leadership principle']},project:{code:'RACV-04',index:'Project node',title:'Applied Project Management',role:'Agile methodologies, process optimisation and delivery',copy:'I apply Project Management to everyday food service operations: translating business goals into concrete actions, assigning responsibilities, setting priorities, tracking KPIs, managing risks and improving processes. A project moves beyond theory when it improves service, costs and productivity.',metrics:[['AGILE','Method'],['RISK','Control'],['KPI','Measurement'],['PDCA','Improvement']],action:['PTD project','en/documento.html?file=PDF%2FPTD.pdf&from=en/index.html'],note:['“Enough structure to deliver; enough flexibility to improve.”','Project approach']},gallery:{code:'RACV-05',index:'Visual node',title:'Professional gallery',role:'Setups, galas, coffee stations and special services',copy:'A visual selection of setups and services delivered in demanding environments. The gallery retains the portfolio’s Mac-style simulation and lets you inspect each image within its dedicated interface.',metrics:[['5★','Setups'],['B&E','Events'],['F&B','Service'],['VIS','Portfolio']],action:['Open gallery','en/galeria.html'],note:['“The presentation of a service is also part of the guest experience.”','Visual principle']},formation:{code:'RACV-06',index:'Learning node',title:'Training & credentials',role:'Hotel management, business management, leadership and F&B expertise',copy:'Additional training in hotel management, food service, profitability, people management, leadership, negotiation, digitalisation, logistics and wine service, alongside professional credentials. Each card links to its supporting document.',metrics:[['650h','Hotel management'],['15 ECTS','Logistics'],['IEP','Innovation'],['F&B','Expertise']],action:['View diplomas','en/diplomas.html'],note:['“Applied learning: gaining tools that improve decisions, teams and operations.”','Development principle']}};
+const panelCode=document.getElementById('panelCode'),panelIndex=document.getElementById('panelIndex'),panelTitle=document.getElementById('panelTitle'),panelRole=document.getElementById('panelRole'),panelCopy=document.getElementById('panelCopy'),panelMetrics=document.getElementById('panelMetrics'),primaryAction=document.getElementById('primaryAction'),fieldNote=document.getElementById('fieldNote'),nodes=document.querySelectorAll('.node');
+function selectPanel(key){const data=panels[key]||panels.profile;panelCode.textContent=data.code;panelIndex.textContent=data.index;panelTitle.textContent=data.title;panelRole.textContent=data.role;panelCopy.textContent=data.copy;panelMetrics.innerHTML=data.metrics.map(([v,l])=>`<div class="metric"><strong>${v}</strong><span>${l}</span></div>`).join('');primaryAction.textContent=data.action[0];primaryAction.href=data.action[1];if(data.action[1].includes('en/documento.html')){primaryAction.removeAttribute('target');primaryAction.removeAttribute('rel')}else{primaryAction.removeAttribute('target')}fieldNote.innerHTML=`<div class="field-note-label">Field note</div><blockquote>${data.note[0]}</blockquote><cite>${data.note[1]}</cite>`;nodes.forEach(n=>n.classList.toggle('is-active',n.dataset.select===key));document.querySelectorAll('.desk-tabs [data-select]').forEach(b=>b.classList.toggle('active',b.dataset.select===key))}
+document.querySelectorAll('[data-select]').forEach(el=>el.addEventListener('click',()=>selectPanel(el.dataset.select)));
+const focusRange=document.getElementById('focusRange'),focusOutput=document.getElementById('focusOutput');focusRange.addEventListener('input',()=>{const v=Number(focusRange.value);document.documentElement.style.setProperty('--cluster-scale',v/100);focusOutput.textContent=`${v}%`});
+const clusterCanvas=document.getElementById('clusterCanvas'),autoToggle=document.getElementById('autoToggle'),autoState=document.getElementById('autoState');function toggleAuto(){const active=clusterCanvas.classList.toggle('is-auto');autoState.textContent=active?'AUTO ON':'AUTO OFF';autoToggle.classList.toggle('active',active)}autoToggle.addEventListener('click',toggleAuto);
+const popover=document.getElementById('contactPopover'),contactAction=document.getElementById('contactAction'),contactClose=document.getElementById('contactClose');function openContact(){popover.classList.add('open')}function closeContact(){popover.classList.remove('open')}contactAction.addEventListener('click',openContact);contactClose.addEventListener('click',closeContact);popover.addEventListener('click',e=>{if(e.target===popover)closeContact()});
+document.addEventListener('keydown',e=>{const map={'1':'fnb','2':'events','3':'leadership','4':'project','5':'gallery','6':'formation'};if(map[e.key])selectPanel(map[e.key]);if(e.key.toLowerCase()==='a')toggleAuto();if(e.key==='Escape')closeContact()});selectPanel('profile');
+</script>
+<script src="language-switch.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="copyright" content="© 2026 Ramón Alberto Curbalán Vega · Exclusive use by the owner">
+  <title>Professional gallery · RACV Cluster</title>
+  <meta name="description" content="Professional gallery of events, F&B, meetings and 5★ Grand Luxury setups by Ramón Alberto Curbalán Vega.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,650&family=Manrope:wght@400;500;600;700&display=swap');
+
+    :root{
+      --deep:#071217;
+      --deep-2:#0a1820;
+      --panel:#0d1d24;
+      --panel-2:#10252e;
+      --ink:#eaf3f5;
+      --muted:#93a9b0;
+      --cyan:#73b9ca;
+      --cyan-2:#a5d8e2;
+      --gold:#c8a66c;
+      --line:rgba(137,201,217,.20);
+      --shadow:0 20px 70px rgba(0,0,0,.38);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      min-height:100vh;
+      font-family:'Manrope',sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 14% 12%, rgba(61,141,165,.18), transparent 28%),
+        radial-gradient(circle at 86% 8%, rgba(199,163,106,.09), transparent 24%),
+        linear-gradient(145deg,#061116 0%,#091820 48%,#071217 100%);
+      overflow-x:hidden;
+    }
+    body::before{
+      content:"";
+      position:fixed;inset:0;pointer-events:none;opacity:.16;
+      background-image:
+        linear-gradient(rgba(115,185,202,.08) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(115,185,202,.08) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 78%);
+    }
+
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+
+    .topbar{
+      position:sticky;top:0;z-index:30;
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+      min-height:72px;padding:14px clamp(18px,4vw,56px);
+      background:rgba(6,17,22,.84);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+    .brand{display:flex;align-items:center;gap:13px;min-width:0}
+    .brand-mark{
+      width:34px;height:34px;border:1px solid rgba(115,185,202,.5);
+      display:grid;place-items:center;transform:rotate(45deg);
+      box-shadow:0 0 24px rgba(115,185,202,.12);
+    }
+    .brand-mark span{transform:rotate(-45deg);font-size:10px;color:var(--cyan-2);font-weight:700}
+    .brand-copy strong{display:block;font-size:12px;letter-spacing:.16em;color:var(--cyan-2)}
+    .brand-copy small{display:block;margin-top:3px;font-size:10px;letter-spacing:.12em;color:var(--muted)}
+    .top-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .nav-btn{
+      padding:9px 13px;border:1px solid var(--line);border-radius:999px;
+      font-size:11px;letter-spacing:.08em;color:#c9d9dd;background:rgba(255,255,255,.025);
+      transition:.22s ease;
+    }
+    .nav-btn:hover{border-color:rgba(115,185,202,.55);color:#fff;background:rgba(115,185,202,.08)}
+    .nav-btn.primary{border-color:rgba(115,185,202,.52);color:#071217;background:var(--cyan-2);font-weight:700}
+
+    .shell{width:min(1320px,calc(100% - 36px));margin:0 auto;padding:54px 0 60px}
+    .hero{
+      display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:28px;
+      align-items:end;padding:34px 0 40px;border-bottom:1px solid var(--line);
+    }
+    .eyebrow{font-size:11px;letter-spacing:.22em;color:var(--gold);font-weight:700;margin-bottom:13px}
+    h1{
+      font-family:'Fraunces',serif;font-size:clamp(42px,6vw,78px);line-height:.98;
+      letter-spacing:-.035em;font-weight:650;
+    }
+    .hero p{margin-top:20px;max-width:780px;color:#acc0c6;font-size:15px;line-height:1.75}
+    .hero-panel{
+      border:1px solid var(--line);background:linear-gradient(145deg,rgba(15,36,45,.9),rgba(9,24,31,.75));
+      padding:20px;border-radius:16px;box-shadow:var(--shadow);
+    }
+    .panel-label{font-size:10px;color:var(--muted);letter-spacing:.18em;margin-bottom:14px}
+    .status-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+    .status-chip{padding:11px 12px;border:1px solid rgba(115,185,202,.15);background:rgba(115,185,202,.045);border-radius:10px}
+    .status-chip b{display:block;color:var(--cyan-2);font-size:16px;margin-bottom:2px}
+    .status-chip span{font-size:9px;letter-spacing:.13em;color:var(--muted)}
+
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;padding:36px 0 20px}
+    .section-head h2{font-size:15px;letter-spacing:.17em;text-transform:uppercase}
+    .section-head p{font-size:11px;color:var(--muted);letter-spacing:.08em}
+
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{
+      position:relative;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:15px;
+      background:linear-gradient(150deg,rgba(16,37,46,.94),rgba(9,23,30,.95));
+      box-shadow:0 12px 35px rgba(0,0,0,.22);cursor:pointer;transition:.25s ease;
+    }
+    .card:hover{transform:translateY(-4px);border-color:rgba(115,185,202,.46);box-shadow:0 18px 44px rgba(0,0,0,.32),0 0 30px rgba(115,185,202,.06)}
+    .image-wrap{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0b171c}
+    .image-wrap::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(7,18,23,.76));pointer-events:none}
+    .card img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .4s ease}
+    .card--bar-premium img{object-position:center 78%}
+    .card--coctel-reception img{object-position:center 62%}
+    .card--take-break img{object-position:center 67%}
+    .card--coffee-beverages img{object-position:center 64%}
+    .card--reception-food img{object-position:center 66%}
+    .card:hover img{transform:scale(1.035)}
+    .card-body{padding:17px 17px 19px}
+    .card-kicker{font-size:9px;font-weight:700;color:var(--gold);letter-spacing:.18em;margin-bottom:8px}
+    .card h3{font-size:17px;line-height:1.25;margin-bottom:8px;color:#f1f7f8}
+    .card p{font-size:12px;line-height:1.6;color:var(--muted)}
+    .card-index{position:absolute;top:12px;right:12px;z-index:2;padding:5px 8px;border-radius:999px;background:rgba(6,17,22,.76);border:1px solid rgba(255,255,255,.12);font-size:9px;letter-spacing:.1em;color:#d7e6e9}
+
+    .legal-mark{flex-basis:100%;padding-top:8px;border-top:1px solid rgba(137,201,217,.12);color:#78949c;font-size:9px;letter-spacing:.08em;text-transform:uppercase}.legal-mark strong{color:var(--cyan-2)}
+    footer{margin-top:44px;padding:22px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#718990;font-size:10px;letter-spacing:.12em}
+
+    .lightbox{
+      position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:24px;
+      background:rgba(2,8,11,.91);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    }
+    .lightbox[hidden]{display:none}
+    .viewer{width:min(1180px,96vw);height:min(820px,90vh);display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;border:1px solid rgba(115,185,202,.25);border-radius:18px;background:#071217;box-shadow:0 35px 110px rgba(0,0,0,.7)}
+    .viewer-top{display:flex;justify-content:space-between;align-items:center;padding:13px 15px;border-bottom:1px solid var(--line);background:#0b1a21}
+    .viewer-top span{font-size:10px;color:var(--cyan-2);letter-spacing:.16em}
+    .close-btn{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:#fff;cursor:pointer;font-size:20px}
+    .viewer-stage{position:relative;min-height:0;overflow:hidden;display:grid;place-items:center;background:radial-gradient(circle at center,#10262f,#050d11 72%)}
+    .viewer-stage img{width:100%;height:100%;min-width:0;min-height:0;display:block;object-fit:contain;padding:14px}
+    .arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(3,11,14,.65);color:#fff;cursor:pointer;font-size:25px}
+    .arrow.prev{left:14px}.arrow.next{right:14px}
+    .viewer-meta{padding:15px 18px 18px;border-top:1px solid var(--line);background:#0b1a21}
+    .viewer-meta small{display:block;color:var(--gold);letter-spacing:.16em;font-size:9px;margin-bottom:6px}
+    .viewer-meta strong{font-size:17px}.viewer-meta p{margin-top:5px;color:var(--muted);font-size:12px}
+
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr}.hero-panel{max-width:520px}.gallery-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:680px){
+      .topbar{align-items:flex-start}.brand-copy strong{font-size:10px}.top-actions{gap:6px}.nav-btn{padding:8px 10px;font-size:9px}
+      .shell{width:min(100% - 24px,1320px);padding-top:30px}.hero{padding-top:22px}.hero p{font-size:13px}.gallery-grid{grid-template-columns:1fr}.section-head{align-items:flex-start;flex-direction:column;gap:7px}.viewer{height:88vh}.arrow{width:40px;height:40px}
+    }
+  </style>
+  <link rel="stylesheet" href="refined-depth.css?v=20261012-galeria-2">
+  <link rel="stylesheet" href="language-switch.css">
+  <script src="language-preference.js"></script>
+</head>
+<body class="gallery-page">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark"><span>R</span></div>
+      <div class="brand-copy">
+        <strong>RACV // PROFESSIONAL CLUSTER</strong>
+        <small>MODULE 05 · VISUAL GALLERY</small>
+      </div>
+    </div>
+    <nav class="language-switch" aria-label="Language"><a href="galeria.html?lang=es" lang="es" aria-label="Español">🇪🇸 ES</a><a href="en/galeria.html?lang=en" lang="en" aria-label="English" aria-current="page">🇬🇧 EN</a></nav>
+      <nav class="top-actions">
+      <a class="nav-btn" href="en/diplomas.html">TRAINING</a>
+      <a class="nav-btn primary" href="en/index.html">← BACK TO CLUSTER</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">MODULE 05 / VISUAL EVIDENCE</div>
+        <h1>Professional<br>gallery</h1>
+        <p>A selection of setups, F&amp;B operations, meetings, receptions and galas delivered in demanding environments, presented as the Professional Cluster’s visual archive.</p>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-label">GALLERY TELEMETRY</div>
+        <div class="status-grid">
+          <div class="status-chip"><b>15</b><span>IMAGES</span></div>
+          <div class="status-chip"><b>5★</b><span>GRAND LUXURY</span></div>
+          <div class="status-chip"><b>F&amp;B</b><span>OPERATIONS</span></div>
+          <div class="status-chip"><b>LIVE</b><span>ARCHIVE</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="section-head">
+      <h2>Visual Evidence Archive</h2>
+      <p>SELECT AN IMAGE TO OPEN THE VIEWER</p>
+    </div>
+
+    <section class="gallery-grid" id="gallery">
+      <article class="card" data-index="0"><div class="image-wrap"><span class="card-index">01</span><img src="imagenes/galeria/sala-meeting-2026.jpeg" alt="Meeting room"></div><div class="card-body"><div class="card-kicker">CORPORATE MEETING</div><h3>Meeting room</h3><p>Meeting and conference room prepared for corporate events.</p></div></article>
+      <article class="card" data-index="1"><div class="image-wrap"><span class="card-index">02</span><img src="imagenes/coffe-braks2.jpg" alt="Premium coffee station"></div><div class="card-body"><div class="card-kicker">BEVERAGE OPERATIONS</div><h3>Premium coffee station</h3><p>Service prepared for conventions and corporate meetings.</p></div></article>
+      <article class="card card--coffee-beverages" data-index="2"><div class="image-wrap"><span class="card-index">03</span><img src="imagenes/galeria/coffee-station-premium-bebidas-2026.jpeg?v=2" alt="Premium drinks and juice station"></div><div class="card-body"><div class="card-kicker">COFFEE STATION · BEVERAGES</div><h3>Premium coffee station · drinks</h3><p>Water, soft drinks and juice station prepared for meetings and events.</p></div></article>
+      <article class="card" data-index="3"><div class="image-wrap"><span class="card-index">04</span><img src="imagenes/galeria/coffee-station-premium-healthy-2026.jpeg?v=2" alt="Fruit and nut selection for a coffee station"></div><div class="card-body"><div class="card-kicker">COFFEE STATION · HEALTHY BREAK</div><h3>Premium coffee station · healthy break</h3><p>Fresh fruit and nuts for a balanced, carefully presented break.</p></div></article>
+      <article class="card card--take-break" data-index="4"><div class="image-wrap"><span class="card-index">05</span><img src="imagenes/galeria/take-a-break-2026.jpg" alt="Dessert selection for Take a break"></div><div class="card-body"><div class="card-kicker">TAKE A BREAK · PASTRY</div><h3>Take a break</h3><p>Individual desserts prepared for a sweet break with careful presentation.</p></div></article>
+      <article class="card card--reception-original" data-index="5"><div class="image-wrap"><span class="card-index">06</span><img src="imagenes/galeria/recepcion-coctel-alta-calidad-2026.jpg" alt="Cocktail reception"></div><div class="card-body"><div class="card-kicker">COCKTAIL RECEPTION</div><h3>Cocktail reception</h3><p>Cocktail reception in an outdoor courtyard with supporting service stations.</p></div></article>
+      <article class="card card--coctel-reception" data-index="6"><div class="image-wrap"><span class="card-index">07</span><img src="imagenes/galeria/coctel-reception-2026.jpg" alt="Cocktail reception on a terrace"></div><div class="card-body"><div class="card-kicker">COCKTAIL RECEPTION</div><h3>Cocktail reception</h3><p>Welcome cocktail setup on a terrace, with a drinks menu and outdoor service.</p></div></article>
+      <article class="card card--reception-food" data-index="7"><div class="image-wrap"><span class="card-index">08</span><img src="imagenes/galeria/reception-food-2026.jpg" alt="Savoury reception station"></div><div class="card-body"><div class="card-kicker">RECEPTION · FOOD STATION</div><h3>Reception food</h3><p>Savoury reception selection with individual bites and supporting service.</p></div></article>
+      <article class="card" data-index="8"><div class="image-wrap"><span class="card-index">09</span><img src="imagenes/mesa-alm.jpg" alt="Private dining table"></div><div class="card-body"><div class="card-kicker">PRIVATE DINING</div><h3>Private dining table</h3><p>Private dining table for senior management and strategic meetings.</p></div></article>
+      <article class="card" data-index="9"><div class="image-wrap"><span class="card-index">10</span><img src="imagenes/IMG_5580.jpeg" alt="Premium restaurant"></div><div class="card-body"><div class="card-kicker">RESTAURANT OPERATIONS</div><h3>Premium restaurant</h3><p>Restaurant setup for lunch and premium service.</p></div></article>
+      <article class="card" data-index="10"><div class="image-wrap"><span class="card-index">11</span><img src="imagenes/galeria/gala-exterior-2026.jpeg" alt="Outdoor gala"></div><div class="card-body"><div class="card-kicker">OUTDOOR GALA</div><h3>Outdoor gala</h3><p>Outdoor gala setup in a grand luxury setting.</p></div></article>
+      <article class="card" data-index="11"><div class="image-wrap"><span class="card-index">12</span><img src="imagenes/mesa-gala-dia.jpg" alt="Gala dinner"></div><div class="card-body"><div class="card-kicker">BANQUET GALA</div><h3>Gala dinner</h3><p>Gala table setup with meticulous attention to detail.</p></div></article>
+      <article class="card" data-index="12"><div class="image-wrap"><span class="card-index">13</span><img src="imagenes/galeria/cena-boda-interior-2026.jpg" alt="Indoor wedding dinner"></div><div class="card-body"><div class="card-kicker">WEDDING DINNER · INDOOR</div><h3>Wedding dinner · indoors</h3><p>Indoor wedding dinner setup with floral decorations and premium service.</p></div></article>
+      <article class="card" data-index="13"><div class="image-wrap"><span class="card-index">14</span><img src="imagenes/galeria/cena-boda-exterior-2026.jpg" alt="Outdoor wedding dinner"></div><div class="card-body"><div class="card-kicker">WEDDING DINNER · OUTDOOR</div><h3>Wedding dinner · outdoors</h3><p>Long banquet table for an outdoor wedding dinner with floral arrangements and natural light.</p></div></article>
+      <article class="card card--bar-premium" data-index="14"><div class="image-wrap"><span class="card-index">15</span><img src="imagenes/galeria/bar-premium-2026.jpg" alt="Premium bar"></div><div class="card-body"><div class="card-kicker">PREMIUM BAR</div><h3>Premium bar</h3><p>Premium bar prepared to offer elegant, attentive service.</p></div></article>
+    </section>
+
+    <footer><span>RACV // VISUAL EVIDENCE ARCHIVE</span><span>HOSPITALITY · F&amp;B · EVENT OPERATIONS · 2026</span><span class="legal-mark"><strong>LICENCE / EXCLUSIVE USE BY THE OWNER.</strong> Design, structure, text and original materials protected. Reproduction, modification or distribution requires express permission from Ramón Alberto Curbalán Vega.</span></footer>
+  </main>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="viewer" role="dialog" aria-modal="true" aria-label="Gallery viewer">
+      <div class="viewer-top"><span>RACV // PHOTO INSPECTOR</span><button class="close-btn" id="closeBtn" aria-label="Close">×</button></div>
+      <div class="viewer-stage"><button class="arrow prev" id="prevBtn" aria-label="Previous">‹</button><img id="viewerImg" src="" alt=""><button class="arrow next" id="nextBtn" aria-label="Next">›</button></div>
+      <div class="viewer-meta"><small id="viewerKicker"></small><strong id="viewerTitle"></strong><p id="viewerText"></p></div>
+    </div>
+  </div>
+
+  <script>
+    const cards = [...document.querySelectorAll('.card')];
+    const lightbox = document.getElementById('lightbox');
+    const viewerImg = document.getElementById('viewerImg');
+    const viewerKicker = document.getElementById('viewerKicker');
+    const viewerTitle = document.getElementById('viewerTitle');
+    const viewerText = document.getElementById('viewerText');
+    let current = 0;
+
+    function show(index){
+      current = (index + cards.length) % cards.length;
+      const card = cards[current];
+      const img = card.querySelector('img');
+      viewerImg.src = img.src;
+      viewerImg.alt = img.alt;
+      viewerKicker.textContent = card.querySelector('.card-kicker').textContent;
+      viewerTitle.textContent = card.querySelector('h3').textContent;
+      viewerText.textContent = card.querySelector('p').textContent;
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+    }
+    function closeViewer(){lightbox.hidden=true;document.body.style.overflow=''}
+    cards.forEach((card,i)=>card.addEventListener('click',()=>show(i)));
+    document.getElementById('closeBtn').addEventListener('click',closeViewer);
+    document.getElementById('prevBtn').addEventListener('click',()=>show(current-1));
+    document.getElementById('nextBtn').addEventListener('click',()=>show(current+1));
+    lightbox.addEventListener('click',e=>{if(e.target===lightbox) closeViewer()});
+    document.addEventListener('keydown',e=>{
+      if(lightbox.hidden) return;
+      if(e.key==='Escape') closeViewer();
+      if(e.key==='ArrowLeft') show(current-1);
+      if(e.key==='ArrowRight') show(current+1);
+    });
+  </script>
+<script src="language-switch.js"></script>
+</body>
+</html>

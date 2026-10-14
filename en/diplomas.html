@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="../">
+  <meta charset="UTF-8" />
+  <title>Diplomas and credentials · Ramón Alberto Curbalán Vega</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Diplomas, specialist courses and official credentials of Ramón Alberto Curbalán in hospitality, food service, hotel operations and management." />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,650&family=Manrope:wght@400;500;600;700&display=swap');
+
+    :root {
+      --primary: #60a4b8;
+      --primary-dark: #3d6e7d;
+      --primary-soft: #e8f3f6;
+      --bg-body: #f2f4f5;
+      --bg-white: #ffffff;
+      --card-bg: #fafbfb;
+      --text-main: #2f3437;
+      --text-muted: #6f777c;
+      --border-soft: #dde2e5;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      letter-spacing: -0.005em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 1180px;
+      margin: 28px auto;
+      background: var(--bg-white);
+      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #78b7c8);
+      color: #fff;
+      padding: 28px 34px 32px;
+    }
+
+    header h1 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 27px;
+      font-weight: 650;
+      letter-spacing: .015em;
+      margin-bottom: 7px;
+    }
+
+    header p { font-size: 13.5px; font-weight: 600; opacity: .97; }
+    header .sub { font-size: 11.8px; font-weight: 500; opacity: .88; margin-top: 6px; }
+    main { padding: 30px 34px 34px; }
+
+    .intro {
+      font-size: 13.5px;
+      font-weight: 500;
+      line-height: 1.7;
+      color: #59656b;
+      margin-bottom: 28px;
+      max-width: 1040px;
+    }
+
+    .section { margin-bottom: 30px; }
+
+    .section-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #334249;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border-soft);
+      padding-bottom: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .cards > .card:only-child,
+    .cards > .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid rgba(205, 218, 224, .9);
+      padding: 16px 17px 17px;
+      background: #ffffff;
+      box-shadow: 0 4px 14px rgba(37, 74, 86, .06);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      isolation: isolate;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(rgba(255,255,255,.90), rgba(255,255,255,.90)),
+        url("imagenes/fondo-diplomas.jpg") center / cover no-repeat;
+      pointer-events: none;
+    }
+
+    .card > * { position: relative; z-index: 1; }
+    .card-header { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; }
+
+    .card-title {
+      font-family: 'Manrope', sans-serif;
+      font-size: 13.8px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: -0.012em;
+      color: #1f2b31;
+    }
+
+    .card-entity { font-size: 11.7px; line-height: 1.45; font-weight: 500; color: #5d6b72; margin-top: 3px; }
+
+    .card-badge {
+      font-size: 10.7px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(232,243,246,.94);
+      color: var(--primary-dark);
+      white-space: nowrap;
+      align-self: flex-start;
+      box-shadow: 0 1px 5px rgba(61,110,125,.05);
+    }
+
+    .card-meta { font-size: 11.6px; font-weight: 500; color: #637178; margin-bottom: 8px; }
+    .card-desc { font-size: 11.9px; font-weight: 500; line-height: 1.62; color: #39474e; margin-bottom: 11px; }
+
+    .card-link {
+      font-size: 11.6px;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: auto;
+      display: inline-block;
+      width: fit-content;
+      border-bottom: 1px solid rgba(61,110,125,.35);
+    }
+
+    .card-link:hover { color: #244f5b; border-bottom-color: #244f5b; }
+    .note { font-size: 10.8px; font-weight: 500; color: var(--text-muted); margin-top: 8px; }
+
+    footer {
+      font-size: 10.8px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 14px 12px 18px;
+      border-top: 1px solid var(--border-soft);
+      background: #f8f9f9;
+    }
+
+    @media (max-width: 800px) {
+      .page { margin: 0; border-radius: 0; }
+      .cards { grid-template-columns: 1fr; }
+      .cards > .card:only-child,
+      .cards > .card:last-child:nth-child(odd) { grid-column: auto; }
+      header, main { padding-left: 18px; padding-right: 18px; }
+      header h1 { font-size: 24px; }
+      .card::before {
+        background:
+          linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)),
+          url("imagenes/fondo-diplomas.jpg") center / cover no-repeat;
+      }
+    }
+  .legal-mark{display:block;margin-top:7px;color:#5c7f88;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.legal-mark strong{color:#3d6e7d}
+
+  /* RCV · NAVEGACIÓN DE RETORNO AL PORTFOLIO · 2026-10-12 */
+  .diplomas-page header .back-to-portfolio{
+    display:inline-flex;
+    position:relative;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    width:fit-content;
+    min-height:38px;
+    margin:0 0 25px;
+    padding:9px 14px;
+    border:1px solid rgba(145,235,248,.46);
+    border-radius:9px;
+    background:linear-gradient(135deg,rgba(82,171,192,.23),rgba(3,39,51,.44));
+    color:#e8fbfe;
+    box-shadow:inset 0 1px rgba(255,255,255,.13),0 8px 18px rgba(0,0,0,.14);
+    font-family:'Manrope',system-ui,sans-serif;
+    font-size:10.5px;
+    font-weight:700;
+    line-height:1.3;
+    letter-spacing:.10em;
+    text-transform:uppercase;
+    text-decoration:none;
+    transition:background .2s ease,border-color .2s ease,transform .2s ease;
+  }
+  .diplomas-page header .back-to-portfolio::after{
+    content:"";
+    position:absolute;
+    pointer-events:none;
+    left:12%;
+    right:12%;
+    bottom:-2px;
+    height:2px;
+    border-radius:999px;
+    background:linear-gradient(90deg,transparent,rgba(51,227,248,.78) 18%,rgba(184,255,255,.98) 50%,rgba(51,227,248,.78) 82%,transparent);
+    box-shadow:0 -2px 9px rgba(35,235,251,.45),0 4px 11px rgba(0,221,239,.27);
+  }
+  .diplomas-page header .back-to-portfolio:hover,
+  .diplomas-page header .back-to-portfolio:focus-visible{
+    color:#fff;
+    border-color:rgba(189,251,255,.81);
+    background:linear-gradient(135deg,rgba(76,189,215,.33),rgba(5,50,66,.68));
+    transform:translateY(-1px);
+  }
+  .diplomas-page header .back-to-portfolio:focus-visible{outline:2px solid #b6f5ff;outline-offset:3px}
+  @media(prefers-reduced-motion:reduce){
+    .diplomas-page header .back-to-portfolio{transition:none}
+  }
+  </style>
+  <link rel="stylesheet" href="refined-depth.css?v=20261012-acreditaciones-1">
+  <link rel="stylesheet" href="language-switch.css">
+  <script src="language-preference.js"></script>
+</head>
+<body class="diplomas-page">
+  <div class="page">
+    <header>
+      <nav class="language-switch" aria-label="Language"><a href="diplomas.html?lang=es" lang="es" aria-label="Español">🇪🇸 ES</a><a href="en/diplomas.html?lang=en" lang="en" aria-label="English" aria-current="page">🇬🇧 EN</a></nav>
+      <a class="back-to-portfolio" href="en/index.html" aria-label="Back to hospitality portfolio"><span aria-hidden="true">←</span> Back to portfolio</a>
+      <h1>Diplomas and credentials</h1>
+      <p>Ramón Alberto Curbalán Vega · Hospitality, Food Service and Hotel Management</p>
+      <p class="sub">A selection of official and additional training in tourism, F&B, business management, leadership, digitalisation and professional development.</p>
+    </header>
+
+    <main>
+      <p class="intro">An overview of training and credentials in hotel management, food service, people management, quality, profitability, innovation, digitalisation and leadership. Each card lists the provider, duration, dates and main focus of the programme.</p>
+
+      <section class="section">
+        <h2 class="section-title">Food service, kitchen and service management</h2>
+        <div class="cards">
+          <article class="card"><div class="card-header"><div><div class="card-title">HOTR040PO · Food Service Management</div><div class="card-entity">Training For Success · National Continuing Training Programme</div></div><div class="card-badge">100 h</div></div><div class="card-meta">Delivery: Online learning · 10/06/2021 – 27/07/2021</div><div class="card-desc">Food service organisation, menu planning, cost control, pricing, revenue management, safety and hygiene.</div><a href="diplomas/Diploma Gestion de la Restauracion.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+          <article class="card"><div class="card-header"><div><div class="card-title">HOTR061PO · Kitchen Management Skills and Competencies</div><div class="card-entity">SMARTMIND S.L. · SEPE · Tourism</div></div><div class="card-badge">25 h</div></div><div class="card-meta">Delivery: Tutor-supported online learning · 21/12/2022 – 11/01/2023</div><div class="card-desc">Kitchen management, section organisation, kitchen design, menu development, stock control, nutrition and culinary creativity.</div><a href="diplomas/Diploma Gestion de Cocinas.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+          <article class="card"><div class="card-header"><div><div class="card-title">HOTR064PO · Restaurant and Bar Service</div><div class="card-entity">Método Estudios Consultores</div></div><div class="card-badge">35 h</div></div><div class="card-meta">Delivery: Online learning · 22/12/2022 – 09/02/2023</div><div class="card-desc">Dining room service, service teams, table settings, order taking, buffets, breakfasts, room service, bar operations, basic mixology and restaurant organisation.</div><a href="diplomas/servicio en restaurantes y bares.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+        </div>
+      </section>
+
+      <section class="section"><h2 class="section-title">Service quality and hotel profitability</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Service Quality Management in Hospitality</div><div class="card-entity">G12 Grupo Empresarial de Servicios</div></div><div class="card-badge">40 h</div></div><div class="card-meta">Delivery: Online learning · 24/11/2021 – 23/12/2021</div><div class="card-desc">Service culture, quality standards, guest satisfaction, communication, complaint management and implementation of quality models.</div><a href="diplomas/Gestion calidad servicio restaurantes.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Hotel Profitability Analysis</div><div class="card-entity">Universidad Camilo José Cela</div></div><div class="card-badge">30 h</div></div><div class="card-meta">Delivery: Online learning · 17/10/2022 – 14/11/2022</div><div class="card-desc">Profit and loss, financial balance, break-even analysis, economic and financial profitability, margins and improvement tools.</div><a href="diplomas/Analisis -Rentabilidad-Hoteles.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+      </div></section>
+
+      <section class="section"><h2 class="section-title">Wine service, beverages and languages</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Wine Service and Food Pairing</div><div class="card-entity">ASSESFORM Assessors · Consorci per a la Formació Contínua de Catalunya</div></div><div class="card-badge">20 h</div></div><div class="card-meta">Delivery: Online learning · 19/03/2025 – 07/04/2025</div><div class="card-desc">Tasting conditions, sensory analysis and wine and food pairing techniques.</div><a href="diplomas/certificado_somellier_marinaje.pdf" target="_blank" class="card-link">View PDF certificate</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Winemaking and Wine Tasting</div><div class="card-entity">Associació Catalana de Fabricants d'Aliments Compostos · Consorci per a la Formació Contínua de Catalunya</div></div><div class="card-badge">40 h</div></div><div class="card-meta">Delivery: Online learning · 13/07/2026 – 10/08/2026</div><div class="card-desc">Wine types, labelling, winemaking, fermentation, quality and hygiene, tasting methodology and sensory analysis.</div><a href="diplomas/Certificado_Enologia_Cata.pdf" target="_blank" class="card-link">View PDF certificate</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">ADGX01 · English for Business Management</div><div class="card-entity">Core Networks S.L. · SEPE · Tourism</div></div><div class="card-badge">200 h</div></div><div class="card-meta">Delivery: Online learning · 20/12/2021 – 08/03/2022</div><div class="card-desc">English for business management, customer service, negotiation, complaints and professional communication.</div><a href="diplomas/DIPLOMA_aprovechamiento_Estatal_Turismo_2021.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+      </div></section>
+
+      <section class="section"><h2 class="section-title">Business administration and hotel management</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Master’s Programme in Business Administration and Management</div><div class="card-entity">MassterCursos · Training Platform</div></div><div class="card-badge">175 h</div></div><div class="card-meta">Method: Online · Completed: 16/12/2021 · Grade: Outstanding</div><div class="card-desc">Business leadership and management, strategic and financial planning, marketing, human resources and business organisation.</div><a href="diplomas/Diploma Master en Administración de Empresas.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Master’s Programme in Tourism and Hotel Management</div><div class="card-entity">MASSTERCURSOS · European Association for Distance Learning (EADL)</div></div><div class="card-badge">650 h</div></div><div class="card-meta">Method: Online · Completed: 12/01/2026 · Grade: Outstanding</div><div class="card-desc">Strategic planning, operations management, financial management, service quality, departmental organisation and decision-making.</div><a href="diplomas/Diploma Master_direccion_Hotelera1.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+      </div></section>
+
+      <section class="section"><h2 class="section-title">People management, employment contracts and labour relations</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">ADGD240PO · Pay and Employment Contracts</div><div class="card-entity">Centro de Estudios Activa Formación SL · Vocational Training System for Employment</div></div><div class="card-badge">100 h</div></div><div class="card-meta">Delivery: Tutor-supported online learning · 18/12/2019 – 19/02/2020</div><div class="card-desc">Training in pay structures, collective agreements, employment contract types, social security, registration and deregistration, contributions, benefits, self-employment, working hours, labour infringements and penalties.</div><a href="diplomas/diploma salarios y contratacion.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+      </div></section>
+
+      <section class="section"><h2 class="section-title">Digitalisation, logistics and sustainability</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Smart Urban Freight Logistics</div><div class="card-entity">Universidad Camilo José Cela · Centre for Advanced Studies</div></div><div class="card-badge">375 h · 15 ECTS</div></div><div class="card-meta">Delivery: Distance learning · 22/01/2025 – 19/05/2025 · Result: Pass</div><div class="card-desc">Advanced programme in urban freight distribution, planning and regulation, efficiency and sustainability, artificial intelligence and machine learning, big data, cloud, blockchain, IoT, 5G, digital fleet management, traffic and electronic transport documentation.</div><a href="diplomas/Certificado_LOGISTICA URBANA INTELIGENTE DE MERCANCIAS.pdf" target="_blank" class="card-link">View PDF certificate</a></article>
+      </div></section>
+
+      <section class="section"><h2 class="section-title">Leadership, innovation, negotiation and personal development</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Design Thinking</div><div class="card-entity">Instituto Europeo de Posgrado (IEP)</div></div><div class="card-badge">50 h</div></div><div class="card-meta">Completed: 19/08/2020</div><div class="card-desc">Design Thinking training focused on innovation, creativity and structured problem-solving.</div><a href="diplomas/IMG_20200819_190321.jpg" target="_blank" class="card-link">View certificate</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Harvard Negotiation Method</div><div class="card-entity">Instituto Europeo de Posgrado (IEP)</div></div><div class="card-badge">50 h</div></div><div class="card-meta">Completed: 26/08/2020</div><div class="card-desc">Specialist training in interest-based negotiation and reaching sustainable agreements.</div><a href="diplomas/IMG_20200826_184107.jpg" target="_blank" class="card-link">View certificate</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">Master’s Programme in Personal, Social and Emotional Development Psychology</div><div class="card-entity">MASSTERCURSOS · Training Platform</div></div><div class="card-badge">200 h</div></div><div class="card-meta">Method: Online · Completed: 24/02/2022</div><div class="card-desc">Personal, social and emotional development applied to interpersonal understanding, communication and people management.</div><a href="diplomas/Diploma Psicologia colectiva.pdf" target="_blank" class="card-link">View PDF diploma</a></article>
+        <article class="card"><div class="card-header"><div><div class="card-title">The Principles of Emotional Intelligence, Leadership and Coaching</div><div class="card-entity">Alison</div></div><div class="card-badge">2026</div></div><div class="card-meta">Certified: 09/07/2026 · ID 3712-19356217</div><div class="card-desc">Principles of emotional intelligence, leadership and coaching applied to team management and development.</div><a href="diplomas/Certificate inteligencia emocional.pdf" target="_blank" class="card-link">View PDF certificate</a></article>
+      </div></section>
+
+      <section class="section"><h2 class="section-title">Official accreditation of professional competencies</h2><div class="cards">
+        <article class="card"><div class="card-header"><div><div class="card-title">Accreditation of Food Service Competency Units</div><div class="card-entity">Institut de les Qualificacions Professionals de les Illes Balears</div></div><div class="card-badge">Level 2–3</div></div><div class="card-meta">Registration number: BTE/165365/2021 · Palma, 28/07/2021</div><div class="card-desc">Official accreditation of competencies in food service planning, process supervision, departmental management, risk prevention, food safety, wine and beverage advice and professional communication.</div><a href="diplomas/BTE_165365_2021 Copiar.pdf" target="_blank" class="card-link">View PDF accreditation</a><div class="note">Accreditation that can count towards vocational qualifications and professional certificates in the food service sector.</div></article>
+      </div></section>
+    </main>
+
+    <footer>Diplomas and credentials page · Ramón Alberto Curbalán Vega<span class="legal-mark"><strong>Licence / exclusive use by the owner.</strong> Design, structure, text and original materials protected. Reproduction, modification or distribution is not authorised without express permission.</span></footer>
+  </div>
+
+  <script>
+    document.addEventListener('click', function(event){
+      const link=event.target.closest('a.card-link');
+      if(!link) return;
+      const href=link.getAttribute('href')||'';
+      if(!/\.(pdf|jpg|jpeg|png|webp)$/i.test(href)) return;
+      event.preventDefault();
+      location.href='en/documento.html?file='+encodeURIComponent(href)+'&from=en/diplomas.html';
+    });
+  </script>
+<script src="language-switch.js"></script>
+</body>
+</html>
