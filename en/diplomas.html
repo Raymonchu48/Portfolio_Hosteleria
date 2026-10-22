@@ -116,7 +116,7 @@
       z-index: -1;
       background:
         linear-gradient(rgba(255,255,255,.90), rgba(255,255,255,.90)),
-        url("imagenes/fondo-diplomas.jpg") center / cover no-repeat;
+        url("../imagenes/fondo-diplomas.jpg") center / cover no-repeat;
       pointer-events: none;
     }
 
@@ -183,7 +183,7 @@
       .card::before {
         background:
           linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)),
-          url("imagenes/fondo-diplomas.jpg") center / cover no-repeat;
+          url("../imagenes/fondo-diplomas.jpg") center / cover no-repeat;
       }
     }
   .legal-mark{display:block;margin-top:7px;color:#5c7f88;font-size:10px;letter-spacing:.08em;text-transform:uppercase}.legal-mark strong{color:#3d6e7d}
@@ -238,15 +238,15 @@
   }
   .card-link--unavailable{display:inline-block;opacity:.64;cursor:default;pointer-events:none;border-bottom-style:dashed}
 </style>
-  <link rel="stylesheet" href="refined-depth.css?v=20261012-acreditaciones-1">
-  <link rel="stylesheet" href="language-switch.css">
-  <script src="language-preference.js"></script>
+  <link rel="stylesheet" href="../refined-depth.css?v=20261012-acreditaciones-1">
+  <link rel="stylesheet" href="../language-switch.css">
+  <script src="../language-preference.js"></script>
 </head>
 <body class="diplomas-page">
   <div class="page">
     <header>
-      <nav class="language-switch" aria-label="Language"><a href="diplomas.html?lang=es" lang="es" aria-label="Español">🇪🇸 ES</a><a href="en/diplomas.html?lang=en" lang="en" aria-label="English" aria-current="page">🇬🇧 EN</a></nav>
-      <a class="back-to-portfolio" href="en/index.html" aria-label="Back to hospitality portfolio"><span aria-hidden="true">←</span> Back to portfolio</a>
+      <nav class="language-switch" aria-label="Language"><a href="../diplomas.html?lang=es" lang="es" aria-label="Español">🇪🇸 ES</a><a href="diplomas.html?lang=en" lang="en" aria-label="English" aria-current="page">🇬🇧 EN</a></nav>
+      <a class="back-to-portfolio" href="index.html" aria-label="Back to hospitality portfolio"><span aria-hidden="true">←</span> Back to portfolio</a>
       <h1>Diplomas and credentials</h1>
       <p>Ramón Alberto Curbalán Vega · Hospitality, Food Service and Hotel Management</p>
       <p class="sub">A selection of official and additional training in tourism, F&B, business management, leadership, digitalisation and professional development.</p>
@@ -311,9 +311,9 @@
       const href=link.getAttribute('href')||'';
       if(!/\.(pdf|jpg|jpeg|png|webp)$/i.test(href)) return;
       event.preventDefault();
-      location.href='en/documento.html?file='+encodeURIComponent(href)+'&from=en/diplomas.html';
+      location.href='documento.html?file='+encodeURIComponent(href)+'&from=diplomas.html';
     });
   </script>
-<script src="language-switch.js"></script>
+<script src="../language-switch.js"></script>
 </body>
 </html>
