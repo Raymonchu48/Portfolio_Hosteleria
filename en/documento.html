@@ -52,7 +52,7 @@
     const pretty=documentTitles[file]||(file.split('/').pop()||'Document').replace(/\.[^.]+$/,'').replace(/[_-]+/g,' ').replace(/\s+/g,' ').trim();
     titleEl.textContent=pretty||'Professional document';
     document.title=(pretty||'Document')+' · RACV Portfolio';
-    document.getElementById('backBtn').addEventListener('click',()=>{if(history.length>1)history.back();else location.href=safeFrom});
+    document.getElementById('backBtn').addEventListener('click',()=>{if(history.length>1)history.back();else location.href=(safeFrom.startsWith('en/')?safeFrom.slice(3):safeFrom)});
     if(!isSafe){status.textContent='INVALID';frame.innerHTML='<div class="error"><div><strong>Document unavailable</strong><span>The requested link is invalid.</span></div></div>';original.removeAttribute('href')}
     else{
       original.href=assetPath;
