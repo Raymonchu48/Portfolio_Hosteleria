@@ -18,19 +18,19 @@
     .viewport{min-height:0;padding:14px;background:radial-gradient(circle at 50% 0,rgba(115,185,202,.08),transparent 32%)}.frame{width:100%;height:calc(100vh - 100px);border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#f4f5f5;box-shadow:0 20px 70px rgba(0,0,0,.3)}iframe{width:100%;height:100%;border:0;background:#fff}.image-wrap{width:100%;height:100%;overflow:auto;display:grid;place-items:center;padding:20px;background:#e9ecee}.image-wrap img{display:block;max-width:100%;height:auto;max-height:none;box-shadow:0 12px 45px rgba(0,0,0,.18);background:#fff}.error{height:100%;display:grid;place-items:center;padding:30px;text-align:center;color:#53636a}.error strong{display:block;font-family:'Fraunces',Georgia,serif;font-size:27px;color:#263840;margin-bottom:8px}
     @media(max-width:700px){.viewer-bar{grid-template-columns:1fr;gap:9px}.doc-meta{text-align:left;order:-1}.doc-meta strong{font-size:15px}.status{display:none}.actions{justify-content:flex-start}.viewport{padding:8px}.frame{height:calc(100vh - 138px);border-radius:10px}}
   </style>
-  <link rel="stylesheet" href="refined-depth.css?v=20261010-1">
-  <link rel="stylesheet" href="language-switch.css">
-  <script src="language-preference.js"></script>
+  <link rel="stylesheet" href="../refined-depth.css?v=20261010-1">
+  <link rel="stylesheet" href="../language-switch.css">
+  <script src="../language-preference.js"></script>
 </head>
 <body class="document-page">
   <div class="viewer">
     <header class="viewer-bar">
-      <div class="actions"><nav class="language-switch" aria-label="Language"><a href="documento.html?lang=es" lang="es" aria-label="Español">🇪🇸 ES</a><a href="en/documento.html?lang=en" lang="en" aria-label="English" aria-current="page">🇬🇧 EN</a></nav>
-        <a class="btn primary" href="en/index.html">← Home</a>
+      <div class="actions"><nav class="language-switch" aria-label="Language"><a href="../documento.html?lang=es" lang="es" aria-label="Español">🇪🇸 ES</a><a href="documento.html?lang=en" lang="en" aria-label="English" aria-current="page">🇬🇧 EN</a></nav>
+        <a class="btn primary" href="index.html">← Home</a>
         <button class="btn" id="backBtn" type="button">← Back</button>
       </div>
       <div class="doc-meta"><strong id="docTitle">Professional document</strong><span>RACV // Document Viewer</span></div>
-      <div class="actions"><a class="btn" id="originalLink" href="en/index.html" target="_blank" rel="noopener">Open original ↗</a><span class="status" id="status">READY</span></div>
+      <div class="actions"><a class="btn" id="originalLink" href="index.html" target="_blank" rel="noopener">Open original ↗</a><span class="status" id="status">READY</span></div>
     </header>
     <main class="viewport"><div class="frame" id="frame"></div></main>
   </div>
@@ -39,6 +39,8 @@
     const requestedFile=params.get('file')||'';
     const englishDocuments={"PDF/Curriculum_2026.pdf": "en/PDF/Curriculum_2026_EN.pdf", "PDF/Gestion_Equipos_Liderazgo_Portfolio.pdf": "en/PDF/Gestion_Equipos_Liderazgo_Portfolio_EN.pdf", "PDF/Servicio.pdf": "en/PDF/Servicio_EN.pdf", "PDF/PTD.pdf": "en/PDF/PTD_EN.pdf", "PDF/Manual_Ejecutivo_Eventos_Editable.pdf": "en/PDF/Manual_Ejecutivo_Eventos_Editable_EN.pdf"};
     const file=englishDocuments[requestedFile]||requestedFile;
+    // Archivos de diplomas compartidos con la versión española; los PDF EN viven en /en/PDF/.
+    const assetPath=file.startsWith('diplomas/')?'../'+file:(file.startsWith('en/PDF/')?file.slice(3):file);
     const from=params.get('from')||'en/index.html';
     const safeFrom=['index.html','diplomas.html','galeria.html','en/index.html','en/diplomas.html','en/galeria.html'].includes(from)?from:'en/index.html';
     const isSafe=/^(?!\/\/)(?!.*\.\.)(?!.*:\/\/)[^?#]+\.(pdf|jpg|jpeg|png|webp)$/i.test(file);
@@ -53,20 +55,20 @@
     document.getElementById('backBtn').addEventListener('click',()=>{if(history.length>1)history.back();else location.href=safeFrom});
     if(!isSafe){status.textContent='INVALID';frame.innerHTML='<div class="error"><div><strong>Document unavailable</strong><span>The requested link is invalid.</span></div></div>';original.removeAttribute('href')}
     else{
-      original.href=file;
+      original.href=assetPath;
       const ext=file.split('.').pop().toLowerCase();
       if(ext==='pdf'){
         const iframe=document.createElement('iframe');
-        iframe.src=file+'#toolbar=1&navpanes=0&view=FitH';
+        iframe.src=assetPath+'#toolbar=1&navpanes=0&view=FitH';
         iframe.title=pretty;
         frame.appendChild(iframe);
       }else{
         const wrap=document.createElement('div');wrap.className='image-wrap';
-        const img=document.createElement('img');img.src=file;img.alt=pretty;
+        const img=document.createElement('img');img.src=assetPath;img.alt=pretty;
         wrap.appendChild(img);frame.appendChild(wrap);
       }
     }
   </script>
-<script src="language-switch.js"></script>
+<script src="../language-switch.js"></script>
 </body>
 </html>
