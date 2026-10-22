@@ -141,9 +141,15 @@ def main():
     processed=0
     modified=0
     redactions=0
-    for path in sorted(ROOT.rglob("*")):
-        if not path.is_file() or path.suffix.lower() not in SUFFIXES:
-            continue
+    # Incluye copias antiguas ubicadas fuera de la carpeta diplomas/.
+    # Se limita a nombres de certificado existentes, para no reescribir manuales ni CV.
+    certificate_names = {p.name.lower() for p in ROOT.rglob("*") if p.is_file()}
+    sources = [p for p in Path(".").rglob("*") if p.is_file() and p.suffix.lower() in SUFFIXES and
+               (str(p).startswith("diplomas/") or
+                p.name.lower() in certificate_names or
+                re.search(r"diploma|certificado|acreditaci[oó]n",p.name,re.I)) and
+               ".git" not in p.parts]
+    for path in sorted(set(sources)):
         processed+=1
         if path.suffix.lower()==".pdf":
             did, count=sanitize_pdf(path)
